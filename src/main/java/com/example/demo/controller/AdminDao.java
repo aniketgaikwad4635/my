@@ -45,7 +45,7 @@ public class AdminDao {
 
 	// authenticate admin
 	@PostMapping("/AuthentAdmlogin")
-	public ModelAndView AuthenticateAdmin(String admUsername, String admPassword) {
+	public ModelAndView AuthenticateAdmin(String admUsername, String admPassword)  {
 		String adminusername = "doctorhub";
 		String adminpassword = "doctorhub";
 		if ((adminusername.equals(admUsername)) && (adminpassword.equals(admPassword))) {
