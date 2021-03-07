@@ -1,18 +1,17 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.entity.AppointmentEntity;
+
+
 import com.example.demo.entity.DoctorEntity;
 import com.example.demo.entity.HospitalEntity;
-import com.example.demo.entity.PatientEntity;
+
 import com.example.demo.repository.AppointmentRepository;
 import com.example.demo.repository.DoctorRepository;
 import com.example.demo.repository.HospitalRepository;
