@@ -10,8 +10,6 @@ import com.example.demo.converter.AppointmentConverter;
 import com.example.demo.dao.Appointment;
 
 import com.example.demo.entity.AppointmentEntity;
-import com.example.demo.entity.DoctorEntity;
-import com.example.demo.entity.PatientEntity;
 import com.example.demo.enums.AptStatus;
 import com.example.demo.repository.AppointmentRepository;
 
