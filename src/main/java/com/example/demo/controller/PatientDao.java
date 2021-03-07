@@ -67,15 +67,11 @@ public class PatientDao {
 	}
 
 	@PostMapping("/AuthPtlogin")
-	public ModelAndView Authenticatepatient(String ptUsername, String ptPassword, HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView Authenticatepatient(String ptUsername, String ptPassword) {
 		PatientEntity patientEntity = patientService.Authenticatepatient(ptUsername, ptPassword);
 		if (patientEntity != null) {
 			ModelAndView mv = new ModelAndView("Appointment");
-			mv.addObject("patient", patientEntity);
-			
-			HttpSession session = request.getSession();
-  		    session.setAttribute("patientauth", 1);
-  		   
+			mv.addObject("patient", patientEntity);		
 			
 			return mv;
 		} else {

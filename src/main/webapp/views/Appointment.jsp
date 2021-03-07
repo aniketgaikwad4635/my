@@ -12,12 +12,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	if(session.getAttribute("patientauth") ==null){
-		response.sendRedirect("/patient/login");
-		return;
-	}
-%>
 
 	<c:if test="${patProf==1}">
 	       <br>
