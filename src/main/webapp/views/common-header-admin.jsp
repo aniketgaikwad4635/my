@@ -12,7 +12,7 @@
 				
 				 <a class="btn btn-sm btn-white mr-3" href="/admin/hspList" role="button"> Hospitals </a>
 					    
-		    <a class="btn btn-sm btn-white mr-3" href="/home" role="button"> Logout </a>
+		    <a class="btn btn-sm btn-white mr-3" href="/admin/admlogout" role="button"> Logout </a>
 		</div>
 
 	</div>

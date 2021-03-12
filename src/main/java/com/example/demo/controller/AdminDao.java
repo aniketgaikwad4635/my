@@ -1,8 +1,11 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,17 +52,28 @@ public class AdminDao {
 
 	// authenticate admin
 	@PostMapping("/AuthentAdmlogin")
-	public ModelAndView AuthenticateAdmin(String admUsername, String admPassword)  {
+	public ModelAndView AuthenticateAdmin(String admUsername, String admPassword, HttpServletRequest req, HttpServletResponse res)  {
 		String adminusername = "doctorhub";
 		String adminpassword = "doctorhub";
 		if ((adminusername.equals(admUsername)) && (adminpassword.equals(admPassword))) {
 			ModelAndView mv = new ModelAndView("Admin");
+			req.getSession().setAttribute(admUsername, adminusername);
+			req.getSession().setAttribute(admPassword, adminpassword);
+			
 			return mv;
 		} else {
 			ModelAndView mv = new ModelAndView("AdmLogin");
 			mv.addObject("AdmLogFail", 0);
 			return mv;
-		}
+		} 
+	}
+	
+	
+	@RequestMapping("/admlogout")
+	public ModelAndView logoutUser(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		ModelAndView mv = new ModelAndView("Home");
+		req.getSession().invalidate();
+		return mv;
 	}
 
 	// read all hospital list

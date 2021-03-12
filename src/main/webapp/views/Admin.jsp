@@ -12,6 +12,12 @@
 </style>
 
 </head>
+
+<%
+String session_admin = (String) session.getAttribute("admUsername");
+%> 
+
+
 <body>
 
 	<!--  hospital -->
