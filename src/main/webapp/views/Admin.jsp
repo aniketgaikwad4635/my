@@ -75,38 +75,32 @@ String session_admin = (String) session.getAttribute("admUsername");
              <div class="col-4"></div>
 			<div class="col-4">
 				<c:if test="${hspReg==1 }">
-					<div class="alert alert-success">Registration Successful</div>
+					<div class="alert alert-success">Hospital Registration Successful...</div>
 				</c:if>
 				<c:if test="${hspReg==0 }">
-					<div class="alert alert-warning">Registration Failed</div>
+					<div class="alert alert-warning">Hospital Registration Failed... <br> 
+					                                 <small>username/password already used. Try with different credentials.</small></div>
 				</c:if>
 				<c:if test="${hspReg==2 }">
 					
 						<form action="addHsp" method="post" class=""
 							style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
-							<c:if test="${hspReg==1 }">
-								<div class="alert alert-success">hospital Registration
-									Success</div>
-							</c:if>
-							<c:if test="${hspReg==0 }">
-								<div class="alert alert-warning">hospital Registration
-									Failed</div>
-							</c:if>
+							
                   <center>
-                        <h6>Registration Form</h6></center>
+                        <h6>Hospital Registration</h6></center>
                         <br>
                         
 							<div class="form-group ">
 								Hospital Name<input name="hspName"
 									class="form-control form-control-sm" type="text"
-									placeholder="Enter Name Here..." pattern="[A-Za-z\s]{1,40}"
+									placeholder="Enter Name Here..." pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"
 									required autocomplete="off" title="only characters are allowed" />
 							</div>
 
 							<div class="form-group">
 								Hospital Address<input name="hspAdd"
 									class="form-control form-control-sm" type="text"
-									placeholder="Enter Address Here..." pattern="[A-Za-z\s]{1,40}"
+									placeholder="Enter Address Here..." pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"
 									required autocomplete="off" title="only characters are allowed" />
 							</div>
 							<div class="from-group ">
@@ -162,13 +156,12 @@ String session_admin = (String) session.getAttribute("admUsername");
 
 
 				<c:if test="${hspprofile==1 }">
-					<div class="alert alert-success">Hospital Profile Updated
-						Successfully</div>
+					<div class="alert alert-success">Hospital Profile Updated Successfully...</div>
 				</c:if>
 
 				<c:if test="${hspprofile==0 }">
-					<div class="alert alert-warning">Hospital Profile Updatation
-						Failed</div>
+					<div class="alert alert-warning">Hospital Profile Updatation Failed...<br>
+			                    <small>username/password already used. Try with different credentials.</small></div>
 				</c:if>
 
 
@@ -187,13 +180,13 @@ String session_admin = (String) session.getAttribute("admUsername");
 						<div class="form-group">
 							Hospital Name<input name="hspName"
 								class="form-control form-control-sm" type="text"
-								value="${hspOldInfo.hspName }" pattern="[A-Za-z\s]{1,40}"
+								value="${hspOldInfo.hspName }" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"
 								required autocomplete="off" title="only characters are allowed" />
 						</div>
 						<div class="form-group">
 							Hospital Address<input name="hspAdd"
 								class="form-control form-control-sm" type="text"
-								value="${hspOldInfo.hspAdd }" pattern="[A-Za-z\s]{1,40}"
+								value="${hspOldInfo.hspAdd }" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"
 								required autocomplete="off" title="only characters are allowed" />
 						</div>
 						<div class="form-group">

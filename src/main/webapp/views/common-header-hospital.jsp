@@ -8,7 +8,7 @@
 					style="border-radius: 50%; width: 50px; height: 50px;"
 					src="/image/DoctorHubLogo.png" /> </a>
 					
-										
+						<div class="ml-3"><i>Welcome Hospital-${hospital.hspName}</i></div>						
 					 
 					 <form action="hospProfile" method="post">														
 				 <input type="hidden" name="hspId" value="${hospital.hspId}" readonly />							
@@ -24,7 +24,7 @@
 	    
 				<form action="addDrOpt" method="post">														
 				 <input type="hidden" name="hspId" value="${hospital.hspId}" readonly />							
-				<button class="btn btn-sm btn-white mr-3" type="submit">Add New Doctor</button>							    
+				<button class="btn btn-sm btn-white mr-3" type="submit">Add Doctor</button>							    
 	    </form>		   
 		
 		  

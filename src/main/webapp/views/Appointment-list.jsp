@@ -23,7 +23,7 @@
     <th>Sr.No</th>  <th>Patient Name</th>    <th>Status</th> <th>Appointment Date</th>  <th>Close Action</th>  <th>Cancel Action</th>
              </tr>
            
-           <c:forEach var="item" items="${Appointpatientlist}" begin="0" end="10" varStatus="srno">  
+           <c:forEach var="item" items="${Appointpatientlist}" begin="0" end="100" varStatus="srno">  
              <tr>
      <td>${srno.index+1 }</td>  
         

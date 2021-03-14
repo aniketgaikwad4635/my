@@ -24,17 +24,20 @@
 						<div class="alert alert-warning">Registration Fail</div>
 					</c:if>
 		
-			<h1>Create Account</h1>
+			<h1>Create Account</h1>                
 			
-			<input class="form-control form-control-sm" type="text" name="ptName" placeholder="Name" pattern="[A-Za-z\s]{1,40}"  required autocomplete="off" title="Only characters are allowed.."/>
-			<input class="form-control form-control-sm" type="text" name="age" placeholder="Age" Pattern= "[0-9]{1,2}" required autocomplete="off" title="Not valid age.."/>
-			<input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" required autocomplete="off" title="Enter valid email.."/>
+			<input class="form-control form-control-sm" type="text" name="ptName" placeholder="Name" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"  required autocomplete="off" title="Only characters are allowed.."/>
+			<input class="form-control form-control-sm" type="text" name="age" placeholder="Age" Pattern= "^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$" required autocomplete="off" title="Not valid age.."/>
+			<input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email"  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="Enter valid email.."/>
 			<input class="form-control form-control-sm" type="text" name="ptMobile" placeholder="Phone No" Pattern= "[789][0-9]{9}" required autocomplete="off" title="Mobile number should be 10 digit.."/>
-			<input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}"required autocomplete="off" title="Username only contains characters & numbers.."/>
-			<input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Password"  pattern="[A-Za-z0-9]{1,10}"required autocomplete="off" title="Password only contains characters & numbers.."/>
+			<input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" title="Username only contains characters & numbers.."/>
+			<input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="Password only contains characters & numbers.."/>
 			
 			<button>Register</button>
+			
+			
 		</form>
+		
 	</div>
 	<div class="form-container sign-in-container">
 		 <form action="AuthPtlogin" method="post"> 
@@ -42,12 +45,22 @@
 		<c:if test="${ptLogFail==0 }">
 						<div class="alert alert-warning"> Invalid Login</div>
 					</c:if>
+					
+					<c:if test="${patReg==1 }">
+						<div class="alert alert-success">Registration Success</div>
+					</c:if>
+
+					<c:if test="${patReg==0 }">
+						<div class="alert alert-warning">Registration Fail</div>
+					</c:if>
+					
 			<h1>Sign in</h1>		
-			<span>or use your account</span>
+			<span>use your account</span>
 			<input type="text" name="ptUsername" placeholder="Username" required="required"/>
-			<input type="password" name="ptPassword" placeholder="Password" required="required"/>
-			  <a href="/home">Go to home</a>
+			<input type="password" name="ptPassword" placeholder="Password" required="required"/>			 
+			  	  
 			<button>Sign In</button>
+			 <a href="/home">Go to home</a>
 		</form>
 	</div>
 	<div class="overlay-container">

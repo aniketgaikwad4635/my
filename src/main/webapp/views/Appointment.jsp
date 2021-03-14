@@ -22,39 +22,38 @@
 					<table class="table  border-dark ">
 					
 						<tr>
-							<th><h5>User Id:</h5></th>
-							<td>
-								<h6>${patient.ptId}</h6>
+							<th>User Id:</th>
+							<td>	${patient.ptId}
 							</td>
 						</tr>
 						<tr>
-							<th><h5>Name:</h5></th>
+							<th>Name:</th>
 							<td>
-								<h6>${patient.ptName}</h6>
-							</td>
-						</tr>
-						<tr>
-							<th>
-								<h5>Age:</h5>
-							</th>
-							<td>
-								<h6>${patient.ptAge}</h6>
+								${patient.ptName}
 							</td>
 						</tr>
 						<tr>
 							<th>
-								<h5>Email:</h5>
+								Age:
 							</th>
 							<td>
-								<h6>${patient.ptGmail}</h6>
+								${patient.ptAge}
 							</td>
 						</tr>
 						<tr>
 							<th>
-								<h5>Mobile:</h5>
+								Email:
 							</th>
 							<td>
-								<h6>${patient.ptMobile}</h6>
+								${patient.ptGmail}
+							</td>
+						</tr>
+						<tr>
+							<th>
+								Mobile:
+							</th>
+							<td>
+								${patient.ptMobile}
 							</td>
 						</tr>
 									

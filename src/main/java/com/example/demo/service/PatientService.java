@@ -17,9 +17,9 @@ public class PatientService {
 	@Autowired
 	PatientRepository patientRepository;
 	
-	public PatientEntity getSinglePatient(String ptId) {
-		int patId=Integer.parseInt(ptId);
-		PatientEntity PatientEntity=patientRepository.findById(patId);
+	public PatientEntity getSinglePatient(String ptId) {   //12   string
+		int patId=Integer.parseInt(ptId);                     //12  int
+		PatientEntity PatientEntity=patientRepository.findById(patId);      //findById(12)
 		return PatientEntity;
 	}
 	
@@ -42,6 +42,28 @@ public class PatientService {
 			return null;
 		}
 	}
+	
+	// @PostMapping("/AuthPtloginwithencrupt")
+		public PatientEntity AuthentPatUname(String ptUsername) {
+			PatientEntity PatientEntity = patientRepository.findByPtUsername(ptUsername);
+			if (PatientEntity != null) {
+				return PatientEntity;
+			} else {
+				return null;
+			}
+		}
+		
+		//@PostMapping("/forgotPass")
+				public PatientEntity AuthentPatUnameGml(String ptUsername,String ptGmail) {
+					PatientEntity PatientEntity = patientRepository.findByPtUsernameAndPtGmail(ptUsername,ptGmail);
+					if (PatientEntity != null) {
+						return PatientEntity;
+					} else {
+						return null;
+					}
+				}
+				
+		
 
 	// @PostMapping("/update-opt")
 	public PatientEntity patientUpdateOpt(String id) {
@@ -51,7 +73,7 @@ public class PatientService {
 	}
 
 	// @PostMapping("/upd-patient")
-	public PatientEntity patientupdated(String id, String ptName, String age, String ptGmail, String ptMobile) {
+	public PatientEntity patientupdated(String id, String ptName, String age, String ptGmail, String ptMobile,String ptUsername) {
 		int ptId = Integer.parseInt(id);
 		int ptAge = Integer.parseInt(age);
 		PatientEntity patientEntity = patientRepository.findById(ptId);
@@ -62,7 +84,7 @@ public class PatientService {
 			patientEntity.setPtAge(ptAge);
 			patientEntity.setPtGmail(ptGmail);
 			patientEntity.setPtMobile(ptMobile);
-
+			patientEntity.setPtUsername(ptUsername);
 			
 			patientRepository.save(patientEntity);
 			return patientEntity;
@@ -72,6 +94,6 @@ public class PatientService {
 		}
 	}
 	
-	
+	  
 	
 }

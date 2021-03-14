@@ -13,22 +13,21 @@
 </head>
 <body>
 
-
-
-
-<div class="row">					         
+                  <div class="row">					         
 						<br>
 						<div class="mx-auto">
 						
 						<c:if test="${b==1}">
-						<div class="alert alert-success mt-2">Appointment booked</div>
+						<div class="alert alert-success mt-2">Appointment booked successfully...<br>
+						                                 <small> Please make a payment to confirm your appointment.</small>                                  </div>
 					</c:if>
 					<c:if test="${b==0}">
-						<div class="alert alert-warning mt-2">Appointment not booked. Try
-							again...</div>
+						<div class="alert alert-warning mt-2">Appointment not booked. Try again...</div>
 					</c:if>
 						
-					
+					<c:if test="${b==2}">
+						<div class="alert alert-warning mt-2">Your Appointment is already present. </div>
+					</c:if>
 					</div>
 					</div>		
 
@@ -43,7 +42,7 @@
        <div class="mx-auto">
         <table class="table table-striped border-dark table-bordered">
              <tr>
-   <th>Sr.No</th>   <th>Name</th> <th>Speciality</th>  <th>Status</th> <th>Select Appointment Date</th> <th>Book Action</th>
+   <th>Sr.No</th>   <th>Name</th> <th>Speciality</th>  <th>Status</th> <th>Select Appointment Date</th><!--  <th>Select Appointment Date</th> --> <th>Book Action</th>
                                  
              </tr>
            
@@ -54,17 +53,35 @@
                        <c:if test="${item.drStatus==true}"> Available</c:if>  
                        <c:if test="${item.drStatus==false}"> Not Available</c:if> 
                </td>
+               
                <form action="aptBooking" method="post">
+               
                <td>
-                 <input type="date" id="loc" name="appdate" value="" min="tdate" placeholder="" tabindex="3" required="required" />
+                <script type="text/javascript">
+   var today = new Date().toISOString().split('T')[0];
+   document.getElementsByName("appdate")[0].setAttribute('min', today);
+
+   </script>
+             <div class="form-group"> 
+    <div class="input-group"> 
+     <input type="date" id="appdate" required="Required" class="form-control" name="appdate" placeholder="Select suitable date" />
+    </div>
+</div>
+               </td>
+              <!--  <td>
+               
+                 <input type="date" id='datetimepicker11' name="appdate" value="" min="tdate" placeholder="" tabindex="3" required="required" />
                </td>  
-                                        
+                        -->                 
               <td>
                 <!-- <form action="aptBooking" method="post"> -->
                <!--  <input type="date" id="loc" name="appdate" value="" placeholder="" tabindex="3" required="required" /> -->
+               
+               <c:if test="${item.drStatus==true }">
                 <input type="hidden" name="drid" value="${item.drId}" readonly />	
                 <input type="hidden" name="ptid" value="${patient.ptId}" readonly />								
-				<button class="btn btn-sm btn-light" type="submit">Book Here</button>							    
+				<button class="btn btn-sm btn-light" type="submit">Book Here</button>	
+				</c:if>						    
 	            <!--  </form>     -->         
                </td>   
             </form>
@@ -76,9 +93,7 @@
         </div>
     </c:if>		
     
-    
-    
-    
+     
     
 </body>
 </html>

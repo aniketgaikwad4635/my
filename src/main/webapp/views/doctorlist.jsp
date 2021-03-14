@@ -15,7 +15,7 @@
 				
 				<div class="row">					
 					<div class="mx-auto">
-				   <center><h3>Doctors list</h3></center>	
+				   <center><h3>Doctors List</h3></center>	
 				   
 				  
 						<table class="table table-striped border-dark table-bordered" >
@@ -32,7 +32,7 @@
 							
 								<th>Sr.No</th>
 								<th>Doctor Name</th>
-								<th>Doctor Speciality</th>
+								<th>Speciality</th>
 								<th>Email</th>
 								<th>Mobile</th>
 								<th>Status</th>

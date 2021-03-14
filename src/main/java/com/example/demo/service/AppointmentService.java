@@ -66,6 +66,18 @@ public class AppointmentService {
 		
 	}
 	
+	public void aptConfirmed(String ptid,String drid) {
+		AptStatus aptStatus=AptStatus.CONFIRMED;   
+		 int patId=Integer.parseInt(ptid); 
+		 int doctId=Integer.parseInt(drid); 
+		 AppointmentEntity appointmentEntity=appointmentRepository.findByPtIdAndDrId(patId,doctId);
+		 Appointment appointment=appointmentConverter.AppointmentEntityToAppointment(appointmentEntity);
+		 appointment.setAptStatus(aptStatus);
+		 
+		 AppointmentEntity appointmentEntitySave=appointmentConverter.AppointmentToAppointmentEntity(appointment);
+		 appointmentRepository.save(appointmentEntitySave);
+	}
+	
 	public void aptCancel(String ptid,String drid) {
 		AptStatus aptStatus=AptStatus.CANCELLED;   
 		 int patId=Integer.parseInt(ptid); 
@@ -127,6 +139,19 @@ public class AppointmentService {
 	 }
 	
 	
-	
+	 public boolean aptPresentCheck(String ptid,String drid) {
+		 AptStatus aptStatus=AptStatus.CONFIRMED;  
+		 int doctId=Integer.parseInt(drid);
+		 int patId=Integer.parseInt(ptid);
+		 AppointmentEntity appointmentEntity=appointmentRepository.findByPtIdAndDrIdAndAptStatus(patId, doctId,aptStatus);
+		 if(appointmentEntity!=null) {
+			 System.out.println("appointment for given ptid drid appdate already present in database");
+			return true;
+		 }
+		 else {
+			 System.out.println("appointment for given ptid drid appdate already not present in database");
+			 return false;
+		 }
+	  } 
 	
 }

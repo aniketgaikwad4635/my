@@ -8,15 +8,13 @@
 					style="border-radius: 50%; width: 50px; height: 50px;"
 					src="/image/DoctorHubLogo.png" /> </a>
 					
-										
+					<div class="ml-3"><i>Welcome Dr.${doctor.drName}</i></div>					
 					 
 					 <form action="doctProfile" method="post">														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />									
 				<button class="btn btn-sm btn-white ml-3 mr-3" type="submit">Profile</button>							    
 	    </form>	
-					 
-					 
-					
+					 					 			
 					 <form action="Appointpatientlist" method="post">														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />							
 				<button class="btn btn-sm btn-white mr-3" type="submit">Appointments</button>							    

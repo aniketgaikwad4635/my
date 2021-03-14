@@ -106,12 +106,22 @@ public class HospitalDao {
 			
 			@PostMapping("/updateHspBedcount")
 			 public ModelAndView updateHspBedcount(String hspId,String hspBNo) {
+				try {
 				      ModelAndView mv=new ModelAndView("hospital");
 				      HospitalEntity hospitalEntity=hospitalService.updateHspBedcount(hspId, hspBNo);
 						mv.addObject("hospital",hospitalEntity );
 						mv.addObject("editHspProf", 1);
 						mv.addObject("hspprofile", 1);	
 					return mv;
+				}
+				catch(Exception e) {
+					 ModelAndView mv=new ModelAndView("hospital");
+				      HospitalEntity hospitalEntity=hospitalService.getHospital(hspId);
+						mv.addObject("hospital",hospitalEntity );
+						mv.addObject("editHspProf", 1);
+						mv.addObject("hspprofile", 0);	
+					return mv;
+				}
 			}
 			
 			@PostMapping("/editDrOpt")
@@ -128,7 +138,8 @@ public class HospitalDao {
 			
 			@PostMapping("/updateDr")
 			 public ModelAndView updateDr(String id,String drName,String drSpec,String drEmail,String drMobile,String drUsername,String drPassword,String hspId) {
-				      ModelAndView mv=new ModelAndView("hospital");				    
+				     try {
+				    	 ModelAndView mv=new ModelAndView("hospital");				    
 				      DoctorEntity doctorEntity=doctorService.updateDr(id, drName, drSpec, drEmail, drMobile, drUsername, drPassword, hspId);				     				     			
 					mv.addObject("editDrProf", 1);
 					mv.addObject("drprofile", 1);				
@@ -136,6 +147,16 @@ public class HospitalDao {
 					mv.addObject("hospital",hospitalEntity );
 					System.out.println("doctor updated successfully in admin dao");
 					return mv;
+				     }
+				     catch(Exception e) {
+				    	 ModelAndView mv=new ModelAndView("hospital");				    				     				     			
+						mv.addObject("editDrProf", 1);
+						mv.addObject("drprofile", 0);				
+						HospitalEntity hospitalEntity=hospitalService.getHospital(hspId);
+						mv.addObject("hospital",hospitalEntity );
+						System.out.println("doctor not updated in admin dao");
+						return mv;
+				     }
 			}
 			
 			@PostMapping("/delDr")
@@ -167,7 +188,8 @@ public class HospitalDao {
 			
 			@PostMapping("/addDr")
 			  public ModelAndView addDr(String drName,String drSpec,String drEmail,String drMobile,String drUsername,String drPassword,String hspId) {
-				ModelAndView mv=new ModelAndView("hospital");
+				try{
+					ModelAndView mv=new ModelAndView("hospital");
 				int hospId=Integer.parseInt(hspId);		
 				DoctorEntity doctorEntity=new DoctorEntity(drName,drSpec,drEmail,drMobile,drUsername,drPassword,false,hospId);
 				doctorService.addDr(doctorEntity);
@@ -177,6 +199,17 @@ public class HospitalDao {
 				mv.addObject("addDrWindow", 1);
 				System.out.println("doctor added successfully in hospital dao");
 			    return mv;
+				}
+				catch(Exception e) {
+					ModelAndView mv=new ModelAndView("hospital");
+					int hospId=Integer.parseInt(hspId);				
+					HospitalEntity hospitalEntity=hospitalService.getHospital(hspId);
+					mv.addObject("hospital", hospitalEntity);
+					mv.addObject("drReg", 0);
+					mv.addObject("addDrWindow", 1);
+					System.out.println("doctor not added in hospital dao");
+				    return mv;
+				}
 			  }
 			
 			

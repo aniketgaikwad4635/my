@@ -92,11 +92,12 @@ public class AdminDao {
 		ModelAndView mv = new ModelAndView("Admin");
 		mv.addObject("addHspWindow", 1);
 		mv.addObject("hspReg", 2);
-		return mv;
+		return mv;	
 	}
 
 	@PostMapping("/addHsp")
 	public ModelAndView addHsp(String hspName, String hspAdd, String hspUsername, String hspPassword) {
+		try {
 		ModelAndView mv = new ModelAndView("Admin");
 		HospitalEntity hospitalEntity = new HospitalEntity(hspName, hspAdd, 0, hspUsername, hspPassword);
 		hospitalService.addHsp(hospitalEntity);		
@@ -104,6 +105,14 @@ public class AdminDao {
 		mv.addObject("hspReg", 1);
 		System.out.println("doctor added successfully in admin dao");
 		return mv;
+		}
+		catch(Exception e) {
+			ModelAndView mv = new ModelAndView("Admin");
+			mv.addObject("addHspWindow", 1);
+			mv.addObject("hspReg", 0);
+			System.out.println("doctor not added in admin dao");
+			return mv;
+		}
 	}
 
 	@PostMapping("/deleteHsp")
@@ -117,23 +126,32 @@ public class AdminDao {
 	}
 
 	@PostMapping("/editHspOpt")
-	public ModelAndView editHspOpt(String id) {
+	public ModelAndView editHspOpt(String id) {		
 		ModelAndView mv = new ModelAndView("Admin");
 		HospitalEntity hspOldInfo = hospitalService.editHspOpt(id);
 		mv.addObject("hspOldInfo", hspOldInfo);
 		mv.addObject("editHspProf", 1);
 		mv.addObject("hspprofile", 2);
-		return mv;
+		return mv;		
 	}
 
 	@PostMapping("/updateHsp")
 	public ModelAndView updateHsp(String id, String hspName, String hspAdd, String hspUsername, String hspPassword) {
+		try {
 		ModelAndView mv = new ModelAndView("Admin");
 		HospitalEntity hospitalEntity = hospitalService.updateHsp(id, hspName, hspAdd, hspUsername, hspPassword);
 		mv.addObject("editHspProf", 1);
 		mv.addObject("hspprofile", 1);
 		System.out.println("hospital updated successfully in admin dao");
 		return mv;
+		}
+		catch(Exception e){
+			ModelAndView mv = new ModelAndView("Admin");
+			mv.addObject("editHspProf", 1);
+			mv.addObject("hspprofile", 0);
+			System.out.println("hospital not updated in admin dao");
+			return mv;
+		}
 	}
 
 }

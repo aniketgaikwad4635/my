@@ -89,12 +89,11 @@
 
 			<div class=" mx-auto">
 				<c:if test="${hspprofile==1 }">
-					<div class="alert alert-success">bed count Updated
-						Successfully</div>
+					<div class="alert alert-success">Bed count Updated Successfully...</div>
 				</c:if>
 
 				<c:if test="${hspprofile==0 }">
-					<div class="alert alert-warning">bed count Updatation Failed</div>
+					<div class="alert alert-warning">Bed count Updatation Failed...</div>
 				</c:if>
 
 				<c:if test="${hspprofile==2 }">
@@ -112,7 +111,7 @@
 						<table class="table table-striped border-dark table-bordered">
 							<br>
 							<center>
-								<h6>Update Bed Status</6>
+								<h6>Update Bed Count</6>
 							</center>
 							<br>
 							<tr>
@@ -161,13 +160,12 @@
 			<div class="col-4">
 
 				<c:if test="${drprofile==1 }">
-					<div class="alert alert-success">doctor Profile Updated
-						Successfully</div>
+					<div class="alert alert-success">Doctor Profile Updated Successfully...</div>
 				</c:if>
 
 				<c:if test="${drprofile==0 }">
-					<div class="alert alert-warning">doctor Profile Updatation
-						Failed</div>
+					<div class="alert alert-warning">Doctor Profile Updatation Failed...<br>
+					               <small>username/password already used. Try with different credentials.</small></div>
 				</c:if>
 
 
@@ -176,13 +174,14 @@
 					<form action="updateDr" method="post" class="col-md-12"
 						style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 
-						<div class="mt-2">
+						<div class="mt-1">
 							<center>
 								<h6>
 									Update Doctor Profile
 								</h6>
+								</center>
 						</div>
-						</center>
+						
 						<br>
 
 
@@ -193,9 +192,6 @@
 						<div>
 							<input name="id" type="hidden" value="${drOldInfo.drId}" readonly />
 						</div>
-
-
-
 
 
 						<%-- <div class="form-group row"> 
@@ -210,7 +206,7 @@
 						<div class="form-group">
 							Doctor Name <input name="drName"
 								class="form-control form-control-sm" type="text"
-								value="${drOldInfo.drName}" pattern="[A-Za-z\s]{1,40}" required
+								value="${drOldInfo.drName}" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"  required
 								autocomplete="off" title="only characters are allowed" />
 						</div>
 
@@ -218,20 +214,20 @@
 						<div class="form-group">
 							Speciality <input name="drSpec"
 								class="form-control form-control-sm" type="text"
-								value="${drOldInfo.drSpec}" pattern="[A-Za-z\s]{1,40}" required
+								value="${drOldInfo.drSpec}" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$" required
 								autocomplete="off" title="only characters are allowed" />
 						</div>
 
 						<div class="form-group">
 							Email <input name="drEmail" class="form-control form-control-sm"
 								type="email" value="${drOldInfo.drEmail}"
-								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" required
+								pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required
 								autocomplete="off" title="enter valid email" />
 						</div>
 						<div class="form-group">
 							Mobile <input name="drMobile"
 								class="form-control form-control-sm" type="text"
-								value="${drOldInfo.drMobile}" Pattern="[789][0-9]{9}" required
+								value="${drOldInfo.drMobile}" Pattern= "[789][0-9]{9}" required
 								autocomplete="off" title="enter valid mobile no" />
 						</div>
 						<div class="form-group">
@@ -269,15 +265,15 @@
 
 			<div class="mx-auto ">
 				<c:if test="${drReg==1 }">
-					<div class="alert alert-success">Registration
-						Successful</div>
+					<div class="alert alert-success">Doctor Registration Successfully...</div>
 				</c:if>
 				<c:if test="${drReg==0 }">
-					<div class="alert alert-warning">Registration Failed</div>
+					<div class="alert alert-warning">Doctor Registration Failed...<br>
+					               <small>username/password already used. Try with different credentials.</small></div>
 				</c:if>
 
 				<c:if test="${drReg==2 }">
-					<form action="addDr" method="post" class=" mt-2"
+					<form action="addDr" method="post" class=" mt-0"
 						style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 						<br>
 						<div>
@@ -285,20 +281,20 @@
 								<h6 >Add Doctor</h6>
 							</center>
 						</div>
-						<br>
+						
 						<div class="form-row">
-							<div class="form-group  field-wrap col-md-6">
+							<div class="form-group  field-wrap col-md-12">
 								<label for="inputname">Doctor Name</label> <input name="drName"
 									class="form-control form-control-sm" type="text"
-									placeholder="Name" pattern="[A-Za-z\s]{1,40}" required
+									placeholder="Name" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"  required
 									autocomplete="off" title="only characters are allowed" />
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group field-wrap col-md-6">
+							<div class="form-group field-wrap col-md-12">
 								<label for="inputspec">Speciality</label> <input name="drSpec"
 									class="form-control form-control-sm" type="text"
-									placeholder="Speciality" pattern="[A-Za-z\s]{1,40}" required
+									placeholder="Speciality" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"  required
 									autocomplete="off" title="only characters are allowed" />
 							</div>
 						</div>
@@ -307,13 +303,13 @@
 								<label for="inputemail">Email</label> <input name="drEmail"
 									class="form-control form-control-sm" type="email"
 									placeholder="Email"
-									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$" required
+									pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required
 									autocomplete="off" title="enter valid email" />
 							</div>
 							<div class="form-group  field-wrap col-md-6">
 								<label for="inputmob">Mobile</label> <input name="drMobile"
 									class="form-control form-control-sm" type="text"
-									placeholder="Mobile" Pattern="[789][0-9]{9}" required
+									placeholder="Mobile" Pattern= "[789][0-9]{9}" required
 									autocomplete="off" title="enter valid mobile no" />
 							</div>
 						</div>

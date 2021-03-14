@@ -23,7 +23,7 @@
        <div class="mx-auto">
         <table class="table table-striped border-dark table-bordered">
              <tr>
-   <th>Sr.No</th>    <th> Name</th> <th>Address</th>  <th> Bed Available</th>  <th> Action</th> 
+   <th>Sr.No</th>    <th>Hospital Name</th> <th>Address</th>  <th> Bed Available</th>  <th> Action</th> 
              </tr>
            
            <c:forEach var="item" items="${hspList}" begin="0" end="100" varStatus="srno">  
