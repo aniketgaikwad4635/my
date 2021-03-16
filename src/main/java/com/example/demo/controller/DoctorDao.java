@@ -81,7 +81,7 @@ public class DoctorDao {
     }
 	
 	
-	//read appointment list using drid and booked
+	//read appointment list using drid and confirmed // we show this to dr in ascending order so todays come first next day apt goes below
 		@PostMapping("/Appointpatientlist")
 	    public ModelAndView Appointpatientlist(String drid) {
 			       AptStatus aptStatus=AptStatus.CONFIRMED;
@@ -89,10 +89,6 @@ public class DoctorDao {
 	   	      	DoctorEntity doctorEntity=doctorService.getDoctor(drid);
 	   	  	      	List<Appointment> Appointpatientlist=appointmentService.Appointpatientlist(drid,aptStatus);
 	   	  	         mv.addObject("doctor", doctorEntity); 	
-	   	  	         
-	   	  	         //ascending  appointment list by apt date
-	   	  	   // List<Appointment> AsecAppointpatientlist=Collections.sort(Appointpatientlist); 
-	   	  	         
 	   	  	         
 	   	  	         mv.addObject("Appointpatientlist", Appointpatientlist);
 	   	  	         mv.addObject("appointPatientlist", 1);

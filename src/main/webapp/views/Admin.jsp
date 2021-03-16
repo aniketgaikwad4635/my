@@ -221,6 +221,43 @@ String session_admin = (String) session.getAttribute("admUsername");
 			</div>
 		</div>
 	</c:if>
+	
+	
+	
+	<!--  hospital -->
+	<c:if test="${CONTACTLIST==1 }">
+		<div class="row">
+            <div class="col-1"></div>
+			<div class="col-10">
+			<br>
+				<center><h4 style="color:grey" >Messages From Users</h4></center>
+				<table class="table table-striped border-dark table-bordered">
+					<tr>
+						<th style="text-align: center;">No</th>									
+						<th style="text-align: center;">Name</th>
+						<th style="text-align: center;">Email</th>
+						<!-- <th style="text-align: center;">Mobile</th> -->
+						<th style="text-align: center;">Subject</th>
+						<th style="text-align: center;">Message</th>
+					
+					</tr>	
+
+					<c:forEach var="item" items="${contactList}" begin="0" end="100"
+						varStatus="srno">
+						<tr>
+							<td>${srno.index+1 }</td>							
+							<td>${item.ctName}</td>
+							<td>${item.ctEmail}</td>
+							<%-- <td>${item.ctMobile}</td> --%>
+							<td>${item.ctSubject}</td>
+							<td>${item.ctMessage}</td>
+						</tr>
+					</c:forEach>
+
+				</table>
+			</div>
+		</div>
+	</c:if>
 
 
 </body>

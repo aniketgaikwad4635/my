@@ -21,4 +21,10 @@ public interface AppointmentRepository extends JpaRepository<AppointmentEntity, 
 	List<AppointmentEntity> findByDrIdAndAptStatus(int drid,AptStatus aptStatus);
 	
 	AppointmentEntity findByPtIdAndDrIdAndAptStatus(int patId,int doctId,AptStatus aptStatus);
+	
+	List<AppointmentEntity> findByPtIdOrderByAptDateDesc(int patId);
+	
+	List<AppointmentEntity> findByDrIdOrderByAptDateDesc(int drId);
+	
+	List<AppointmentEntity> findByDrIdAndAptStatusOrderByAptDateAsc(int drid,AptStatus aptStatus);
 }

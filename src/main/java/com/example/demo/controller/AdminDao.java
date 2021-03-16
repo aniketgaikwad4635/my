@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.entity.Contactus;
 import com.example.demo.entity.DoctorEntity;
 import com.example.demo.entity.HospitalEntity;
+import com.example.demo.repository.ContactusRepository;
 import com.example.demo.repository.DoctorRepository;
 import com.example.demo.repository.HospitalRepository;
 import com.example.demo.service.AppointmentService;
@@ -29,11 +31,7 @@ import com.example.demo.service.HospitalService;
 @RequestMapping("/admin")
 public class AdminDao {
 
-	//@Autowired
-	//DoctorRepository doctorRepository;
-
-	//@Autowired
-	// hospitalRepository;
+	
 
 	@Autowired
 	HospitalService hospitalService;
@@ -43,6 +41,9 @@ public class AdminDao {
 	
 	@Autowired
 	DoctorService doctorService;
+	
+	@Autowired
+    ContactusRepository contactusRepository;
 
 	@GetMapping("/login")
 	public ModelAndView Admin() {
@@ -152,6 +153,15 @@ public class AdminDao {
 			System.out.println("hospital not updated in admin dao");
 			return mv;
 		}
+	}
+	
+	@GetMapping("/contactList")
+	public ModelAndView contactList(){
+		ModelAndView mv=new ModelAndView("Admin");
+		List<Contactus> contactList=contactusRepository.findAll();
+		mv.addObject("CONTACTLIST", 1);
+		mv.addObject("contactList", contactList);
+		return mv;
 	}
 
 }

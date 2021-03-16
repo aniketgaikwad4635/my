@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.entity.Contactus;
 import com.example.demo.entity.DoctorEntity;
 import com.example.demo.entity.HospitalEntity;
+import com.example.demo.repository.ContactusRepository;
 import com.example.demo.repository.HospitalRepository;
 import com.example.demo.service.HospitalService;
 
@@ -18,8 +21,10 @@ import com.example.demo.service.HospitalService;
 @RequestMapping("/")
 public class NavbarAction {
      
-	//@Autowired
-	//HospitalRepository hospitalRepository;
+	@Autowired
+	ContactusRepository contactusRepository;
+	
+	
 	
 	@Autowired 
 	HospitalService hospitalService;
@@ -69,8 +74,15 @@ public class NavbarAction {
 	
 	@GetMapping("contactus")
 	public ModelAndView contactus() {
-		ModelAndView mv=new ModelAndView("contactus");
+		ModelAndView mv=new ModelAndView("contact");
 		return mv;
 	}
 	
+	@PostMapping("createcont")
+	public ModelAndView createcont(Contactus contactus) {
+		ModelAndView mv=new ModelAndView("contact");
+		contactusRepository.save(contactus);	
+		mv.addObject("contdone", 1);	
+		return mv;
+	}
 }

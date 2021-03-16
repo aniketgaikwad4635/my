@@ -13,6 +13,8 @@
 				 <a class="btn btn-sm btn-white ml-3 mr-3" href="/admin/addHspOpt" role="button"> Register Hospital </a>
 				
 				 <a class="btn btn-sm btn-white mr-3" href="/admin/hspList" role="button"> Hospitals </a>
+				 
+				  <a class="btn btn-sm btn-white mr-3" href="/admin/contactList" role="button"> User Messages </a>
 					    
 		    <a class="btn btn-sm btn-white mr-3" href="/admin/admlogout" role="button"> Logout </a>
 		</div>

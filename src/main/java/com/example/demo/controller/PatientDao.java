@@ -57,6 +57,7 @@ public class PatientDao {
 	@PostMapping("/registered")
 	public ModelAndView create(String ptName, String age, String ptGmail, String ptMobile, String ptUsername,
 			String ptPassword) {
+		try {
 		//encrypt pass using hashPassword() method
 		PatientDao patientDao=new PatientDao();		
 		String encrpPassUser=patientDao.hashPassword(ptPassword);
@@ -75,6 +76,13 @@ public class PatientDao {
 		
 		mv.addObject("patReg", 1);
 		return mv;
+		}
+		catch(Exception e) {
+			ModelAndView mv = new ModelAndView("register");
+			mv.addObject("patReg", 0);
+			return mv;
+		}
+		
 	}
 	
 	private String hashPassword(String plainTextPassword){

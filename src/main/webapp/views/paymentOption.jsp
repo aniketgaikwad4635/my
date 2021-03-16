@@ -42,7 +42,7 @@
                     <div class="form-group pt-2">
                         <div class="row d-flex">
                             <div class="col-5">
-                                <p class="text-warning mb-0">Expiration</p> <input type="text" name="exp" placeholder="MM/YYYY" id="exp" required  title="Only digits allowed">
+                                <p class="text-warning mb-0">Expiration</p> <input type="text" name="exp" placeholder="MM/YY" id="exp" required  title="Only digits allowed">
                             </div>
                             <div class="col-4">
                                 <p class="text-warning mb-0">Cvv</p> <input type="password" name="cvv" placeholder="&#9679;&#9679;&#9679;" required pattern="[0-9]{3}" title="Only 3 digits allowed">

@@ -20,10 +20,10 @@ public class AppointmentService {
 	
 	@Autowired AppointmentConverter appointmentConverter;
 	
-	//patient having all appointment list
+	//patient having all appointment list  in descending order of date so we get latest activity at top
 	public List<Appointment>  getAptListPt(String ptid){
 		 int patId=Integer.parseInt(ptid); 		 
-		List<AppointmentEntity> appointmentEntity=appointmentRepository.findByPtId(patId);
+		List<AppointmentEntity> appointmentEntity=appointmentRepository.findByPtIdOrderByAptDateDesc(patId);
 		List<Appointment>  appointments=new ArrayList<>();		
 		for(AppointmentEntity appointmentEnt:appointmentEntity) {
 			appointments.add(appointmentConverter.AppointmentEntityToAppointment(appointmentEnt));
@@ -103,10 +103,11 @@ public class AppointmentService {
 		 appointmentRepository.save(appointmentEntitySave);
 	}
 	
+	//doctor having all patient list  in descending order of date so we get latest activity at top
 	//@PostMapping("/AllpatAptlist")
 		public List<Appointment> AllpatAptlist(String drid){
 			int doctId=Integer.parseInt(drid); 
-			List<AppointmentEntity>appointmentEntities=appointmentRepository.findByDrId(doctId);
+			List<AppointmentEntity>appointmentEntities=appointmentRepository.findByDrIdOrderByAptDateDesc(doctId);
 			List<Appointment> appointments=new ArrayList<Appointment>();
 			
 			for(AppointmentEntity appointmentEntity:appointmentEntities) {
@@ -115,11 +116,11 @@ public class AppointmentService {
 			return appointments;
 		}
 		
-		
+		//doctor having all patient list  in Ascending order of apt date so we get todays apt first below next day then day after next day like wise
 		//@PostMapping("/Appointpatientlist")
 				public List<Appointment> Appointpatientlist(String drid,AptStatus aptStatus){
 					int doctId=Integer.parseInt(drid); 
-					List<AppointmentEntity>appointmentEntities=appointmentRepository.findByDrIdAndAptStatus(doctId,aptStatus);
+					List<AppointmentEntity>appointmentEntities=appointmentRepository.findByDrIdAndAptStatusOrderByAptDateAsc(doctId,aptStatus);
 					List<Appointment> appointments=new ArrayList<Appointment>();
 					
 					for(AppointmentEntity appointmentEntity:appointmentEntities) {

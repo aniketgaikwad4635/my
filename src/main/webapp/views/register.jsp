@@ -21,7 +21,8 @@
 					</c:if>
 
 					<c:if test="${patReg==0 }">
-						<div class="alert alert-warning">Registration Fail</div>
+						<div class="alert alert-warning">Registration Fail  <br>
+						                               <small>Username/password already exist.</small></div>
 					</c:if>
 		
 			<h1>Create Account</h1>                
@@ -51,7 +52,8 @@
 					</c:if>
 
 					<c:if test="${patReg==0 }">
-						<div class="alert alert-warning">Registration Fail</div>
+						<div class="alert alert-warning">Registration Fail  <br>
+						                               <small>Username/password already exist.</small></div>
 					</c:if>
 					
 			<h1>Sign in</h1>		

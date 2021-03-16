@@ -28,6 +28,8 @@
             </div> 
            
 			 <a class="btn btn-sm btn-white ml-3"  href="/aboutus" role="button">AboutUs</a>
+			 
+			  <a class="btn btn-sm btn-white ml-3"  href="/contactus" role="button">ContactUs</a>
 					  		    
 		    
 		</div>
