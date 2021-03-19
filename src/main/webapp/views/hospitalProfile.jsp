@@ -10,8 +10,16 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
 
+
+<%  if(session.getAttribute("my-hospital")==null){
+	response.sendRedirect("http://localhost:8080/hospital/login");
+	return;
+}
+%>
+
+<body>
+<br>
 	<div class="row">
 		<div class="mx-auto">
 			<center>
@@ -21,41 +29,29 @@
 
 
 			<table class="table  border-dark ">
-
-
-
 				<tr>
 
 					<th>Hospital Reg. No</th>
-
 					<td>${hospital.hspId}</td>
 				</tr>
 
-
-
-
-
 				<tr>
-
-
 					<th>Hospital Name</th>
-
 					<td>${hospital.hspName}</td>
 				</tr>
-
-
+				
+				 <tr>
+					<th>Total doctors</th>
+					<td>${drcount}</td>
+				</tr>
+				
 
 				<tr>
-
-
 					<th>Hospital Address</th>
-
 					<td>${hospital.hspAdd}</td>
 				</tr>
 
-
-
-
+     
 			</table>
 
 		</div>

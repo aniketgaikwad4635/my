@@ -40,7 +40,6 @@
 		<p>
 			DoctorHub is a platform for hospitality to connect patient and doctor in simple step
 		</p>
-		<a href="home"><i class="fas fa-hand-point-left"></i></a>
 	</div>
 
 	<img src="/image/impactdochub.jpg" class="img-fluid" alt=""  >

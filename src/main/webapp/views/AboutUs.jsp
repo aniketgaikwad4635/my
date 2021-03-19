@@ -21,6 +21,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
 	integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
 	crossorigin="anonymous" />
+	
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 <style>
 .about-section {
@@ -51,18 +53,7 @@
 	font-size: 18px;
 }
 
-button {
-	border: none;
-	outline: 0;
-	display: inline-block;
-	padding: 8px;
-	color: white;
-	background-color: #000;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-}
+
 
 
 
@@ -107,21 +98,19 @@ button {
 				<div class="carousel-item active">
 					<img src="image/groupdoctor.jpg" height="600" width="1400"
 						 alt="...">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>First slide label</h5>
-						<p>Fastest growing Liver Transplant Centre in Western India .</p>
+					<div class="carousel-caption d-none d-md-block" >
+						<h5>Living Healthier Together</h5>
+						<p>Together, we are working toward a healthier community</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="image/clinic.jpg" height="600" width="1400"
 						 alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Second slide label</h5>
-						<p>Performing highest number of CT Angiographies in Asia.</p>
+						<h5>Something to feel good about.</h5>
+						<p>Not just better healthcare, but a better healthcare experience.</p>
 					</div>
-				</div>
-
-			
+				</div>			
 
 	</div>
 
@@ -138,37 +127,26 @@ button {
 			</a>
 		</div>
 	
-
-
   <br>
 	<h2 style="text-align: center">Contact Us</h2>
 
 	<div class="card">
-		<img src="image/DoctorHubLogo.png" alt="logo" style="width: 100%">
+		<img src="image/DoctorHubLogo.png" alt="logo" height="330px" style="width: 100% ">
 		<h1>Team25</h1>
 		<p class="title">CEO & Founder, Example</p>
 		<p>CDAC,Mumbai</p>
-		<div style="margin: 24px 0;">
-			<a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i
-				class="fa fa-twitter"></i></a> <a
-				href="https://www.linkedin.com/in/c-dac-mumbai-4b26111ba"><i
-				class="fa fa-linkedin"></i></a> <a href="#"><i
-				class="fa fa-facebook"></i></a>
+		<div >
+			<a href="#"><i class="fab fa-facebook fa-3x"></i></a> 
+			<a href="#"><i class="fab fa-twitter-square fa-3x ml-4"></i></a> 
+			<a href="https://www.linkedin.com/in/c-dac-mumbai-4b26111ba"><i class="fab fa-linkedin fa-3x ml-4"></i></a> 
 		</div>
 		<p>
-			<a button href="addinquiry">Contact
-				</button>
-			</a>
+			<a button href="/contactus">Contact Us </a>
 		</p>
 	</div>
 
-
-
-
-
 	<footer class="about-section1">
 		<div class="container">
-
 			<div>
 				Copyright © 2021 CDAC,Mumbai. All rights reserved | Designed by	Team25. 
 				<a href="#" style="color: #FFFFFF;" target="_blank"><u>Design For U</u></a>

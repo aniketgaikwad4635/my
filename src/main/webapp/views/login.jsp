@@ -30,12 +30,13 @@
 		
 			<h1>Change password</h1>
 			
-			<span>or use your email for registration</span>
+			<span>enter your Username & email here</span>
 		<input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" title="only 15 characters & numbers allowed"/>	
 			<input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="enter valid email"/>				
 			<input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Enter new password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="only 10 characters & numbers allowed"/>
 			
 			<button>Save</button>
+			<a href="/home">Go to home</a>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -49,15 +50,15 @@
 					</c:if>
 
 					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning">Password update failed</div>
+						<div class="alert alert-warning ">Password updatation failed</div>
 					</c:if>
 					
 			<h1>Sign in</h1>			
-			<span>or use your account</span>
+			<span>use your account</span>
 			<input type="text" name="ptUsername" placeholder="Username" required="required"/>
 			<input type="password" name="ptPassword" placeholder="Password" required="required"/>
 			
-			 
+			
 			<button>Sign In</button>
 			<a href="/home">Go to home</a>
 		</form>
@@ -70,8 +71,8 @@
 				 <button class="ghost" id="signIn">Sign In</button> 
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your username and password and start journey with us</p>
+				<h1>Hello, Friend !</h1>
+				<p>Have you forgot your password? click here to change password</p>
 				<button class="ghost" id="signUp">forgot password</button> 
 			</div>
 		</div>

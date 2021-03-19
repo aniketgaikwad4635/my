@@ -58,21 +58,26 @@ public class AdminDao {
 		String adminpassword = "doctorhub";
 		if ((adminusername.equals(admUsername)) && (adminpassword.equals(admPassword))) {
 			ModelAndView mv = new ModelAndView("Admin");
-			req.getSession().setAttribute(admUsername, adminusername);
-			req.getSession().setAttribute(admPassword, adminpassword);
+		//	req.getSession().setAttribute(admUsername, adminusername);
+			//req.getSession().setAttribute(admPassword, adminpassword);
+			HttpSession httpSession=req.getSession();
+			httpSession.setAttribute("my-admin",1);
 			
 			return mv;
 		} else {
 			ModelAndView mv = new ModelAndView("AdmLogin");
 			mv.addObject("AdmLogFail", 0);
+			HttpSession session=req.getSession();
+			session.setAttribute("my-admin",0);
 			return mv;
 		} 
 	}
 	
 	
 	@RequestMapping("/admlogout")
-	public ModelAndView logoutUser(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public ModelAndView logoutAdmin(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		ModelAndView mv = new ModelAndView("Home");
+		req.removeAttribute("my-admin");
 		req.getSession().invalidate();
 		return mv;
 	}

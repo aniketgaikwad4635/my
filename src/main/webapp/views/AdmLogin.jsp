@@ -30,11 +30,12 @@
 						<div class="alert alert-warning"> Invalid Login</div>
 					</c:if>
 			<h1>Sign in</h1>			
-			<span>or use your account</span>
-			 <input id="username" name="admUsername"  class='lf--input' placeholder='Username' type='text'>
-			<input name="admPassword" id="password" class='lf--input' placeholder='Password' type='password'>
-			<a href="/home">Go to home</a>
+			<span>use your account</span>
+			 <input id="username" name="admUsername"  class='lf--input' placeholder='Username' type='text' required>
+			<input name="admPassword" id="password" class='lf--input' placeholder='Password' type='password' required>
+			
 			<button>Sign In</button>
+			<a href="/home">Go to home</a>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -45,7 +46,7 @@
 				 <button class="ghost" id="signIn">Sign In</button> 
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Admin!</h1>
+				<h1>Hello, Admin !</h1>
 				<p>Enter your username and password and start journey with us</p>
 				<!-- <button class="ghost" id="signUp">Sign Up</button> -->
 			</div>

@@ -40,7 +40,7 @@
 
 							<div>
 								<center><h6>
-									Update profile
+									Update User Profile
 								</h6></center>
 							</div>
 							<div>

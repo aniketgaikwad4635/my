@@ -97,7 +97,7 @@ public class PatientDao {
 	}
 
 	@PostMapping("/AuthPtlogin")
-	public ModelAndView Authenticatepatient(String ptUsername, String ptPassword) {
+	public ModelAndView Authenticatepatient(String ptUsername, String ptPassword, HttpServletRequest req, HttpServletResponse res) {
 		try {		 
 		PatientEntity patientEntity = patientService.AuthentPatUname(ptUsername);
 		
@@ -106,7 +106,9 @@ public class PatientDao {
 			boolean passresult=patientDao.checkPass(ptPassword,patientEntity.getPtPassword() );
 			if(passresult) {
 			   ModelAndView mv = new ModelAndView("Appointment");
-			   mv.addObject("patient", patientEntity);					
+			   mv.addObject("patient", patientEntity);
+			  
+
 			   return mv;
 		     } 
 		  }
@@ -266,6 +268,11 @@ public class PatientDao {
     	 //fetch doctorlist on patient appointment table to display doctor name on front end
     	 List<DoctorEntity> drList=doctorService.allDoctor();
     	 mv.addObject("drList",  drList);
+    	 
+    	//fetch doctorlist on patient appointment table to display doctor name on front end
+    	 List<HospitalEntity> hspList = hospitalService.hspList();
+			mv.addObject("hspList", hspList);
+    	 
     	 return mv;
      }
      
@@ -293,6 +300,8 @@ public class PatientDao {
        
        DoctorEntity doctorEntity=doctorService.getDoctor(drid);
        mv.addObject("doctor", doctorEntity);
+       
+       mv.addObject("payOnce", 5);
        return mv;       
       }
      

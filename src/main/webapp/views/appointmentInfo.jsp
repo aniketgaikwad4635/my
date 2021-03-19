@@ -48,11 +48,14 @@
 				<table class="table table-striped border-dark table-bordered">
 					<tr>
 						<th>Sr.No</th>
-						<th>Doctor Name</th>
+						<th>Doctor Name
+						 </th>
+						<th>
+						Hospital Name</th>
 						<th>Appointment Status</th>
 						<th>Appointment Date</th>
 						<th>For Payment</th>
-						<th>Cancel Action</th>
+						<th>Cancel Appointment</th>
 
 					</tr>
 
@@ -60,9 +63,22 @@
 						varStatus="srno">
 						<tr>
 							<td>${srno.index+1 }</td>
-							<td><c:forEach var="singledr" items="${drList}">
-									<c:if test="${singledr.drId==item.drId}"> Dr. ${singledr.drName} </c:if>
-								</c:forEach></td>
+							
+							
+							    <td>
+							    <c:forEach var="singledr" items="${drList}">
+									<c:if test="${singledr.drId==item.drId}"> Dr. ${singledr.drName} 
+								</td>
+								<td>	
+									 <c:forEach var="singlehsp" items="${hspList}">
+									<c:if test="${singlehsp.hspId==singledr.hspId}"> ${singlehsp.hspName} </c:if>
+								   </c:forEach>
+																										
+									</c:if>
+									</td>
+									
+								 </c:forEach>
+								</td>
 
 							<td>${item.aptStatus}</td>
 							<td>${item.aptDate}</td>
@@ -73,7 +89,7 @@
 										<input type="hidden" name="ptid" value="${patient.ptId}" readonly />
 										<input type="hidden" name="drid" value="${item.drId}" readonly />
 										<c:if test="${item.aptStatus=='BOOKED'}" >
-										<button class="btn btn-sm btn-light" type="submit">Payment</button>
+										<button class="btn btn-sm btn-light" type="submit"><i class="far fa-credit-card"></i> Payment</button>
 										</c:if>
 									</div>
 								</form>
@@ -83,8 +99,8 @@
 									<input type="hidden" name="drid" value="${item.drId}" readonly />
 									<input type="hidden" name="ptid" value="${patient.ptId}"
 										readonly />
-									<c:if test="${item.aptStatus=='BOOKED'}" >
-										<button class="btn btn-sm btn-light" type="submit">Cancel
+									<c:if test="${item.aptStatus=='BOOKED' || item.aptStatus=='CONFIRMED'}" >
+										<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-times"></i> Cancel
 											Appointment</button>
 									</c:if>
 

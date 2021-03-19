@@ -16,12 +16,19 @@
 <br>
 <center>
 <form th:action="@{/}">
-    Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+    Filter: <input type="text" name="keyword" id="keyword" size="50" value="${keyword}" required />
     &nbsp;
     <input type="submit" value="Search" />
-    
+   					<a href='hospitalList'  type="button" class="btn btn-sm btn-success ml-2">Clear</a>
+				
 </form>
  </center>
+ 
+ <c:if test="${noresult==0}">
+      <div class="container">
+           <center> No result Found</center>
+      </div>
+ </c:if>
  
      <div class="container mt-3">
    <c:forEach var="hospital" items="${hospitallist}">
@@ -64,6 +71,7 @@
 								<button type="submit" class="btn btn-sm btn-outline-primary">View doctors</button>
 								</form>	
 						</div>
+						
 					</div>
 
 				</div>

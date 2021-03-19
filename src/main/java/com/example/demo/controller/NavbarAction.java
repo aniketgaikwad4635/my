@@ -17,6 +17,8 @@ import com.example.demo.repository.ContactusRepository;
 import com.example.demo.repository.HospitalRepository;
 import com.example.demo.service.HospitalService;
 
+import java.text.SimpleDateFormat;
+import java.util.*;
 @Controller
 @RequestMapping("/")
 public class NavbarAction {
@@ -42,7 +44,13 @@ public class NavbarAction {
 		 List<HospitalEntity> hospitallist=hospitalService.listAll(keyword);    
 		 mv.addObject("hospitallist", hospitallist);
 		 mv.addObject("keyword", keyword);
-         
+        	System.out.println(keyword);
+        	
+		 if(hospitallist.size()==0)
+		 { 
+			 mv.addObject("noresult", 0); 
+			 
+		 }
         return mv;
     }
 	
@@ -78,8 +86,15 @@ public class NavbarAction {
 		return mv;
 	}
 	
-	@PostMapping("createcont")
+	@GetMapping("createcont")
 	public ModelAndView createcont(Contactus contactus) {
+		Date now = new Date();
+		String pattern = "yyyy-MM-dd";
+		SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+		String mysqlDateString = formatter.format(now);
+		String ctDate = mysqlDateString;
+		
+		contactus.setCtDate(ctDate);
 		ModelAndView mv=new ModelAndView("contact");
 		contactusRepository.save(contactus);	
 		mv.addObject("contdone", 1);	

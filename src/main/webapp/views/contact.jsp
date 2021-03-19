@@ -23,7 +23,7 @@
     <div class="row">
 
         <div class="col-md-9 mb-md-0 mb-5">
-            <form  action="createcont" method="POST">
+            <form  action="createcont" method="get">
  
                 <div class="row">
                     <div class="col-md-6">
@@ -65,10 +65,23 @@
                     <div class="col-md-12">
                         <div class="md-form">
                          <label for="message">Your message</label>
-                            <input type="text"  name="ctMessage"  class="form-control md-textarea"  minlength="5" maxlength="200" pattern="^[a-zA-z0-9]+([\s][a-zA-Z0-9]+)*$" required autocomplete="off" title="message only contains characters & numbers.."/>                       
+                            <input type="text"  name="ctMessage"  id="todaydate" class="form-control md-textarea"  minlength="5" maxlength="200" pattern="^[a-zA-z0-9]+([\s][a-zA-Z0-9]+)*$" required autocomplete="off" title="message only contains characters & numbers.."/>                       
                         </div>
 
                     </div>
+                    
+                   <%--  <input type="hidden" name="ctDate" id="today" value="${today}"/>
+                    
+                    <script type="text/javascript">
+                    document.getElementById('today').value = moment().format('YYYY-MM-DD');
+                    </script> --%>
+                    
+                    <script>
+                      if ( window.history.replaceState ) {
+                       window.history.replaceState( null, null, window.location.href );
+                      }
+                 	</script>
+                    
                 </div>
                  <div class="text-center text-md-left mt-3">         
 									<button class="btn btn-md btn-info" type="submit">Send</button>

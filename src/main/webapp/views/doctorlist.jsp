@@ -44,7 +44,7 @@
 						
 						
 									<td>${srno.index+1 }</td>
-									<td>${item.drName}</td>
+									<td>Dr. ${item.drName}</td>
 									<td>${item.drSpec}</td>
 									<td>${item.drEmail}</td>
 									<td>${item.drMobile}</td>

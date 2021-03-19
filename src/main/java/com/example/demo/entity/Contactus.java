@@ -16,21 +16,31 @@ public class Contactus {
 	private String ctMobile;
 	private String ctSubject;
 	private String ctMessage;
+	private String ctDate;
 	
 	public Contactus() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Contactus(String ctName, String ctEmail, String ctMobile, String ctSubject, String ctMessage) {
+	public Contactus(String ctName, String ctEmail, String ctMobile, String ctSubject, String ctMessage,String ctDate) {
 		super();
 		this.ctName = ctName;
 		this.ctEmail = ctEmail;
 		this.ctMobile = ctMobile;
 		this.ctSubject = ctSubject;
 		this.ctMessage = ctMessage;
+		this.ctDate=ctDate;
 	}
 
+	public int getCtId() {
+		return ctId;
+	}
+
+	public void setCtId(int ctId) {
+		this.ctId = ctId;
+	}
+	
 	public String getCtName() {
 		return ctName;
 	}
@@ -71,5 +81,12 @@ public class Contactus {
 		this.ctMessage = ctMessage;
 	}
 
-	
+	public String getCtDate() {
+		return ctDate;
+	}
+
+	public void setCtDate(String ctDate) {
+		this.ctDate = ctDate;
+	}
+
 }

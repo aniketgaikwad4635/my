@@ -31,21 +31,22 @@
 						<div class="alert alert-warning">You already done payment for this appointment.</div>
 	     	</c:if>					
             
+            <c:if test="${payOnce==5 }">
                 <center> <h4 class="heading">PAYMENT DETAILS</h4> </center>
                 <form class="pl-3" action="patientpay" method="post">
                     <div class="form-group mb-0">
-                        <p class="text-warning mb-0">Card Number</p> <input type="text" name="cardnum" placeholder="1234 5678 9012 3457"  Pattern= "[0-9]{12}" required autocomplete="off" title="Card number should have 12 digits.."> <img src="https://img.icons8.com/color/48/000000/visa.png" width="64px" height="60px" />
+                        <p class="mb-0">Card Number</p> <input type="text" name="cardnum" placeholder="1234 5678 9012 3457"  Pattern= "[0-9]{12}" required autocomplete="off" title="Card number should have 12 digits.."> <img src="https://img.icons8.com/color/48/000000/visa.png" width="64px" height="60px" />
                     </div>
                     <div class="form-group">
-                        <p class="text-warning mb-0">Cardholder's Name</p> <input type="text" name="name" placeholder="Name" pattern="[A-Za-z\s]{1,40}"  required autocomplete="off" title="Only characters are allowed..">
+                        <p class="mb-0">Cardholder's Name</p> <input type="text" name="name" placeholder="Name" pattern="[A-Za-z\s]{1,40}"  required autocomplete="off" title="Only characters are allowed..">
                     </div>
                     <div class="form-group pt-2">
                         <div class="row d-flex">
                             <div class="col-5">
-                                <p class="text-warning mb-0">Expiration</p> <input type="text" name="exp" placeholder="MM/YY" id="exp" required  title="Only digits allowed">
+                                <p class="mb-0">Expiration</p> <input type="text" name="exp" placeholder="MM/YY" id="exp" required  title="Only digits allowed">
                             </div>
                             <div class="col-4">
-                                <p class="text-warning mb-0">Cvv</p> <input type="password" name="cvv" placeholder="&#9679;&#9679;&#9679;" required pattern="[0-9]{3}" title="Only 3 digits allowed">
+                                <p class="mb-0">Cvv</p> <input type="password" name="cvv" placeholder="&#9679;&#9679;&#9679;" required pattern="[0-9]{3}" title="Only 3 digits allowed">
                             </div>
                             <div class="col-2 pt-0 mt-3 ml-2"> <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-right px-3 py-1"></i></button> </div>
                         </div>
@@ -59,6 +60,7 @@
                     <input type="hidden" name="drid" value="${doctor.drId}" readonly />
                     </div> 
                 </form>
+                </c:if>	
             </div>
         </div>
     </div>

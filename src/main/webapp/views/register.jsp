@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +36,7 @@
 			<input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="Password only contains characters & numbers.."/>
 			
 			<button>Register</button>
-			
+			<a href="/home">Go to home</a>
 			
 		</form>
 		
@@ -68,12 +69,12 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
+				<h1>Welcome Back !</h1>
 				<p>To keep connected with us please login with your personal info</p>
 				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
+				<h1>Hello, Friend !</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>

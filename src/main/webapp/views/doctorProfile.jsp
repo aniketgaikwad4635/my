@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<br>
 	<div class="row">
 		<div class="mx-auto">
 			<center>
@@ -34,6 +34,12 @@
 					<th>Name</th>
 
 					<td>${doctor.drName}</td>
+				</tr>
+				
+				<tr>
+					<th>Hospital</th>
+
+					<td>${hospital.hspName}</td>
 				</tr>
 
 				<tr>

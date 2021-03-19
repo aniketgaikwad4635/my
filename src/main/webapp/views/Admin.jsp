@@ -14,8 +14,25 @@
 </head>
 
 <%
-String session_admin = (String) session.getAttribute("admUsername");
+/* response.setHeader("cache-control", "no-cache, no-store, must-revalidate");
+response.setHeader("pragma", "no-cache");
+response.setDateHeader("Expires", 0); */
+
+response.setHeader("Pragma","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Expires","0");
+response.setDateHeader("Expires",-1);
+
+if(session.getAttribute("my-admin")==null)
+{
+	response.sendRedirect("http://localhost:8080/admin/login");
+	return;
+}
 %> 
+<script>
+    history.forward();
+</script>
+ 
 
 
 <body>
@@ -39,23 +56,24 @@ String session_admin = (String) session.getAttribute("admUsername");
 
 					<c:forEach var="item" items="${hspList}" begin="0" end="100"
 						varStatus="srno">
-						<tr>
-							<td>${srno.index+1 }</td>
+						<tr >
+							<td style="text-align:center">${srno.index+1 }</td>
 							<%-- <th>${item.hspId}</th> --%>
-							<td>${item.hspName}</td>
-							<td>${item.hspAdd}</td>
+							<td >${item.hspName}</td>
+							<td style="text-align:center">${item.hspAdd}</td>
 
-							<td>
+							<td style="text-align:center">
 								<form action="editHspOpt" method="post">
 									<input type="hidden" name="id" value="${item.hspId}" readonly />
-									<button class="btn btn-sm btn-light" type="submit">Edit</button>
+									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-edit"></i> Edit</button>
+
 								</form>
 							</td>
 
-							<td>
+							<td style="text-align:center">
 								<form action="deleteHsp" method="post">
 									<input type="hidden" name="id" value="${item.hspId}" readonly />
-									<button class="btn btn-sm btn-light" type="submit">Delete</button>
+									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-minus-circle"></i> Delete</button>
 								</form>
 							</td>
 						</tr>
@@ -171,7 +189,7 @@ String session_admin = (String) session.getAttribute("admUsername");
 					style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 
 						 <center>
-                        <h6>Update Details Here</h6></center>
+                        <h6>Update Hospital Details</h6></center>
                         <br>
 						<div>
 							<input name="id" type="hidden" value="${hspOldInfo.hspId}"
@@ -236,8 +254,9 @@ String session_admin = (String) session.getAttribute("admUsername");
 						<th style="text-align: center;">No</th>									
 						<th style="text-align: center;">Name</th>
 						<th style="text-align: center;">Email</th>
+						<th style="text-align: center;">Date</th>
 						<!-- <th style="text-align: center;">Mobile</th> -->
-						<th style="text-align: center;">Subject</th>
+						<th style="text-align: center;">Subject/Topic</th>
 						<th style="text-align: center;">Message</th>
 					
 					</tr>	
@@ -245,9 +264,10 @@ String session_admin = (String) session.getAttribute("admUsername");
 					<c:forEach var="item" items="${contactList}" begin="0" end="100"
 						varStatus="srno">
 						<tr>
-							<td>${srno.index+1 }</td>							
+							<td >${srno.index+1 }</td>							
 							<td>${item.ctName}</td>
 							<td>${item.ctEmail}</td>
+							<td>${item.ctDate}</td>
 							<%-- <td>${item.ctMobile}</td> --%>
 							<td>${item.ctSubject}</td>
 							<td>${item.ctMessage}</td>

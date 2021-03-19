@@ -12,11 +12,16 @@
 </style>
 
 </head>
+
+<%  if(session.getAttribute("my-hospital")==null){
+	response.sendRedirect("http://localhost:8080/hospital/login");
+	return;
+}
+%>
 <body>
 
-
 	<c:if test="${DRLIST==1 }">
-
+        <br>
 		<div class="row">
 
 			<div class="mx-auto">
@@ -54,7 +59,7 @@
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
-									<button class="btn btn-sm btn-light" type="submit">Change</button>
+									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-exchange-alt"></i> Change</button>
 								</form>
 							</td>
 
@@ -63,7 +68,7 @@
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
-									<button class="btn btn-sm btn-light" type="submit">Edit</button>
+									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-edit"></i> Edit</button>
 								</form>
 							</td>
 
@@ -72,7 +77,7 @@
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
-									<button class="btn btn-sm btn-light" type="submit">Delete</button>
+									<button class="btn btn-sm btn-light" type="submit"><i class="far fa-trash-alt"></i> Delete</button>
 								</form>
 							</td>
 						</tr>
@@ -84,7 +89,7 @@
 
 
 	<c:if test="${editHspProf==1 }">
-		
+		<br>
 		<div class="row">
 
 			<div class=" mx-auto">
@@ -99,9 +104,6 @@
 				<c:if test="${hspprofile==2 }">
 
 					<form action="updateHspBedcount" method="post" class="" style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
-
-
-
 
 						<div>
 							<input name="hspId" type="hidden" value="${hospital.hspId}"
@@ -239,7 +241,7 @@
 						</div>
 						<div class="form-group">
 							Password<input name="drPassword"
-								class="form-control form-control-sm" type="text"
+								class="form-control form-control-sm" type="password"
 								value="${drOldInfo.drPassword}" pattern="[A-Za-z0-9]{1,10}"
 								required autocomplete="off"
 								title="only 10 characters & numbers allowed" />

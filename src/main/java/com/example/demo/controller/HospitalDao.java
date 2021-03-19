@@ -1,6 +1,11 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -47,11 +52,13 @@ public class HospitalDao {
 	  }
 	
 	@PostMapping("/AuthentHsplogin")
-	public ModelAndView AuthenticateHospital(String hspUsername,String hspPassword) {	
+	public ModelAndView AuthenticateHospital(String hspUsername,String hspPassword, HttpServletRequest req, HttpServletResponse res) {	
 		HospitalEntity hospitalEntity=hospitalService.AuthenticateHospital(hspUsername, hspPassword);	
 		if(hospitalEntity!=null) {
 			ModelAndView mv=new ModelAndView("hospital");
 			mv.addObject("hospital", hospitalEntity);
+		   HttpSession session=req.getSession();
+		   session.setAttribute("my-hospital", 1);
 			return mv;
 		}		
 		else {
@@ -61,11 +68,17 @@ public class HospitalDao {
 		}
 	}
 	
+	@GetMapping("/hsplogout")
+	public ModelAndView logoutHsp(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		ModelAndView mv = new ModelAndView("HspLogin");
+		req.getSession().invalidate();
+		return mv;
+	}
 	
 	
 	     //get doctor list using two way using hospitalService and using doctorService
 	      //read all doctor list
-			@PostMapping("/drList")
+			@GetMapping("/drList")
 			  public ModelAndView drList(String hspId) {				
 				if(hspId==null) {
 					ModelAndView mv=new ModelAndView("HspLogin");	
@@ -94,7 +107,7 @@ public class HospitalDao {
 			  }
 			
 			//update bed count
-			@PostMapping("/editHspBedOpt")
+			@GetMapping("/editHspBedOpt")
 			  public ModelAndView editHspBedOpt(String hspId) {
 				ModelAndView mv=new ModelAndView("hospital");				
 				HospitalEntity hospitalEntity=hospitalService.editHspBedOpt(hspId);
@@ -176,7 +189,7 @@ public class HospitalDao {
 			    return mv;
 			  }
 			
-			@PostMapping("/addDrOpt")
+			@GetMapping("/addDrOpt")
 			  public ModelAndView addDrOpt(String hspId) {
 				ModelAndView mv=new ModelAndView("hospital");				
 				HospitalEntity hospitalEntity=hospitalService.getHospital(hspId);
@@ -213,12 +226,14 @@ public class HospitalDao {
 			  }
 			
 			
-			@PostMapping("/hospProfile")
+			@GetMapping("/hospProfile")
 			  public ModelAndView hospProfile(String hspId) {
 				ModelAndView mv=new ModelAndView("hospitalProfile");				
 				HospitalEntity hospitalEntity=hospitalService.getHospital(hspId);
+				List<DoctorEntity> doctorEntity=hospitalEntity.getDoctorList();
+				int drcount=doctorEntity.size();
 				 mv.addObject("hospital", hospitalEntity);
-				
+				 mv.addObject("drcount", drcount);
 			    return mv;
 			  }
 			

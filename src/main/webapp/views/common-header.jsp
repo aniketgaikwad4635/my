@@ -12,11 +12,11 @@
 					src="/image/DoctorHubLogo.png" /> </a>
 		
 		 <!--    <a class="btn btn-sm btn-secondary mr-3" href="/home" role="button"> Home </a>  -->
-		    <a class="btn btn-sm btn-white ml-3" href="/hospitalList" role="button"> Inquiry </a> 
-		    <a class="btn btn-sm btn-white ml-3" href="/patient/reg" role="button"> Register </a>
+		    <a class="btn btn-sm btn-white ml-4" href="/hospitalList" role="button"><i class="fas fa-search"></i> Inquiry </a> 
+		    <a class="btn btn-sm btn-white ml-3" href="/patient/reg" role="button"><i class="fas fa-plus-circle"></i> Register </a>
 		    <div class="dropdown">
                  <button class="btn btn-sm btn-white dropdown-toggle ml-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Login
+                 <i class="fas fa-sign-in-alt"></i> Login
                  </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="/admin/login">Admin</a> 
@@ -27,9 +27,9 @@
                </div>
             </div> 
            
-			 <a class="btn btn-sm btn-white ml-3"  href="/aboutus" role="button">AboutUs</a>
+			 <a class="btn btn-sm btn-white ml-3"  href="/aboutus" role="button"><i class="fas fa-info-circle"></i> About Us</a>
 			 
-			  <a class="btn btn-sm btn-white ml-3"  href="/contactus" role="button">ContactUs</a>
+			  <a class="btn btn-sm btn-white ml-3"  href="/contactus" role="button"><i class="fas fa-phone-square-alt"></i> Contact Us</a>
 					  		    
 		    
 		</div>

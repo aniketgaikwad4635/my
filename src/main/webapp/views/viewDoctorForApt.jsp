@@ -26,7 +26,7 @@
 					</c:if>
 						
 					<c:if test="${b==2}">
-						<div class="alert alert-warning mt-2">Your Appointment is already present. </div>
+						<div class="alert alert-warning mt-2">Your already have appointment with this doctor. </div>
 					</c:if>
 					</div>
 					</div>		
@@ -42,7 +42,7 @@
        <div class="mx-auto">
         <table class="table table-striped border-dark table-bordered">
              <tr>
-   <th>Sr.No</th>   <th>Name</th> <th>Speciality</th>  <th>Status</th> <th>Select Appointment Date</th><!--  <th>Select Appointment Date</th> --> <th>Book Action</th>
+   <th>Sr.No</th>   <th>Name</th> <th>Speciality</th>  <th>Current Status</th> <!-- <th>Select time</th> --> <th>Select Appointment Date</th><!--  <th>Select Appointment Date</th> --> <th>Book Action</th>
                                  
              </tr>
            
@@ -53,8 +53,13 @@
                        <c:if test="${item.drStatus==true}"> Available</c:if>  
                        <c:if test="${item.drStatus==false}"> Not Available</c:if> 
                </td>
-               
-               <form action="aptBooking" method="post">
+
+							<!-- <td><form action="#">
+									<input type="time" id="appt" name="appt"> <input
+										type="submit">
+								</form></td> -->
+
+							<form action="aptBooking" method="post">
                
                <td>
                 <script type="text/javascript">
@@ -64,8 +69,11 @@
    </script>
              <div class="form-group"> 
     <div class="input-group"> 
-     <input type="date" id="appdate" required="Required" class="form-control" name="appdate" placeholder="Select suitable date" />
+    
+     <input type="date"  required="Required" class="form-control" name="appdate" placeholder="Select suitable date" />
     </div>
+   
+    
 </div>
                </td>
               <!--  <td>

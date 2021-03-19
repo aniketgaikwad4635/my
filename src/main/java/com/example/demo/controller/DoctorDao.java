@@ -15,11 +15,13 @@ import com.example.demo.EmailSenderService;
 import com.example.demo.dao.Appointment;
 import com.example.demo.entity.AppointmentEntity;
 import com.example.demo.entity.DoctorEntity;
+import com.example.demo.entity.HospitalEntity;
 import com.example.demo.entity.PatientEntity;
 import com.example.demo.enums.AptStatus;
 import com.example.demo.repository.DoctorRepository;
 import com.example.demo.service.AppointmentService;
 import com.example.demo.service.DoctorService;
+import com.example.demo.service.HospitalService;
 import com.example.demo.service.PatientService;
 
 @Controller
@@ -28,6 +30,9 @@ public class DoctorDao {
 	
 	@Autowired
 	AppointmentService appointmentService;
+	
+	@Autowired
+	HospitalService HospitalService;
 	
 	@Autowired
 	DoctorService doctorService;
@@ -152,9 +157,11 @@ public class DoctorDao {
 		@PostMapping("/doctProfile")
 		public ModelAndView doctProfile(String drid) {		
 			DoctorEntity doctorEntity=doctorService.getDoctor(drid);
-			
+			String hid=String.valueOf(doctorEntity.getHspId());
+			HospitalEntity hospitalEntity=HospitalService.getHospital(hid);
 				ModelAndView mv=new ModelAndView("doctorProfile");
 				mv.addObject("doctor", doctorEntity);
+				mv.addObject("hospital", hospitalEntity);
 				return mv;
 			     
 			

@@ -13,7 +13,7 @@
 
 
   <c:if test="${appointPatientlist==1 }">
-       
+       <br>
        <div class="row" >
          
            <div class=" mx-auto">
@@ -41,7 +41,7 @@
                    <form action="AptCloseByDr" method="post">
                 <input type="hidden" name="ptid" value="${item.ptId}" readonly />														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />												
-				<button class="btn btn-sm btn-light" type="submit">Close</button>							    
+				<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-check"></i> Close</button>							    
 	             </form>                           
                  </td> 
                  	
@@ -49,7 +49,7 @@
                <form action="AptCancelByDr" method="post">
                  <input type="hidden" name="ptid" value="${item.ptId}" readonly />														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />								
-				<button class="btn btn-sm btn-light" type="submit">Cancel</button>							    
+				<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-times"></i> Cancel</button>							    
 	             </form>              
                </td> 
                                  
@@ -65,7 +65,7 @@
   
   
   <c:if test="${allPatAptlist==1 }">
-    
+    <br>
       <div class="row" >
          
            <div class=" mx-auto">

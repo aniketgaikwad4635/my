@@ -28,13 +28,13 @@
            
            <c:forEach var="item" items="${hspList}" begin="0" end="100" varStatus="srno">  
              <tr>
-   <td>${srno.index+1 }</td>    <td>${item.hspName}</td> <td> ${item.hspAdd}</td>  <td>${item.hspBNo}</td> 
+   <td>${srno.index+1 }</td>    <td>${item.hspName}</td> <td> ${item.hspAdd}</td>  <td><center>${item.hspBNo}</center></td> 
    
               <td>
                 <form action="drList" method="post">
                 <input type="hidden" name="hspid" value="${item.hspId}" readonly />     
                   <input type="hidden" name="ptid" value="${patient.ptId}" readonly />																				
-				<button class="btn btn-sm  btn-light" type="submit">View doctors</button>							    
+				<button class="btn btn-sm  btn-light" type="submit"><i class="far fa-eye"></i> View doctors</button>							    
 	             </form>              
                </td> 
    
