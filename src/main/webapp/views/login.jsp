@@ -2,6 +2,9 @@
     pageEncoding="ISO-8859-1"%>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,17 +18,17 @@
 <body>
 
 
-
-
 <div class="container" id="container">
+
 	<div class="form-container sign-up-container">
+	
 		<form action="forgotPass" method="post">
 		<c:if test="${ptPassFail==1 }">
-						<div class="alert alert-success">Password updated</div>
+						<div class="alert alert-success" style="color:green"><h3>Password updated</h3></div>
 					</c:if>
 
 					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning">Password update failed</div>
+						<div class="alert alert-warning" style="color:orange"><h3>Password update failed</h3></div>
 					</c:if>
 		
 			<h1>Change password</h1>
@@ -46,11 +49,11 @@
 					</c:if>
 					
 					<c:if test="${ptPassFail==1 }">
-						<div class="alert alert-success">Password updated</div>
+						<div class="alert alert-success" style="color:green"><h3> Password updated <h3></div>
 					</c:if>
 
 					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning ">Password updatation failed</div>
+						<div class="alert alert-warning " style="color:orange"><h3>Password update failed</h3></div>
 					</c:if>
 					
 			<h1>Sign in</h1>			

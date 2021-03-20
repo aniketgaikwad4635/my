@@ -18,11 +18,11 @@
 	<div class="form-container sign-up-container">
 		<form action="registered" method="post">
 		<c:if test="${patReg==1 }">
-						<div class="alert alert-success">Registration Success</div>
+						<div class="alert alert-success" style="color:green">Registration Success</div>
 					</c:if>
 
 					<c:if test="${patReg==0 }">
-						<div class="alert alert-warning">Registration Fail  <br>
+						<div class="alert alert-warning" style="color:orange">Registration Fail  <br>
 						                               <small>Username/password already exist.</small></div>
 					</c:if>
 		
@@ -49,11 +49,11 @@
 					</c:if>
 					
 					<c:if test="${patReg==1 }">
-						<div class="alert alert-success">Registration Success</div>
+						<div class="alert alert-success" style="color:green">Registration Success</div>
 					</c:if>
 
 					<c:if test="${patReg==0 }">
-						<div class="alert alert-warning">Registration Fail  <br>
+						<div class="alert alert-warning" style="color:orange">Registration Fail  <br>
 						                               <small>Username/password already exist.</small></div>
 					</c:if>
 					

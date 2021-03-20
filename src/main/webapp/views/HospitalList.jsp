@@ -31,18 +31,23 @@
  </c:if>
  
      <div class="container mt-3">
-   <c:forEach var="hospital" items="${hospitallist}">
-	
+      
+   <c:forEach var="hospital" items="${hospitallist}"  begin="0"    end="100" varStatus="srno">
+   
+        <c:if test="${srno.index==0}">
+         <div><h4><center>Hospitals</center></h4></div>
+        </c:if>
+	          
 	  <div class="container-fluid">
 		<div class="">
-			<div class="row border shadow-lg p-3  bg-white rounded"
+			<div class="row border shadow-lg p-3  bg-light rounded"
 				style="height: 165px">
 				<div class="col-md-4 col-2 ">
 					<img style="height: 120px; width: 200px"
-						src="https://cdn.pixabay.com/photo/2016/04/19/13/22/hospital-1338585_960_720.jpg"
+						  src="image/hsp${srno.index+1}.jpg"
 						class="img-fluid" alt="...">
 				</div>
-				
+				<!-- src="https://cdn.pixabay.com/photo/2016/04/19/13/22/hospital-1338585_960_720.jpg"  -->
 				<div class="col-8 col-md-6 ">
 					<h5>${hospital.hspName}</h5>
 					<p class="m-0">
@@ -77,8 +82,8 @@
 				</div>
 
 			</div>
-		  	<div class="row border shadow-lg p-3 mb-2 bg-white rounded"
-				style="height: 40px"></div></div>  		
+		  	<div class="row border shadow-lg p-0 mb-2 bg-white rounded"
+				style="height: 10px"></div></div>  		
 	        </div>
 	
 	</c:forEach>

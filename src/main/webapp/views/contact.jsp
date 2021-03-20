@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-<div class="container">
+<div class="container bg-light">
 <!--Section: Contact v.2-->
 <section class="mb-4">
 
@@ -20,7 +20,7 @@
     <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
         a matter of hours to help you.</p>
 
-    <div class="row">
+    <div class="row ">
 
         <div class="col-md-9 mb-md-0 mb-5">
             <form  action="createcont" method="get">

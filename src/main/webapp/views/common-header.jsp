@@ -3,12 +3,13 @@
 <body>
 
 	<div class="row bg-light " style="height: 70px">
+	  <div class="col-2"></div>
 		<div
-			class=" d-none d-flex justify-content-center align-items-center">
+			class="col-10 d-none d-flex  align-items-center justify-content-end">
 	
 		
 		<a class="navbar-band ml-5" href="/home"><img
-					style="border-radius: 50%; width: 50px; height: 50px;"
+					style="border-radius: 50%; width: 40px; height: 40px;"
 					src="/image/DoctorHubLogo.png" /> </a>
 		
 		 <!--    <a class="btn btn-sm btn-secondary mr-3" href="/home" role="button"> Home </a>  -->
@@ -29,9 +30,10 @@
            
 			 <a class="btn btn-sm btn-white ml-3"  href="/aboutus" role="button"><i class="fas fa-info-circle"></i> About Us</a>
 			 
-			  <a class="btn btn-sm btn-white ml-3"  href="/contactus" role="button"><i class="fas fa-phone-square-alt"></i> Contact Us</a>
+			  <a class="btn btn-sm btn-white ml-3 mr-5"  href="/contactus" role="button"><i class="fas fa-phone-square-alt"></i> Contact Us</a>
 					  		    
 		    
 		</div>
 
 	</div>
+	

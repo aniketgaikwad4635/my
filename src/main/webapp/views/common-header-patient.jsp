@@ -1,12 +1,16 @@
 <body>
 
 	<div class="row bg-light " style="height: 70px">
+	
+	<div class="col-3 d-flex justify-content-center align-items-center">
+		     <div class=""><h5><i class="fas fa-user"></i> Welcome ${patient.ptName}</h5></div>
+		</div>
 
-		<div class="col-9 d-flex justify-content-start align-items-center">
+		<div class="col-9 d-flex justify-content-end align-items-center">
 		    
 
 			<a class="navbar-band ml-5" href="/home"><img
-				style="border-radius: 50%; width: 50px; height: 50px;"
+				style="border-radius: 50%; width: 40px; height: 40px;"
 				src="/image/DoctorHubLogo.png" /> </a>
 								
 				 <form action="showPatientProf" method="post">														
@@ -50,10 +54,9 @@
 			<a class="btn btn-sm btn-white mr-3" href="/home" role="button"><i class="fas fa-sign-out-alt"></i> Logout </a>
 		</div>
 		
-		<div class="col-3 d-flex justify-content-center align-items-center">
-		     <div class=""><h5><i class="fas fa-user"></i> Welcome ${patient.ptName}</h5></div>
-		</div>
+		
 		
 		
 
 	</div>
+	
