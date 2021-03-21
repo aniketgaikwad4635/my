@@ -9,8 +9,28 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Doctor list</title>
+
 </head>
+
+<% 
+
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-patient")==null){
+	response.sendRedirect("http://localhost:8080/patient/ptlogout");
+}
+
+%>
+
+<script >
+  history.forword();
+</script>
+
+
 <body>
 
                   <div class="row">					         
@@ -48,7 +68,7 @@
            
            <c:forEach var="item" items="${drList}" begin="0" end="100" varStatus="srno">  
              <tr>
-   <td>${srno.index+1 }</td>    <td>${item.drName}</td> <td> ${item.drSpec}</td> 
+   <td><center>${srno.index+1 }</center></td>    <td>${item.drName}</td> <td> ${item.drSpec}</td> 
               <td>
                        <c:if test="${item.drStatus==true}"> Available</c:if>  
                        <c:if test="${item.drStatus==false}"> Not Available</c:if> 
@@ -59,7 +79,7 @@
 										type="submit">
 								</form></td> -->
 
-							<form action="aptBooking" method="post">
+							<form action="aptBooking" method="get">
                
                <td>
                 <script type="text/javascript">

@@ -94,7 +94,7 @@ public class HospitalDao {
 			  }
 			
 			//update dr status			
-			@PostMapping("/editDrStatus")
+			@GetMapping("/editDrStatus")
 			  public ModelAndView editDrStatus(String drId,String hspId) {
 				doctorService.editDrStatus(drId, hspId);				
 				ModelAndView mv=new ModelAndView("hospital");	
@@ -117,7 +117,7 @@ public class HospitalDao {
 			    return mv;
 			  }
 			
-			@PostMapping("/updateHspBedcount")
+			@GetMapping("/updateHspBedcount")
 			 public ModelAndView updateHspBedcount(String hspId,String hspBNo) {
 				try {
 				      ModelAndView mv=new ModelAndView("hospital");
@@ -137,7 +137,7 @@ public class HospitalDao {
 				}
 			}
 			
-			@PostMapping("/editDrOpt")
+			@GetMapping("/editDrOpt")
 			  public ModelAndView editDrOpt(String drId,String hspId) {
 				ModelAndView mv=new ModelAndView("hospital");												
 				DoctorEntity drOldInfo=doctorService.getSingleDoctor(drId, hspId);					
@@ -149,7 +149,7 @@ public class HospitalDao {
 			    return mv;
 			  }
 			
-			@PostMapping("/updateDr")
+			@GetMapping("/updateDr")
 			 public ModelAndView updateDr(String id,String drName,String drSpec,String drEmail,String drMobile,String drUsername,String drPassword,String hspId) {
 				     try {
 				    	 ModelAndView mv=new ModelAndView("hospital");				    
@@ -172,8 +172,9 @@ public class HospitalDao {
 				     }
 			}
 			
-			@PostMapping("/delDr")
+			@GetMapping("/delDr")
 			  public ModelAndView deleteDr(String drId,String hspId) {
+				try {
 				ModelAndView mv=new ModelAndView("hospital");	
 
 				appointmentService.deleteDrAppointments(drId);								
@@ -187,6 +188,22 @@ public class HospitalDao {
 				mv.addObject("DRLIST", 1);
 				System.out.println("doctor deleted successfully in hospital dao");
 			    return mv;
+				}
+				catch(Exception e){
+					ModelAndView mv=new ModelAndView("hospital");	
+
+					//appointmentService.deleteDrAppointments(drId);								
+					//doctorService.deleteDr(drId, hspId);
+					
+					HospitalEntity hospitalEntity=hospitalService.getHospital(hspId);				
+					List<DoctorEntity> drList=doctorService.drList(hspId);
+					
+					mv.addObject("hospital", hospitalEntity);
+					mv.addObject("drList", drList);
+					mv.addObject("DRLIST", 1);
+					System.out.println("doctor not deleted  in hospital dao");
+				    return mv;
+				}
 			  }
 			
 			@GetMapping("/addDrOpt")
@@ -199,7 +216,7 @@ public class HospitalDao {
 			    return mv;
 			  }
 			
-			@PostMapping("/addDr")
+			@GetMapping("/addDr")
 			  public ModelAndView addDr(String drName,String drSpec,String drEmail,String drMobile,String drUsername,String drPassword,String hspId) {
 				try{
 					ModelAndView mv=new ModelAndView("hospital");

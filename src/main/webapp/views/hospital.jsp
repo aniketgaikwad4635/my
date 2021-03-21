@@ -6,18 +6,33 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Hospital Logged</title>
 
 <style>
 </style>
 
 </head>
 
-<%  if(session.getAttribute("my-hospital")==null){
+<%
+/* response.setHeader("cache-control", "no-cache, no-store, must-revalidate");
+response.setHeader("pragma", "no-cache");
+response.setDateHeader("Expires", 0); */
+
+response.setHeader("Pragma","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Expires","0");
+response.setDateHeader("Expires",-1);
+
+if(session.getAttribute("my-hospital")==null){
 	response.sendRedirect("http://localhost:8080/hospital/login");
 	return;
 }
-%>
+%> 
+<script>
+    history.forward();
+</script>
+
+
 <body>
 
 	<c:if test="${DRLIST==1 }">
@@ -55,7 +70,7 @@
 							<td><c:if test="${item.drStatus==true}"> Available</c:if> <c:if
 									test="${item.drStatus==false}"> Not Available</c:if></td>
 							<td>
-								<form action="editDrStatus" method="post">
+								<form action="editDrStatus" method="get">
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
@@ -64,7 +79,7 @@
 							</td>
 
 							<td>
-								<form action="editDrOpt" method="post">
+								<form action="editDrOpt" method="get">
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
@@ -73,7 +88,7 @@
 							</td>
 
 							<td>
-								<form action="delDr" method="post">
+								<form action="delDr" method="get">
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
@@ -103,7 +118,7 @@
 
 				<c:if test="${hspprofile==2 }">
 
-					<form action="updateHspBedcount" method="post" class="" style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+					<form action="updateHspBedcount" method="get" class="" style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 
 						<div>
 							<input name="hspId" type="hidden" value="${hospital.hspId}"
@@ -160,20 +175,23 @@
 		<div class="row">
            <div class="col-4"></div>
 			<div class="col-4">
-
+                 
 				<c:if test="${drprofile==1 }">
+				<br>
 					<div class="alert alert-success">Doctor Profile Updated Successfully...</div>
 				</c:if>
 
 				<c:if test="${drprofile==0 }">
+				     <br> 
 					<div class="alert alert-warning">Doctor Profile Updatation Failed...<br>
 					               <small>username/password already used. Try with different credentials.</small></div>
 				</c:if>
 
-
+                     
 				<c:if test="${drprofile==2 }">
-
-					<form action="updateDr" method="post" class="col-md-12"
+				
+                   
+					<form action="updateDr" method="get" class="col-md-12"
 						style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 
 						<div class="mt-1">
@@ -255,6 +273,7 @@
 						</div>
 
 					</form>
+					
 				</c:if>
 			</div>
 		</div>
@@ -275,7 +294,7 @@
 				</c:if>
 
 				<c:if test="${drReg==2 }">
-					<form action="addDr" method="post" class=" mt-0"
+					<form action="addDr" method="get" class=" mt-0"
 						style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 						<br>
 						<div>

@@ -103,6 +103,8 @@ public class HospitalService {
 		hospitalRepository.deleteById(hspId);
 		List<HospitalEntity> hspList = hospitalRepository.findAll();
 		return hspList;
+		
+		
 	}
 	
 	

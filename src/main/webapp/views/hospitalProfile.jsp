@@ -8,15 +8,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Hospital Logged</title>
 </head>
 
 
-<%  if(session.getAttribute("my-hospital")==null){
+<% 
+response.setHeader("Pragma","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Expires","0");
+response.setDateHeader("Expires",-1);
+
+
+if(session.getAttribute("my-hospital")==null){
 	response.sendRedirect("http://localhost:8080/hospital/login");
 	return;
 }
 %>
+
+<script>
+    history.forward();
+</script>
 
 <body>
 <br>

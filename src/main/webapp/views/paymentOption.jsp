@@ -8,9 +8,28 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Payment</title>
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
+
+<% 
+
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-patient")==null){
+	response.sendRedirect("http://localhost:8080/patient/ptlogout");
+}
+
+%>
+
+<script >
+  history.forword();
+</script>
+
+
 <body>
 <br>
 <div class="container-fluid">

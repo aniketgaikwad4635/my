@@ -9,8 +9,29 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>User Profile</title>
 </head>
+
+
+
+<% 
+
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-patient")==null){
+	response.sendRedirect("http://localhost:8080/patient/ptlogout");
+}
+
+%>
+
+<script >
+  history.forword();
+</script>
+
+
 <body>
  <br>
         <br>
@@ -35,7 +56,7 @@
 					
 					<c:if test="${u==2 }">
 
-						<form action="upd-patient" method="post" class=""
+						<form action="upd-patient" method="get" class=""
 							style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
 
 							<div>

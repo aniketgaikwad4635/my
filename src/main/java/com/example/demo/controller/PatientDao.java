@@ -108,7 +108,9 @@ public class PatientDao {
 			   ModelAndView mv = new ModelAndView("Appointment");
 			   mv.addObject("patient", patientEntity);
 			  
-
+                 HttpSession session=req.getSession();
+                 session.setAttribute("my-patient", 1);
+			   
 			   return mv;
 		     } 
 		  }
@@ -156,7 +158,15 @@ public class PatientDao {
 		
 	}
 	
-	@PostMapping("/showPatientProf")
+	@GetMapping("/ptlogout")
+    public ModelAndView ptlogout(HttpServletRequest req, HttpServletResponse res) {
+    	ModelAndView mv=new ModelAndView("login");
+    	req.removeAttribute("my-patient");
+    	req.getSession().invalidate();
+    	return mv;
+    }
+	
+	@GetMapping("/showPatientProf")
 	public ModelAndView showPatientProf(String id) {
 		PatientEntity patientEntity = patientService.patientUpdateOpt(id);		 
 			ModelAndView mv = new ModelAndView("Appointment");
@@ -166,7 +176,7 @@ public class PatientDao {
 		
 	}
 
-	@PostMapping("/update-opt")
+	@GetMapping("/update-opt")
 	public ModelAndView patientUpdateOpt(String id) {
 		PatientEntity patientEntity = patientService.patientUpdateOpt(id);
 		if (patientEntity != null) {
@@ -183,7 +193,7 @@ public class PatientDao {
 		}
 	}
 
-	@PostMapping("/upd-patient")
+	@GetMapping("/upd-patient")
 	public ModelAndView patientupdated(String id, String ptName, String age, String ptGmail, String ptMobile,String ptUsername) {
 		try {
 		    PatientEntity patientEntity = patientService.patientupdated(id, ptName, age, ptGmail, ptMobile,ptUsername);
@@ -202,7 +212,7 @@ public class PatientDao {
 	}
 	
 	
-	@PostMapping("/bookAppBtn")
+	@GetMapping("/bookAppBtn")
 	public ModelAndView bookAppoint(String ptid){
 		ModelAndView mv=new ModelAndView("bookAptShowHspList"); 
 		PatientEntity patientEntity=patientService.getSinglePatient(ptid);
@@ -215,7 +225,7 @@ public class PatientDao {
 	
 	
 	 // read all doctor list as per hspId
-	  @PostMapping("/drList") 
+	  @GetMapping("/drList") 
 	  public ModelAndView drList(String hspid, String ptid) { 
 		  List<DoctorEntity> drList=doctorService.drList(hspid);
 		  PatientEntity patientEntity =patientService.getSinglePatient(ptid);
@@ -226,7 +236,7 @@ public class PatientDao {
 	   return mv;
      }
 	 
-     @PostMapping("/aptBooking")
+     @GetMapping("/aptBooking")
      public ModelAndView aptBooking(String appdate,String ptid,String drid ){
     	 
     	 //patient is booking first time or second time....first time null value in appointment table and second type find set save
@@ -248,12 +258,13 @@ public class PatientDao {
     	 ModelAndView mv=new ModelAndView("viewDoctorForApt"); 
     	 mv.addObject("patient",  patientEntity);
     	 mv.addObject("b",1);
-    	 System.out.println("appointment booked succesfully");
+    	 System.out.println("appointment booked succesfully");    	     	 
+    	 
     	 return mv;
     	 }
      }
      
-     @PostMapping("/aptinfoWindow")
+     @GetMapping("/aptinfoWindow")
      public ModelAndView aptinfoWindow(String ptid){
     	 PatientEntity patientEntity=patientService.getSinglePatient(ptid);
     	List<Appointment> aptList=appointmentService.getAptListPt(ptid);
@@ -276,7 +287,7 @@ public class PatientDao {
     	 return mv;
      }
      
-     @PostMapping("/aptCancel")
+     @GetMapping("/aptCancel")
      public ModelAndView aptCancel(String ptid,String drid){
     	 PatientEntity patientEntity=patientService.getSinglePatient(ptid);    	  	   
     	 appointmentService.aptCancel(ptid,drid);
@@ -291,7 +302,7 @@ public class PatientDao {
      
      
      
-     @PostMapping("patientPayOPt")
+     @GetMapping("patientPayOPt")
      public ModelAndView patientPayOPt(String ptid, String drid) {      //12
        PatientEntity patientEntity=patientService.getSinglePatient(ptid);       //12 
        
@@ -338,6 +349,12 @@ public class PatientDao {
     		 DoctorEntity doctorEntity=doctorService.getDoctor(drid);
     	       mv.addObject("doctor", doctorEntity);
         	 System.out.println("appointment confirmed with successfully payment");
+        	 
+        	 emailSenderService.sendSimpleEmail(patientEntity.getPtGmail(),
+        			 "Message from DoctorHub... You have successfully completed payment."
+        			 + " Your appointment is confirmed with doctor "+doctorEntity.getDrName()+". Thank You",
+     					"From DoctorHub!!!");
+        	 
     		 return mv;
     	 }
     	 else {

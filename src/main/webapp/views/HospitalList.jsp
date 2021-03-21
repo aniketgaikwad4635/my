@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Inquiry</title>
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <link href="css/HospitalList.css" rel="stylesheet" type="text/css">
 

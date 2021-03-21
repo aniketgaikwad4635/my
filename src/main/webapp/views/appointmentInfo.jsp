@@ -9,8 +9,27 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Appointment Info</title>
 </head>
+
+<% 
+
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-patient")==null){
+	response.sendRedirect("http://localhost:8080/patient/ptlogout");
+}
+
+%>
+
+<script >
+  history.forword();
+</script>
+
+
 <body>
 
 
@@ -62,7 +81,7 @@
 					<c:forEach var="item" items="${aptList}" begin="0" end="100"
 						varStatus="srno">
 						<tr>
-							<td>${srno.index+1 }</td>
+							<td><center> ${srno.index+1 } </center></td>
 							
 							
 							    <td>
@@ -81,10 +100,10 @@
 								</td>
 
 							<td>${item.aptStatus}</td>
-							<td>${item.aptDate}</td>
+							<td><center> ${item.aptDate} </center></td>
 
 							<td>
-								<form action="patientPayOPt" method="post">
+								<form action="patientPayOPt" method="get">
 									<div>
 										<input type="hidden" name="ptid" value="${patient.ptId}" readonly />
 										<input type="hidden" name="drid" value="${item.drId}" readonly />
@@ -95,7 +114,7 @@
 								</form>
 							</td>
 							<td>
-								<form action="aptCancel" method="post">
+								<form action="aptCancel" method="get">
 									<input type="hidden" name="drid" value="${item.drId}" readonly />
 									<input type="hidden" name="ptid" value="${patient.ptId}"
 										readonly />

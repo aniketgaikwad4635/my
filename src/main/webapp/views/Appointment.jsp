@@ -9,8 +9,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>User logged</title>
 </head>
+
+<% 
+
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-patient")==null){
+	response.sendRedirect("http://localhost:8080/patient/ptlogout");
+}
+
+%>
+
+<script >
+  history.forword();
+</script>
+
+
+
+
+
+
+
 <body>
 
 	<c:if test="${patProf==1}">

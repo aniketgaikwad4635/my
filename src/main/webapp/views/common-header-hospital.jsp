@@ -1,6 +1,8 @@
+
+
 <body>
 
-	<div class="row bg-light " style="height: 70px">
+	<div class="row " style="height: 70px; background-color:#D3D3D3">
 	
 	<div class="col-4 d-flex justify-content-center align-items-center">
                <div class=""><h5><i class="fas fa-hospital-user"></i> ${hospital.hspName}</h5></div>

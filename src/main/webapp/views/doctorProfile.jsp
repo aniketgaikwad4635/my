@@ -8,8 +8,28 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Doctor Profile</title>
 </head>
+
+<%
+response.setHeader("Pragma", "no-cache");
+response.setHeader("cache-control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-doctor")==null){
+	response.sendRedirect("http://localhost:8080/dr/drlogout");
+	return;
+}
+
+%>
+<script>
+   history.forword();
+</script>
+
+
+
+
 <body>
 <br>
 	<div class="row">
@@ -20,7 +40,7 @@
 			</center>
 
 
-			<table class="table  border-dark ">
+			<table class="table  border-dark " >
 
 
 

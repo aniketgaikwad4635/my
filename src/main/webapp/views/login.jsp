@@ -3,20 +3,25 @@
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
-
+    <%@ include file="common-css-js.jsp"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>User Login</title>
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
  <link href="<c:url value="/css/newlogin.css" />" rel="stylesheet">
 </head>
 <body>
 
+<div class="container-fluid">
+<jsp:include page="common-header.jsp"></jsp:include>
+</div>
+<br>
+<br>
 
 <div class="container" id="container">
 
@@ -24,11 +29,11 @@
 	
 		<form action="forgotPass" method="post">
 		<c:if test="${ptPassFail==1 }">
-						<div class="alert alert-success" style="color:green"><h3>Password updated</h3></div>
+						<div class="alert alert-success" style="color:green"><h6>Password updated</h6></div>
 					</c:if>
 
 					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning" style="color:orange"><h3>Password update failed</h3></div>
+						<div class="alert alert-warning" style="color:orange"><h6>Password update failed</h6></div>
 					</c:if>
 		
 			<h1>Change password</h1>
@@ -49,11 +54,11 @@
 					</c:if>
 					
 					<c:if test="${ptPassFail==1 }">
-						<div class="alert alert-success" style="color:green"><h3> Password updated <h3></div>
+						<div class="alert alert-success" style="color:green"><h6> Password updated </h6></div>
 					</c:if>
 
 					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning " style="color:orange"><h3>Password update failed</h3></div>
+						<div class="alert alert-warning " style="color:orange"><h6>Password update failed</h6></div>
 					</c:if>
 					
 			<h1>Sign in</h1>			

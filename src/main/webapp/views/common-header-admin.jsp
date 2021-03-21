@@ -1,6 +1,13 @@
+<!-- <style>
+ body {
+  background-image: url('https://img.wallpapersafari.com/desktop/1600/900/48/48/NQV7zq.jpg');
+  background-size:cover;
+} 
+</style> -->
+
 <body>
 
-	<div class="row bg-light" style="height: 70px; ">
+	<div class="row" style="height: 70px; background-color:#D3D3D3 ">
 		<div class="col-3 d-flex justify-content-center align-items-center">
                <div class=""><h5><i class="fas fa-wreath"></i> Welcome Admin <i class="fas fa-wreath"></i></h5></div>
 		</div>

@@ -2,17 +2,26 @@
     pageEncoding="ISO-8859-1"%>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+     <%@ include file="common-css-js.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Doctor Login</title>
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
  <link href="<c:url value="/css/newlogin.css" />" rel="stylesheet">
 </head>
 <body>
+
+<div class="container-fluid">
+<jsp:include page="common-header.jsp"></jsp:include>
+</div>
+<br>
+<br>
+
 <div class="container" id="container">
 	
 	<div class="form-container sign-in-container">

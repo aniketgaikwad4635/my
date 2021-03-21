@@ -1,6 +1,6 @@
 <body>
 
-	<div class="row bg-light " style="height: 70px">
+	<div class="row" style="height: 70px; background-color:#D3D3D3 ">
 	
 	<div class="col-3 d-flex d-none justify-content-center align-items-center">
 		      <div class=""><h5><i class="fas fa-user-md fa-1x"></i> Welcome Dr.${doctor.drName}</h5></div>	
@@ -14,22 +14,22 @@
 					
 									
 					 
-					 <form action="doctProfile" method="post">														
+					 <form action="doctProfile" method="get">														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />									
 				<button class="btn btn-sm btn-white ml-3 mr-3" type="submit"><i class="fas fa-user-md"></i> Profile</button>							    
 	    </form>	
 					 					 			
-					 <form action="Appointpatientlist" method="post">														
+					 <form action="Appointpatientlist" method="get">														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />							
 				<button class="btn btn-sm btn-white mr-3" type="submit"><i class="fas fa-calendar-check"></i> Appointments</button>							    
 	    </form>
 	    
-		<form action="AllpatAptlist" method="post">																		
+		<form action="AllpatAptlist" method="get">																		
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />								
 				 <button class="btn btn-sm btn-white mr-3" type="submit"><i class="fas fa-user-injured"></i> Patients</button>							
 		 </form>
 					    
-		    <a class="btn btn-sm btn-white mr-3" href="/home" role="button"><i class="fas fa-sign-out-alt"></i> Logout </a>
+		    <a class="btn btn-sm btn-white mr-3" href="/dr/drlogout" role="button"><i class="fas fa-sign-out-alt"></i> Logout </a>
 		</div>
 		
 		

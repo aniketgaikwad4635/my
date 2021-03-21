@@ -2,10 +2,10 @@
 
 <body>
 
-	<div class="row bg-light " style="height: 70px">
+	<div class="row" style="height: 70px;  background-color:#D3D3D3" >
 	  <div class="col-2"></div>
 		<div
-			class="col-10 d-none d-flex  align-items-center justify-content-end">
+			class="col-10 d-none d-flex  align-items-center justify-content-end" style="font-family:  sans-serif;">
 	
 		
 		<a class="navbar-band ml-5" href="/home"><img
@@ -17,7 +17,7 @@
 		    <a class="btn btn-sm btn-white ml-3" href="/patient/reg" role="button"><i class="fas fa-plus-circle"></i> Register </a>
 		    <div class="dropdown">
                  <button class="btn btn-sm btn-white dropdown-toggle ml-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <i class="fas fa-sign-in-alt"></i> Login
+                 <i class="fas fa-sign-in-alt"></i> LOGIN
                  </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="/admin/login">Admin</a> 

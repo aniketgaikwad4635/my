@@ -9,8 +9,27 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>hospital List</title>
 </head>
+
+<% 
+
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Expires", "0");
+response.setDateHeader("Expires", -1);
+
+if(session.getAttribute("my-patient")==null){
+	response.sendRedirect("http://localhost:8080/patient/ptlogout");
+}
+
+%>
+
+<script >
+  history.forword();
+</script>
+
+
 <body>
 
 <!-- display hospital list -->
@@ -28,10 +47,10 @@
            
            <c:forEach var="item" items="${hspList}" begin="0" end="100" varStatus="srno">  
              <tr>
-   <td>${srno.index+1 }</td>    <td>${item.hspName}</td> <td> ${item.hspAdd}</td>  <td><center>${item.hspBNo}</center></td> 
+   <td><center>${srno.index+1 }</center></td>    <td>${item.hspName}</td> <td> ${item.hspAdd}</td>  <td><center>${item.hspBNo}</center></td> 
    
               <td>
-                <form action="drList" method="post">
+                <form action="drList" method="get">
                 <input type="hidden" name="hspid" value="${item.hspId}" readonly />     
                   <input type="hidden" name="ptid" value="${patient.ptId}" readonly />																				
 				<button class="btn btn-sm  btn-light" type="submit"><i class="far fa-eye"></i> View doctors</button>							    

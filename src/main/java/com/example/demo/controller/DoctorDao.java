@@ -3,6 +3,10 @@ package com.example.demo.controller;
 import java.util.Collections;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,11 +58,14 @@ public class DoctorDao {
 	
 	//@RequestMapping(value="/Authentdrlogin" ,method=RequestMethod.GET)	
 	@PostMapping("/Authentdrlogin")
-	public ModelAndView AuthenticateDoctor(String drUsername,String drPassword) {		
+	public ModelAndView AuthenticateDoctor(String drUsername,String drPassword,HttpServletRequest req,HttpServletResponse res) {		
 		DoctorEntity doctorEntity=doctorService.AuthenticateDoctor(drUsername, drPassword);		
 		if(doctorEntity!=null) {
 			ModelAndView mv=new ModelAndView("Appointment-list");
 			mv.addObject("doctor", doctorEntity);
+			HttpSession session=req.getSession();
+			session.setAttribute("my-doctor", 1);
+			
 			return mv;
 		}		
 		else {
@@ -68,8 +75,16 @@ public class DoctorDao {
 		}
 	}
 	
+	@GetMapping("/drlogout")
+	public ModelAndView drlogout(HttpServletRequest req,HttpServletResponse res) {
+		ModelAndView mv=new ModelAndView("DrLogin");
+		req.removeAttribute("my-doctor");
+		req.getSession().invalidate();
+		return mv;
+	}
+	
 	//read appointment list using drid and all booked closed cancelled
-	@PostMapping("/AllpatAptlist")
+	@GetMapping("/AllpatAptlist")
     public ModelAndView AllpatAptlist(String drid) {
    	      	    ModelAndView mv=new ModelAndView("Appointment-list");
    	      	DoctorEntity doctorEntity=doctorService.getDoctor(drid);
@@ -87,7 +102,7 @@ public class DoctorDao {
 	
 	
 	//read appointment list using drid and confirmed // we show this to dr in ascending order so todays come first next day apt goes below
-		@PostMapping("/Appointpatientlist")
+		@GetMapping("/Appointpatientlist")
 	    public ModelAndView Appointpatientlist(String drid) {
 			       AptStatus aptStatus=AptStatus.CONFIRMED;
 	   	      	    ModelAndView mv=new ModelAndView("Appointment-list");
@@ -104,7 +119,7 @@ public class DoctorDao {
 				    return mv;
 	    }
 		
-		@PostMapping("/AptCloseByDr")
+		@GetMapping("/AptCloseByDr")
 	    public ModelAndView AppCloseByDr(String ptid,String drid) {
 			      appointmentService.aptClosed(ptid, drid);
 			
@@ -115,7 +130,8 @@ public class DoctorDao {
 	   	  	         mv.addObject("doctor", doctorEntity); 	  	        
 	   	  	         mv.addObject("Appointpatientlist", Appointpatientlist);
 	   	  	         mv.addObject("appointPatientlist", 1);
-	   	  	         
+	   	  	         mv.addObject("aptCloseByDr", 1);
+	   	  	    
 	   	  	    //fetch patient list on doctor see appointment table to display patient name on front end
 	   		   	  	List< PatientEntity> patientList =patientService.getAllPatient();
 	   		   	    mv.addObject("patientList",  patientList);
@@ -129,7 +145,7 @@ public class DoctorDao {
 				    return mv;
 	    }
 	
-		@PostMapping("/AptCancelByDr")
+		@GetMapping("/AptCancelByDr")
 	    public ModelAndView AptCancelByDr(String ptid,String drid) {
 			      appointmentService.aptCancel(ptid, drid);
 			
@@ -140,7 +156,8 @@ public class DoctorDao {
 	   	  	         mv.addObject("doctor", doctorEntity); 	  	        
 	   	  	         mv.addObject("Appointpatientlist", Appointpatientlist);
 	   	  	         mv.addObject("appointPatientlist", 1);
-	   	  	         
+	   	  	         mv.addObject("aptCancelByDr", 1);
+	   	  	      	         
 	   	  	    //fetch patient list on doctor see appointment table to display patient name on front end
 	   		   	  	List< PatientEntity> patientList =patientService.getAllPatient();
 	   		   	    mv.addObject("patientList",  patientList);
@@ -154,7 +171,7 @@ public class DoctorDao {
 				    return mv;
 	    }
 		
-		@PostMapping("/doctProfile")
+		@GetMapping("/doctProfile")
 		public ModelAndView doctProfile(String drid) {		
 			DoctorEntity doctorEntity=doctorService.getDoctor(drid);
 			String hid=String.valueOf(doctorEntity.getHspId());

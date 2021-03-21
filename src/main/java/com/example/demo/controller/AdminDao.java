@@ -76,7 +76,7 @@ public class AdminDao {
 	
 	@RequestMapping("/admlogout")
 	public ModelAndView logoutAdmin(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		ModelAndView mv = new ModelAndView("Home");
+		ModelAndView mv = new ModelAndView("AdmLogin");
 		req.removeAttribute("my-admin");
 		req.getSession().invalidate();
 		return mv;
@@ -101,15 +101,22 @@ public class AdminDao {
 		return mv;	
 	}
 
-	@PostMapping("/addHsp")
+	@GetMapping("/addHsp")
 	public ModelAndView addHsp(String hspName, String hspAdd, String hspUsername, String hspPassword) {
 		try {
 		ModelAndView mv = new ModelAndView("Admin");
-		HospitalEntity hospitalEntity = new HospitalEntity(hspName, hspAdd, 0, hspUsername, hspPassword);
+		
+		//apply internal validation
+		String hospName=hspName.trim();
+		String hospAdd=hspAdd.trim();
+		String hospUsername=hspUsername.trim();
+		String hospPassword=hspPassword.trim();
+		
+		HospitalEntity hospitalEntity = new HospitalEntity(hospName, hospAdd, 0, hospUsername, hospPassword);
 		hospitalService.addHsp(hospitalEntity);		
 		mv.addObject("addHspWindow", 1);
 		mv.addObject("hspReg", 1);
-		System.out.println("doctor added successfully in admin dao");
+		System.out.println("hospital added successfully in admin dao");
 		return mv;
 		}
 		catch(Exception e) {
@@ -121,17 +128,31 @@ public class AdminDao {
 		}
 	}
 
-	@PostMapping("/deleteHsp")
+	@GetMapping("/deleteHsp")
 	public ModelAndView deleteHsp(String id) {
+		try {
 		ModelAndView mv = new ModelAndView("Admin");		
 		List<HospitalEntity> hspList = hospitalService.deleteHsp(id);
 		mv.addObject("hspList", hspList);
 		mv.addObject("HSPLIST", 1);
 		System.out.println("doctor deleted successfully in admin dao");
+		mv.addObject("hspdel", 1);		
 		return mv;
+		}
+		catch(Exception e) {
+			ModelAndView mv = new ModelAndView("Admin");		
+			List<HospitalEntity> hspList = hospitalService.hspList();
+			
+			mv.addObject("hspList", hspList);
+			mv.addObject("HSPLIST", 1);
+			
+			mv.addObject("hspdel", 0);	
+			System.out.println("doctor not deleted in admin dao");
+			return mv;
+		}
 	}
 
-	@PostMapping("/editHspOpt")
+	@GetMapping("/editHspOpt")
 	public ModelAndView editHspOpt(String id) {		
 		ModelAndView mv = new ModelAndView("Admin");
 		HospitalEntity hspOldInfo = hospitalService.editHspOpt(id);
@@ -141,7 +162,7 @@ public class AdminDao {
 		return mv;		
 	}
 
-	@PostMapping("/updateHsp")
+	@GetMapping("/updateHsp")
 	public ModelAndView updateHsp(String id, String hspName, String hspAdd, String hspUsername, String hspPassword) {
 		try {
 		ModelAndView mv = new ModelAndView("Admin");

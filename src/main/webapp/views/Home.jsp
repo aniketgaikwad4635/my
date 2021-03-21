@@ -6,8 +6,9 @@
 <html>
 <head>
 
+<title> home</title>
 
-
+<link rel="icon" href="/image/DoctorHubLogo.png"  type="image/png" sizes="16x16">
 <style>
 .about-section {
 	padding: 50px;

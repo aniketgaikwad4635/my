@@ -33,7 +33,7 @@
 	
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-<title>Project</title>
+<link rel="icon" href="/image/DoctorHubLogo.png"  type="image/png" sizes="16x16">
 </head>
 <body>
 

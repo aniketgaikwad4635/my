@@ -6,10 +6,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin logged</title>
 
-<style>
-</style>
+
 
 </head>
 
@@ -33,18 +32,52 @@ if(session.getAttribute("my-admin")==null)
     history.forward();
 </script>
  
+ <style>
 
 
-<body>
+  .contentabc {
+  background: rgb(0, 0, 0);  
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+} 
+
+.bg-image {
+  /* The image used */
+  background-image: url("https://wallpapercave.com/wp/wp2219692.jpg");
+  /* Add the blur effect */
+  
+ /* background-color: transparent;*/
+   background-size: cover; 
+}
+
+.bg-table{
+ background-color:white;
+ filter: drop-shadow(5px 5px 5px #222); 
+  opacity: 0.6;
+}
+
+.forshadow{
+filter: drop-shadow(5px 5px 5px #222); 
+}
+
+</style>
+
+
+
+<body class="bg-image">
+<div >
+
+
 
 	<!--  hospital -->
 	<c:if test="${HSPLIST==1 }">
-		<div class="row">
+		<div class="row " >
 
-			<div class="mx-auto">
+			<div class="mx-auto ">
 			<br>
-				<center><h4 style="color:grey" >Hospital Details</h4></center>
-				<table class="table table-striped border-dark table-bordered">
+			
+				<center><h4 style="color:black" >Hospital Details</h4></center>
+				<table class="table  border-dark table-bordered bg-table" style="color:black">
 					<tr>
 						<th>Sr.No</th>
 						<!-- <th>Hospital Id</th> -->						
@@ -56,26 +89,28 @@ if(session.getAttribute("my-admin")==null)
 
 					<c:forEach var="item" items="${hspList}" begin="0" end="100"
 						varStatus="srno">
+						
+						
 						<tr >
-							<td style="text-align:center">${srno.index+1 }</td>
+							<th style="text-align:center">${srno.index+1 }</th>
 							<%-- <th>${item.hspId}</th> --%>
-							<td >${item.hspName}</td>
-							<td style="text-align:center">${item.hspAdd}</td>
+							<th >${item.hspName}</th>
+							<th style="text-align:center">${item.hspAdd}</th>
 
-							<td style="text-align:center">
-								<form action="editHspOpt" method="post">
+							<th style="text-align:center">
+								<form action="editHspOpt" method="get">
 									<input type="hidden" name="id" value="${item.hspId}" readonly />
 									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-edit"></i> Edit</button>
 
 								</form>
-							</td>
+							</th>
 
-							<td style="text-align:center">
-								<form action="deleteHsp" method="post">
+							<th style="text-align:center">
+								<form action="deleteHsp" method="get">
 									<input type="hidden" name="id" value="${item.hspId}" readonly />
 									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-minus-circle"></i> Delete</button>
 								</form>
-							</td>
+							</th>
 						</tr>
 					</c:forEach>
 
@@ -86,6 +121,7 @@ if(session.getAttribute("my-admin")==null)
 
 
 	<c:if test="${addHspWindow==1 }">
+		<br>
 		<br>
 		<br>
 		<div class="row" style="height:">
@@ -101,8 +137,8 @@ if(session.getAttribute("my-admin")==null)
 				</c:if>
 				<c:if test="${hspReg==2 }">
 					
-						<form action="addHsp" method="post" class=""
-							style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+						<form action="addHsp" method="get" class=""
+							style="border: 2px solid green;  padding: 20px; border-radius: 20px">
 							
                   <center>
                         <h6>Hospital Registration</h6></center>
@@ -167,6 +203,7 @@ if(session.getAttribute("my-admin")==null)
 	<c:if test="${editHspProf==1 }">
 		<br>
 		<br>
+		<br>
 		<div class="row" style="height:">
 
              <div class="col-4"></div>
@@ -185,8 +222,8 @@ if(session.getAttribute("my-admin")==null)
 
 				<c:if test="${hspprofile==2 }">
 
-					<form action="updateHsp" method="post" class="mx-auto " 
-					style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+					<form action="updateHsp" method="get" class="mx-auto forshadow" 
+					style="border: 2px solid green;  padding: 20px; border-radius: 20px">
 
 						 <center>
                         <h6>Update Hospital Details</h6></center>
@@ -248,8 +285,8 @@ if(session.getAttribute("my-admin")==null)
             <div class="col-1"></div>
 			<div class="col-10">
 			<br>
-				<center><h4 style="color:grey" >Messages From Users</h4></center>
-				<table class="table table-striped border-dark table-bordered">
+				<center><h4 style="color:white" >Messages From Users</h4></center>
+				<table class="table  border-dark table-bordered bg-table" style="background-color:white;">
 					<tr>
 						<th style="text-align: center;">No</th>									
 						<th style="text-align: center;">Name</th>
@@ -264,10 +301,10 @@ if(session.getAttribute("my-admin")==null)
 					<c:forEach var="item" items="${contactList}" begin="0" end="100"
 						varStatus="srno">
 						<tr>
-							<td >${srno.index+1 }</td>							
+							<td><center>${srno.index+1 }</center></td>							
 							<td>${item.ctName}</td>
 							<td>${item.ctEmail}</td>
-							<td>${item.ctDate}</td>
+							<td><center>${item.ctDate}</center></td>
 							<%-- <td>${item.ctMobile}</td> --%>
 							<td>${item.ctSubject}</td>
 							<td>${item.ctMessage}</td>
@@ -279,6 +316,6 @@ if(session.getAttribute("my-admin")==null)
 		</div>
 	</c:if>
 
-
+</div>
 </body>
 </html>
