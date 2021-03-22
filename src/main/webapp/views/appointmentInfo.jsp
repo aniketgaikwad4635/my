@@ -94,7 +94,7 @@ if(session.getAttribute("my-patient")==null){
 								   </c:forEach>
 																										
 									</c:if>
-									</td>
+									
 									
 								 </c:forEach>
 								</td>

@@ -50,10 +50,10 @@ if(session.getAttribute("my-admin")==null)
    background-size: cover; 
 }
 
-.bg-table{
+.bg-tableHspListcontact{
  background-color:white;
  filter: drop-shadow(5px 5px 5px #222); 
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .forshadow{
@@ -77,14 +77,14 @@ filter: drop-shadow(5px 5px 5px #222);
 			<br>
 			
 				<center><h4 style="color:black" >Hospital Details</h4></center>
-				<table class="table  border-dark table-bordered bg-table" style="color:black">
+				<table class="table  border-dark table-bordered bg-tableHspListcontact" style="color:black">
 					<tr>
 						<th>Sr.No</th>
 						<!-- <th>Hospital Id</th> -->						
-						<th>Hospital Name</th>
-						<th>Hospital Address</th>
-						<th>Edit Action</th>
-						<th>Delete Action</th>
+						<th><i class="fas fa-hospital"></i> Hospital Name</th>
+						<th><i class="fas fa-map-marker-alt"></i> Hospital Address</th>
+						<th><i class="fas fa-edit"></i></i> Edit Action</th>
+						<th><i class="fas fa-minus-circle"></i> Delete Action</th>
 					</tr>
 
 					<c:forEach var="item" items="${hspList}" begin="0" end="100"
@@ -100,7 +100,7 @@ filter: drop-shadow(5px 5px 5px #222);
 							<th style="text-align:center">
 								<form action="editHspOpt" method="get">
 									<input type="hidden" name="id" value="${item.hspId}" readonly />
-									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-edit"></i> Edit</button>
+									<button class="btn btn-sm btn-success" type="submit"><i class="fas fa-edit"></i> Edit</button>
 
 								</form>
 							</th>
@@ -108,7 +108,7 @@ filter: drop-shadow(5px 5px 5px #222);
 							<th style="text-align:center">
 								<form action="deleteHsp" method="get">
 									<input type="hidden" name="id" value="${item.hspId}" readonly />
-									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-minus-circle"></i> Delete</button>
+									<button class="btn btn-sm btn-warning" type="submit"><i class="fas fa-minus-circle"></i> Delete</button>
 								</form>
 							</th>
 						</tr>
@@ -137,8 +137,8 @@ filter: drop-shadow(5px 5px 5px #222);
 				</c:if>
 				<c:if test="${hspReg==2 }">
 					
-						<form action="addHsp" method="get" class=""
-							style="border: 2px solid green;  padding: 20px; border-radius: 20px">
+						<form action="addHsp" method="get" class="forshadow"
+							style="border: 2px solid green; background:white; padding: 20px; border-radius: 20px">
 							
                   <center>
                         <h6>Hospital Registration</h6></center>
@@ -179,10 +179,10 @@ filter: drop-shadow(5px 5px 5px #222);
 							</div>
 							
 							  <div class="form-row mt-3">
-							  <input class="btn btn-outline-success btn-sm col-md-6" type="submit"
+							  <input class="btn btn-success btn-sm col-md-6" type="submit"
 									value="Register" />
 							 
-								 <input class="btn btn-outline-success btn-sm col-md-6"
+								 <input class="btn btn-warning btn-sm col-md-6"
 									type="reset" value="Cancel" />
                                 </div>
 
@@ -223,7 +223,7 @@ filter: drop-shadow(5px 5px 5px #222);
 				<c:if test="${hspprofile==2 }">
 
 					<form action="updateHsp" method="get" class="mx-auto forshadow" 
-					style="border: 2px solid green;  padding: 20px; border-radius: 20px">
+					style="border: 2px solid green; background:white;  padding: 20px; border-radius: 20px">
 
 						 <center>
                         <h6>Update Hospital Details</h6></center>
@@ -264,10 +264,10 @@ filter: drop-shadow(5px 5px 5px #222);
 								title="only 10 characters & numbers allowed" />
 						</div>
 						<div class="form-row mt-2 ">
-							<input class="btn btn-outline-success btn-sm col-md-6" type="submit"
+							<input class="btn btn-success btn-sm col-md-6" type="submit"
 								value="Save" />
 						
-							<input class="btn btn-outline-success btn-sm col-md-6" type="reset"
+							<input class="btn btn-warning btn-sm col-md-6" type="reset"
 								value="Cancel" />
 						</div>
 
@@ -285,16 +285,16 @@ filter: drop-shadow(5px 5px 5px #222);
             <div class="col-1"></div>
 			<div class="col-10">
 			<br>
-				<center><h4 style="color:white" >Messages From Users</h4></center>
-				<table class="table  border-dark table-bordered bg-table" style="background-color:white;">
+				<center><h4 style="color:black" >Messages From Users</h4></center>
+				<table class="table  border-dark table-bordered bg-tableHspListcontact" style="color:black;">
 					<tr>
 						<th style="text-align: center;">No</th>									
-						<th style="text-align: center;">Name</th>
-						<th style="text-align: center;">Email</th>
-						<th style="text-align: center;">Date</th>
+						<th style="text-align: center;"><i class="fas fa-user"></i> Name</th>
+						<th style="text-align: center;"><i class="fas fa-envelope"></i> Email</th>
+						<th style="text-align: center;"><i class="far fa-calendar-alt"></i> Date</th>
 						<!-- <th style="text-align: center;">Mobile</th> -->
-						<th style="text-align: center;">Subject/Topic</th>
-						<th style="text-align: center;">Message</th>
+						<th style="text-align: center;"><i class="far fa-sticky-note"></i> Subject/Topic</th>
+						<th style="text-align: center;"><i class="far fa-comment-alt"></i> Message</th>
 					
 					</tr>	
 

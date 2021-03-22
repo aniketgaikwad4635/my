@@ -5,7 +5,6 @@ public enum AptStatus {
 	BOOKED,
 	CONFIRMED,
 	CANCELLED,
-	COMPLAINT_RAISED,
 	CLOSED
 	
 }
