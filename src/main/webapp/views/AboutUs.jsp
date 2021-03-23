@@ -94,7 +94,7 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="image/groupdoctor.jpg" height="600" width="1400"
+					<img src="image/aboutus/groupdoctor.jpg" height="600" width="1400"
 						 alt="...">
 					<div class="carousel-caption d-none d-md-block" >
 						<h5>Living Healthier Together</h5>
@@ -102,7 +102,7 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="image/clinic.jpg" height="600" width="1400"
+					<img src="image/aboutus/clinic.jpg" height="600" width="1400"
 						 alt="...">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Something to feel good about.</h5>

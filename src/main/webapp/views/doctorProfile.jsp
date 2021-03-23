@@ -30,17 +30,17 @@ if(session.getAttribute("my-doctor")==null){
 
 
 
-<body>
+<body class="bg-image">
 <br>
 	<div class="row">
 		<div class="mx-auto">
 			<center>
-				<h3 style="color:grey">Doctor Profile</h3>
-			<img src="/image/doctorLogo.png"" alt="" width="100" height="100"/></center>
+				<h3 style="color:black">Doctor Profile</h3>
+			<img src="/image/profiles/doctorLogo.png"" alt="" width="100" height="100"/></center>
 			</center>
 
 
-			<table class="table  border-dark " >
+			<table class="table  border-dark table-bordered bg-tableHspListcontact " >
 
 
 

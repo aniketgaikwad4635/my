@@ -27,51 +27,33 @@
 
 	<div class="form-container sign-up-container">
 	
-		<form action="reqforgotPass" method="post">
-		            <c:if test="${ptPassFail==1 }">
-						<div class="alert alert-success" style="color:green"><h6>Please check your email</h6></div>
-					</c:if>
-
-					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning" style="color:orange"><h6>Invalid User</h6></div>
-					</c:if>
-					
-					<c:if test="${ptPassUpdated==1 }">
-						<div class="alert alert-success" style="color:green"><h6>Password updated successfully.</h6></div>
-					</c:if>
-
-					<c:if test="${ptPassUpdated==0 }">
+		<form action="applyforgotPassinput" method="post">
+		
+		<c:if test="${ptPassUpdated==0 }">
 						<div class="alert alert-warning" style="color:orange"><h6>Password not updated.</h6></div>
 					</c:if>
-		
+			
 			<h1>Change password</h1>
 			
-			<span>enter your Username & email here</span>
+			<span>enter Username & new password here</span>
 		<input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" title="only 15 characters & numbers allowed"/>	
-			<input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="enter valid email"/>				
-			<!-- <input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Enter new password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="only 10 characters & numbers allowed"/> -->
+			<!-- <input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="enter valid email"/>	 -->			
+		 <input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Enter new password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="only 10 characters & numbers allowed"/> 
 			
-			<button>Apply</button>
+			<button>Save</button>
 			<a href="/home">Go to home</a>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="AuthPtlogin" method="post">
-		             <c:if test="${ptLogFail==0 }">
+		           <c:if test="${ptLogFail==0 }">
 						<div class="alert alert-warning"> Invalid Login</div>
-					 </c:if>
-					
-					 <c:if test="${ptPassFail==1 }">
-						<div class="alert alert-success" style="color:green"><h6> Please check your email</h6></div>
-					 </c:if>
-
-					<c:if test="${ptPassFail==0 }">
-						<div class="alert alert-warning " style="color:orange"><h6>Invalid User</h6></div>
-					</c:if>
-					<c:if test="${ptPassUpdated==1 }">
-						<div class="alert alert-success" style="color:green"><h6>Password updated successfully.</h6></div>
 					</c:if>
 					
+					<c:if test="${ptPassUpdated==0 }">
+						<div class="alert alert-warning" style="color:orange"><h6>Password not updated.</h6></div>
+					</c:if>
+															
 			<h1>Sign in</h1>			
 			<span>use your account</span>
 			<input type="text" name="ptUsername" placeholder="Username" required="required"/>

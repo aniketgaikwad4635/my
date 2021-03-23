@@ -33,7 +33,7 @@ response.setDateHeader("Expires", -1);
 
 
 
-<body>
+<body class="bg-image">
 
 
   <c:if test="${appointPatientlist==1 }">
@@ -60,8 +60,8 @@ response.setDateHeader("Expires", -1);
 					
 					
 					
-            <center><h4 style="color:grey">Appointment List</h4></center> 
-         <table class="table table-striped border-dark table-bordered" >
+            <center><h4 style="color:black">Appointment List</h4></center> 
+         <table class="table  border-dark table-bordered bg-tableHspListcontact" >
              <tr>
     <th>Sr.No</th>  <th>Patient Name</th>    <th>Status</th> <th>Appointment Date</th>  <th>Close Action</th>  <th>Cancel Action</th>
              </tr>
@@ -84,7 +84,7 @@ response.setDateHeader("Expires", -1);
                    <form action="AptCloseByDr" method="get">
                 <input type="hidden" name="ptid" value="${item.ptId}" readonly />														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />												
-				<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-check"></i> Close</button>							    
+				<button class="btn btn-sm btn-success" type="submit"><i class="fas fa-check"></i> Close</button>							    
 	             </form>                           
                  </td> 
                  	
@@ -92,7 +92,7 @@ response.setDateHeader("Expires", -1);
                <form action="AptCancelByDr" method="get">
                  <input type="hidden" name="ptid" value="${item.ptId}" readonly />														
 				<input type="hidden" name="drid" value="${doctor.drId}" readonly />								
-				<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-times"></i> Cancel</button>							    
+				<button class="btn btn-sm btn-warning" type="submit"><i class="fas fa-times"></i> Cancel</button>							    
 	             </form>              
                </td> 
                                  
@@ -112,8 +112,8 @@ response.setDateHeader("Expires", -1);
       <div class="row" >
          
            <div class=" mx-auto">
-             <center><h4 style="color:grey">All Patient List</h4></center> 
-         <table class="table table-striped border-dark table-bordered" >
+             <center><h4 style="color:black">All Patient List</h4></center> 
+         <table class="table  border-dark table-bordered bg-tableHspListcontact" >
              <tr>
    <th>Sr.No</th>  <th>Patient Name</th>  <th>Age</th> <th>Mobile</th> <th>Status</th> <th>Appointment Date</th> 
              </tr>

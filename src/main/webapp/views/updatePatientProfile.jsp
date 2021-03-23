@@ -32,7 +32,7 @@ if(session.getAttribute("my-patient")==null){
 </script>
 
 
-<body>
+<body class="bg-image">
  <br>
         <br>
 <div class="row">
@@ -57,7 +57,7 @@ if(session.getAttribute("my-patient")==null){
 					<c:if test="${u==2 }">
 
 						<form action="upd-patient" method="get" class=""
-							style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+							style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 
 							<div>
 								<center><h6>
@@ -95,11 +95,11 @@ if(session.getAttribute("my-patient")==null){
 							</div>
 																	
 							<div class="form-row mt-3">
-								<input class="btn btn-outline-success btn-sm col-md-6" type="submit"
+								<input class="btn btn-outline-secondary btn-sm col-md-6" type="submit"
 									value="Save" />
 							
-								<input class="btn btn-outline-success btn-sm col-md-6" type="reset"
-									value="Cancel" />
+								<input class="btn btn-outline-secondary btn-sm col-md-6" type="reset"
+									value="Clear" />
 							</div>
 						</form>
 						

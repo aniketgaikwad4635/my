@@ -32,35 +32,6 @@ if(session.getAttribute("my-admin")==null)
     history.forward();
 </script>
  
- <style>
-
-
-  .contentabc {
-  background: rgb(0, 0, 0);  
-  background: rgba(0, 0, 0, 0.5); 
-  color: white;
-} 
-
-.bg-image {
-  /* The image used */
-  background-image: url("https://wallpapercave.com/wp/wp2219692.jpg");
-  /* Add the blur effect */
-  
- /* background-color: transparent;*/
-   background-size: cover; 
-}
-
-.bg-tableHspListcontact{
- background-color:white;
- filter: drop-shadow(5px 5px 5px #222); 
-  opacity: 1;
-}
-
-.forshadow{
-filter: drop-shadow(5px 5px 5px #222); 
-}
-
-</style>
 
 
 
@@ -138,7 +109,7 @@ filter: drop-shadow(5px 5px 5px #222);
 				<c:if test="${hspReg==2 }">
 					
 						<form action="addHsp" method="get" class="forshadow"
-							style="border: 2px solid green; background:white; padding: 20px; border-radius: 20px">
+							style="border: 2px solid black; background:white; padding: 20px; border-radius: 20px">
 							
                   <center>
                         <h6>Hospital Registration</h6></center>
@@ -179,11 +150,11 @@ filter: drop-shadow(5px 5px 5px #222);
 							</div>
 							
 							  <div class="form-row mt-3">
-							  <input class="btn btn-success btn-sm col-md-6" type="submit"
+							  <input class="btn btn-outline-secondary btn-sm col-md-6" type="submit"
 									value="Register" />
 							 
-								 <input class="btn btn-warning btn-sm col-md-6"
-									type="reset" value="Cancel" />
+								 <input class="btn btn-outline-secondary btn-sm col-md-6"
+									type="reset" value="Clear" />
                                 </div>
 
 							
@@ -223,7 +194,7 @@ filter: drop-shadow(5px 5px 5px #222);
 				<c:if test="${hspprofile==2 }">
 
 					<form action="updateHsp" method="get" class="mx-auto forshadow" 
-					style="border: 2px solid green; background:white;  padding: 20px; border-radius: 20px">
+					style="border: 2px solid black; background:white;  padding: 20px; border-radius: 20px">
 
 						 <center>
                         <h6>Update Hospital Details</h6></center>
@@ -264,11 +235,11 @@ filter: drop-shadow(5px 5px 5px #222);
 								title="only 10 characters & numbers allowed" />
 						</div>
 						<div class="form-row mt-2 ">
-							<input class="btn btn-success btn-sm col-md-6" type="submit"
+							<input class="btn btn-outline-secondary btn-sm col-md-6" type="submit"
 								value="Save" />
 						
-							<input class="btn btn-warning btn-sm col-md-6" type="reset"
-								value="Cancel" />
+							<input class="btn btn-outline-secondary btn-sm col-md-6" type="reset"
+								value="Clear" />
 						</div>
 
 					</form>

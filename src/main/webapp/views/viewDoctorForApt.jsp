@@ -31,7 +31,7 @@ if(session.getAttribute("my-patient")==null){
 </script>
 
 
-<body>
+<body class="bg-image">
 
                   <div class="row">					         
 						<br>
@@ -57,10 +57,10 @@ if(session.getAttribute("my-patient")==null){
 	   
   
     
-       <div ><center><h4 style="color:grey">Doctor List</h4></div></center>
+       <div ><center><h4 style="color:black">Doctor List</h4></div></center>
        <div class="row" >
        <div class="mx-auto">
-        <table class="table table-striped border-dark table-bordered">
+        <table class="table border-dark table-bordered bg-tableHspListcontact">
              <tr>
    <th>Sr.No</th>   <th>Name</th> <th>Speciality</th>  <th>Current Status</th> <!-- <th>Select time</th> --> <th>Select Appointment Date</th><!--  <th>Select Appointment Date</th> --> <th>Book Action</th>
                                  
@@ -108,7 +108,7 @@ if(session.getAttribute("my-patient")==null){
                <c:if test="${item.drStatus==true }">
                 <input type="hidden" name="drid" value="${item.drId}" readonly />	
                 <input type="hidden" name="ptid" value="${patient.ptId}" readonly />								
-				<button class="btn btn-sm btn-light" type="submit">Book Here</button>	
+				<button class="btn btn-sm btn-success" type="submit">Book Here</button>	
 				</c:if>						    
 	            <!--  </form>     -->         
                </td>   

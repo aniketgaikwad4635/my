@@ -30,17 +30,17 @@ if(session.getAttribute("my-patient")==null){
 </script>
 
 
-<body>
+<body class="bg-image">
 
 <!-- display hospital list -->
 					
 		<c:if test="${HSPLIST==1 }">
 		<br>			    					   
       
-       <div ><center><h4 style="color:grey">Hospital List</h4></div></center>
+       <div ><center><h4 style="color:black">Hospital List</h4></div></center>
        <div class="row" >
        <div class="mx-auto">
-        <table class="table table-striped border-dark table-bordered">
+        <table class="table  border-dark table-bordered bg-tableHspListcontact">
              <tr>
    <th>Sr.No</th>    <th>Hospital Name</th> <th>Address</th>  <th> Bed Available</th>  <th> Action</th> 
              </tr>
@@ -53,7 +53,7 @@ if(session.getAttribute("my-patient")==null){
                 <form action="drList" method="get">
                 <input type="hidden" name="hspid" value="${item.hspId}" readonly />     
                   <input type="hidden" name="ptid" value="${patient.ptId}" readonly />																				
-				<button class="btn btn-sm  btn-light" type="submit"><i class="far fa-eye"></i> View doctors</button>							    
+				<button class="btn btn-sm  btn-info" type="submit"><i class="far fa-eye"></i> View doctors</button>							    
 	             </form>              
                </td> 
    

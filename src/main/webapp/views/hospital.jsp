@@ -33,7 +33,7 @@ if(session.getAttribute("my-hospital")==null){
 </script>
 
 
-<body>
+<body class="bg-image">
 
 	<c:if test="${DRLIST==1 }">
         <br>
@@ -41,9 +41,9 @@ if(session.getAttribute("my-hospital")==null){
 
 			<div class="mx-auto">
 				<center>
-					<h3 style="color: grey">Doctor's Profile</h3>
+					<h3 style="color: black">Doctor's Info</h3>
 				</center>
-				<table class="table table-striped border-dark table-bordered">
+				<table class="table  border-dark table-bordered bg-tableHspListcontact" style="color:black">
 
 					<tr>
 						<th>Sr.No</th>
@@ -74,7 +74,7 @@ if(session.getAttribute("my-hospital")==null){
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
-									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-exchange-alt"></i> Change</button>
+									<button class="btn btn-sm btn-info" type="submit"><i class="fas fa-exchange-alt"></i> Change</button>
 								</form>
 							</td>
 
@@ -83,7 +83,7 @@ if(session.getAttribute("my-hospital")==null){
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
-									<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-edit"></i> Edit</button>
+									<button class="btn btn-sm btn-success" type="submit"><i class="fas fa-edit"></i> Edit</button>
 								</form>
 							</td>
 
@@ -92,7 +92,7 @@ if(session.getAttribute("my-hospital")==null){
 									<input type="hidden" name="drId" value="${item.drId}" readonly />
 									<input type="hidden" name="hspId" value="${hospital.hspId}"
 										readonly />
-									<button class="btn btn-sm btn-light" type="submit"><i class="far fa-trash-alt"></i> Delete</button>
+									<button class="btn btn-sm btn-warning" type="submit"><i class="far fa-trash-alt"></i> Delete</button>
 								</form>
 							</td>
 						</tr>
@@ -106,8 +106,10 @@ if(session.getAttribute("my-hospital")==null){
 	<c:if test="${editHspProf==1 }">
 		<br>
 		<div class="row">
-
+             
 			<div class=" mx-auto">
+			
+			<br><br><br>
 				<c:if test="${hspprofile==1 }">
 					<div class="alert alert-success">Bed count Updated Successfully...</div>
 				</c:if>
@@ -118,7 +120,7 @@ if(session.getAttribute("my-hospital")==null){
 
 				<c:if test="${hspprofile==2 }">
 
-					<form action="updateHspBedcount" method="get" class="" style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+					<form action="updateHspBedcount" method="get" class="" style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 
 						<div>
 							<input name="hspId" type="hidden" value="${hospital.hspId}"
@@ -149,13 +151,13 @@ if(session.getAttribute("my-hospital")==null){
 							<tr>
 								<td>
 									<div class="mt-1">
-										<input class="btn btn-success btn-sm btn-block" type="reset"
+										<input class="btn btn-outline-secondary btn-sm btn-block" type="reset"
 											value="Cancel" />
 									</div>
 								</td>
 								
 								<td>
-								<div class="mt-1"><input class="btn btn-success btn-sm btn-block"
+								<div class="mt-1"><input class="btn btn-outline-secondary btn-sm btn-block"
 									type="submit" value="Update" />
 									</div>
 									</td>
@@ -192,7 +194,7 @@ if(session.getAttribute("my-hospital")==null){
 				
                    
 					<form action="updateDr" method="get" class="col-md-12"
-						style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+						style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 
 						<div class="mt-1">
 							<center>
@@ -265,10 +267,10 @@ if(session.getAttribute("my-hospital")==null){
 								title="only 10 characters & numbers allowed" />
 						</div>
 						<div class="form-row mt-2">
-							<input class="btn btn-outline-success btn-sm col-md-6" type="submit"
+							<input class="btn btn-sm btn-outline-secondary col-md-6" type="submit"
 								value="Save" />
 						
-							<input class="btn btn-outline-success btn-sm col-md-6" type="reset"
+							<input class="btn btn-sm btn-outline-secondary col-md-6" type="reset"
 								value="Cancel" />
 						</div>
 
@@ -283,8 +285,9 @@ if(session.getAttribute("my-hospital")==null){
 
 		<div class="row mt-3" style="height:">
 			<!-- <div class="col-3"></div> -->
-
+             
 			<div class="mx-auto ">
+			 <br> <br>
 				<c:if test="${drReg==1 }">
 					<div class="alert alert-success">Doctor Registration Successfully...</div>
 				</c:if>
@@ -295,7 +298,7 @@ if(session.getAttribute("my-hospital")==null){
 
 				<c:if test="${drReg==2 }">
 					<form action="addDr" method="get" class=" mt-0"
-						style="border: 2px solid green; background-color: white; padding: 20px; border-radius: 20px">
+						style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 						<br>
 						<div>
 							<center>
@@ -356,14 +359,15 @@ if(session.getAttribute("my-hospital")==null){
 								readonly />
 						</div>
 
-						<div class="form-row">
-						<div class="form-group  field-wrap col-md-6">
-								<input class="btn btn-outline-success" type="submit" value="Register" />
-							</div>
-							<div class="form-group  field-wrap col-md-6">
-								<input class="btn btn-outline-success" type="reset" value="Cancel" />
-							</div>
-						</div>
+						
+						<div class="form-row mt-3">
+							  <input class="btn btn-outline-secondary btn-sm col-md-6" type="submit"
+									value="Register" />
+							 
+								 <input class="btn btn-outline-secondary btn-sm col-md-6"
+									type="reset" value="Cancel" />
+                                </div>
+						
 
 					</form>
 				</c:if>

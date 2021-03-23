@@ -30,7 +30,7 @@ if(session.getAttribute("my-patient")==null){
 </script>
 
 
-<body>
+<body class="bg-image">
 
 
 
@@ -59,12 +59,12 @@ if(session.getAttribute("my-patient")==null){
 
 		<div>
 			<center>
-				<h4 style="color: grey">Appointment Info</h4>
+				<h4 style="color:black">Appointment Info</h4>
 		</div>
 		</center>
 		<div class="row">
 			<div class="mx-auto">
-				<table class="table table-striped border-dark table-bordered">
+				<table class="table border-dark table-bordered bg-tableHspListcontact">
 					<tr>
 						<th>Sr.No</th>
 						<th>Doctor Name
@@ -108,7 +108,7 @@ if(session.getAttribute("my-patient")==null){
 										<input type="hidden" name="ptid" value="${patient.ptId}" readonly />
 										<input type="hidden" name="drid" value="${item.drId}" readonly />
 										<c:if test="${item.aptStatus=='BOOKED'}" >
-										<button class="btn btn-sm btn-light" type="submit"><i class="far fa-credit-card"></i> Payment</button>
+										<button class="btn btn-sm btn-info" type="submit"><i class="far fa-credit-card"></i> Payment</button>
 										</c:if>
 									</div>
 								</form>
@@ -119,7 +119,7 @@ if(session.getAttribute("my-patient")==null){
 									<input type="hidden" name="ptid" value="${patient.ptId}"
 										readonly />
 									<c:if test="${item.aptStatus=='BOOKED' || item.aptStatus=='CONFIRMED'}" >
-										<button class="btn btn-sm btn-light" type="submit"><i class="fas fa-times"></i> Cancel
+										<button class="btn btn-sm btn-warning" type="submit"><i class="fas fa-times"></i> Cancel
 											Appointment</button>
 									</c:if>
 

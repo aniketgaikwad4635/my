@@ -15,6 +15,7 @@ import com.example.demo.entity.DoctorEntity;
 import com.example.demo.entity.HospitalEntity;
 import com.example.demo.repository.ContactusRepository;
 import com.example.demo.repository.HospitalRepository;
+import com.example.demo.service.DoctorService;
 import com.example.demo.service.HospitalService;
 
 import java.text.SimpleDateFormat;
@@ -26,7 +27,8 @@ public class NavbarAction {
 	@Autowired
 	ContactusRepository contactusRepository;
 	
-	
+	@Autowired 
+	DoctorService doctorService;
 	
 	@Autowired 
 	HospitalService hospitalService;
@@ -34,6 +36,8 @@ public class NavbarAction {
 	@GetMapping("home")
 	public ModelAndView showHome() {
 		ModelAndView mv=new ModelAndView("Home");
+		List<DoctorEntity> drList=doctorService.allDoctor();
+		mv.addObject("drList", drList);
 		return mv;
 	}
 	

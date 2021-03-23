@@ -44,7 +44,7 @@
 				style="height: 165px">
 				<div class="col-md-4 col-2 ">
 					<img style="height: 120px; width: 200px"
-						  src="image/hsp${srno.index+1}.jpg"
+						  src="image/hospitals/hsp${srno.index+1}.jpg"
 						class="img-fluid" alt="...">
 				</div>
 				<!-- src="https://cdn.pixabay.com/photo/2016/04/19/13/22/hospital-1338585_960_720.jpg"  -->

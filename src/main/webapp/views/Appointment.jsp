@@ -35,16 +35,16 @@ if(session.getAttribute("my-patient")==null){
 
 
 
-<body>
+<body class="bg-image">
 
 	<c:if test="${patProf==1}">
 	       <br>
 		<div class="row" >
 			<div class="mx-auto">			      
-             				<center><h4 style="color:grey">User Profile</h4> 
-             				<img src="/image/profileUnknown.png"" alt="" width="100" height="100"/></center>
-					<table class="table  border-dark ">
-					
+             				<center><h4 style="color:black">User Profile</h4> 
+             				<img src="/image/profiles/profileUnknown.png"" alt="" width="100" height="100"/></center>
+					<table class="table  border-dark table-bordered bg-tableHspListcontact ">
+					<br>
 						<tr>
 							<th>User Id:</th>
 							<td>	${patient.ptId}

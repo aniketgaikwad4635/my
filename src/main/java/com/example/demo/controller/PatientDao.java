@@ -138,25 +138,58 @@ public class PatientDao {
 		}
 	}
 	
-	@PostMapping("/forgotPass")
-	public ModelAndView forgotPass(String ptUsername, String ptPassword,String ptGmail) {
+	@PostMapping("/reqforgotPass")
+	public ModelAndView reqforgotPass(String ptUsername,String ptGmail) {
 		PatientEntity patientEntity = patientService.AuthentPatUnameGml(ptUsername,ptGmail);
+		if (patientEntity != null ) {
+			ModelAndView mv = new ModelAndView("login");
+			PatientDao patientDao=new PatientDao();		
+			mv.addObject("ptPassFail", 1);
+			
+			emailSenderService.sendSimpleEmail(ptGmail,
+					"click on this link to update your password   " + "http://localhost:8080/patient/applyforgotPass?UserName="+ patientEntity.getPtUsername() ,
+						"From DoctorHub!!!");
+			
+			return mv;
+		} else {
+			ModelAndView mv = new ModelAndView("login");
+			mv.addObject("ptPassFail", 0);
+			return mv;
+		}	
+	}
+	
+	@GetMapping("/applyforgotPass")
+		public ModelAndView applyforgotPass(String UserName ) {
+		ModelAndView mv = new ModelAndView("loginForgotPass");
+		mv.addObject("UserName"+ UserName);
+		return mv;
+	}
+	
+	
+	@PostMapping("/applyforgotPassinput")
+	public ModelAndView applyforgotPass(String ptUsername, String ptPassword) {
+		PatientEntity patientEntity = patientService.AuthentPatUname(ptUsername);
 		if (patientEntity != null ) {
 			ModelAndView mv = new ModelAndView("login");
 			PatientDao patientDao=new PatientDao();		
 			String encrpPassUser=patientDao.hashPassword(ptPassword);	
 			patientEntity.setPtPassword(encrpPassUser);
 			patientService.create(patientEntity);
-			mv.addObject("ptPassFail", 1);
+			mv.addObject("ptPassUpdated", 1);	
 			return mv;
+			
 		} else {
-			ModelAndView mv = new ModelAndView("login");
-			mv.addObject("ptPassFail", 0);
+			ModelAndView mv = new ModelAndView("loginForgotPass");
+			mv.addObject("ptPassUpdated", 0);
 			return mv;
 		}
 		
 		
 	}
+	
+	
+	
+	
 	
 	@GetMapping("/ptlogout")
     public ModelAndView ptlogout(HttpServletRequest req, HttpServletResponse res) {

@@ -30,13 +30,14 @@ if(session.getAttribute("my-patient")==null){
 </script>
 
 
-<body>
+<body class="bg-image">
 <br>
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
-       
+        <br><br>
         <div class="col-5">
             <div class="card mx-auto">
+           
                                 
             <c:if test="${payment==1 }">
 						<div class="alert alert-success">Payment Successfully Completed. Appointment Confirmed...</div>
