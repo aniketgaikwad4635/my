@@ -49,7 +49,7 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                          <label for="subject" class="">Subject</label>
-                            <input type="text"  name="ctSubject" class="form-control" pattern="[A-Za-z0-9\s]{1,15}" required autocomplete="off" title="subject only contains characters & numbers..">                          
+                            <input type="text"  name="ctSubject" class="form-control" pattern="[A-Za-z0-9\s]{1,50}" required autocomplete="off" title="subject only contains characters & numbers..">                          
                        </div>
                     </div>
                 

@@ -30,7 +30,7 @@ import com.example.demo.service.PatientService;
 
 @Controller
 @RequestMapping("/dr")
-public class DoctorDao {
+public class DoctorController {
 	
 	@Autowired
 	AppointmentService appointmentService;

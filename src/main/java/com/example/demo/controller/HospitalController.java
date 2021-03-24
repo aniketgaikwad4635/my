@@ -28,7 +28,7 @@ import com.example.demo.service.HospitalService;
 
 @Controller
 @RequestMapping("/hospital")
-public class HospitalDao {
+public class HospitalController {
 
 	@Autowired
 	HospitalService hospitalService;

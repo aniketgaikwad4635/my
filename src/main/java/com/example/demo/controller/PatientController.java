@@ -29,7 +29,7 @@ import com.example.demo.service.PatientService;
 
 @Controller
 @RequestMapping("/patient")
-public class PatientDao {
+public class PatientController {
 
 	@Autowired
 	PatientService patientService;
@@ -59,7 +59,7 @@ public class PatientDao {
 			String ptPassword) {
 		try {
 		//encrypt pass using hashPassword() method
-		PatientDao patientDao=new PatientDao();		
+		PatientController patientDao=new PatientController();		
 		String encrpPassUser=patientDao.hashPassword(ptPassword);
 		
 		ModelAndView mv = new ModelAndView("register");
@@ -102,7 +102,7 @@ public class PatientDao {
 		PatientEntity patientEntity = patientService.AuthentPatUname(ptUsername);
 		
 		  if (patientEntity != null) {
-			PatientDao patientDao=new PatientDao();
+			PatientController patientDao=new PatientController();
 			boolean passresult=patientDao.checkPass(ptPassword,patientEntity.getPtPassword() );
 			if(passresult) {
 			   ModelAndView mv = new ModelAndView("Appointment");
@@ -143,7 +143,7 @@ public class PatientDao {
 		PatientEntity patientEntity = patientService.AuthentPatUnameGml(ptUsername,ptGmail);
 		if (patientEntity != null ) {
 			ModelAndView mv = new ModelAndView("login");
-			PatientDao patientDao=new PatientDao();		
+			PatientController patientDao=new PatientController();		
 			mv.addObject("ptPassFail", 1);
 			
 			emailSenderService.sendSimpleEmail(ptGmail,
@@ -171,7 +171,7 @@ public class PatientDao {
 		PatientEntity patientEntity = patientService.AuthentPatUname(ptUsername);
 		if (patientEntity != null ) {
 			ModelAndView mv = new ModelAndView("login");
-			PatientDao patientDao=new PatientDao();		
+			PatientController patientDao=new PatientController();		
 			String encrpPassUser=patientDao.hashPassword(ptPassword);	
 			patientEntity.setPtPassword(encrpPassUser);
 			patientService.create(patientEntity);

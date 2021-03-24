@@ -152,7 +152,7 @@ if(session.getAttribute("my-hospital")==null){
 								<td>
 									<div class="mt-1">
 										<input class="btn btn-outline-secondary btn-sm btn-block" type="reset"
-											value="Cancel" />
+											value="Clear" />
 									</div>
 								</td>
 								
@@ -271,7 +271,7 @@ if(session.getAttribute("my-hospital")==null){
 								value="Save" />
 						
 							<input class="btn btn-sm btn-outline-secondary col-md-6" type="reset"
-								value="Cancel" />
+								value="Clear" />
 						</div>
 
 					</form>
@@ -365,7 +365,7 @@ if(session.getAttribute("my-hospital")==null){
 									value="Register" />
 							 
 								 <input class="btn btn-outline-secondary btn-sm col-md-6"
-									type="reset" value="Cancel" />
+									type="reset" value="Clear" />
                                 </div>
 						
 

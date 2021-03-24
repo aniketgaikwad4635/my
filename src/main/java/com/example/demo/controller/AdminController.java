@@ -29,7 +29,7 @@ import com.example.demo.service.HospitalService;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminDao {
+public class AdminController {
 
 	
 
@@ -187,7 +187,10 @@ public class AdminDao {
 		List<Contactus> contactList=contactusRepository.findAll();
 		mv.addObject("CONTACTLIST", 1);
 		mv.addObject("contactList", contactList);
+		AdminController adminDao=new AdminController(); 
+		mv.addObject("adminDao", adminDao);
 		return mv;
+		
 	}
 
 }
