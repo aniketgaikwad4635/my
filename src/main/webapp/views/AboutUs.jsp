@@ -118,7 +118,7 @@
 	
    
 	<div class="card col-8">
-		<img src="image/DoctorHubLogo.png" alt="logo" height="200px" style="width:100% ">
+		<img src="/image/mainlogo/mainlogo.png" alt="logo" height="200px" style="width:100% ">
 		<h1>Team25</h1>
 		<p class="title">CEO & Founder, Example</p>
 		<p>CDAC,Mumbai</p>
