@@ -37,7 +37,7 @@ if(session.getAttribute("my-patient")==null){
 		<c:if test="${HSPLIST==1 }">
 		<br>			    					   
       
-       <div ><center><h4 style="color:black">Hospital List</h4></div></center>
+       <div ><center><h4 style="color:white">Hospital List</h4></div></center>
        <div class="row" >
        <div class="mx-auto">
         <table class="table  border-dark table-bordered bg-tableHspListcontact">

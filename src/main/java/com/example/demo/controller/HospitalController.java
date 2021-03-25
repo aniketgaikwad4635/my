@@ -117,7 +117,7 @@ public class HospitalController {
 			    return mv;
 			  }
 			
-			@GetMapping("/updateHspBedcount")
+			@PostMapping("/updateHspBedcount")
 			 public ModelAndView updateHspBedcount(String hspId,String hspBNo) {
 				try {
 				      ModelAndView mv=new ModelAndView("hospital");
@@ -149,7 +149,7 @@ public class HospitalController {
 			    return mv;
 			  }
 			
-			@GetMapping("/updateDr")
+			@PostMapping("/updateDr")
 			 public ModelAndView updateDr(String id,String drName,String drSpec,String drEmail,String drMobile,String drUsername,String drPassword,String hspId) {
 				     try {
 				    	 ModelAndView mv=new ModelAndView("hospital");				    
@@ -216,7 +216,7 @@ public class HospitalController {
 			    return mv;
 			  }
 			
-			@GetMapping("/addDr")
+			@PostMapping("/addDr")
 			  public ModelAndView addDr(String drName,String drSpec,String drEmail,String drMobile,String drUsername,String drPassword,String hspId) {
 				try{
 					ModelAndView mv=new ModelAndView("hospital");

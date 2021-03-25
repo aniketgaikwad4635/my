@@ -26,20 +26,20 @@
 .about-section {
 	padding: 50px;
 	text-align: center;
-	background-color: grey;
+	background-color:#0099e6;
 	color: white;
 }
 
 .about-section1 {
 	padding: 20px;
 	text-align: center;
-	background-color: yellowgreen;
+	background-color:grey;
 	color: white;
 }
 
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	max-width: 400px;
+	max-width: 300px;
 	margin: auto;
 	text-align: center;
 	font-family: arial;
@@ -51,35 +51,9 @@
 	font-size: 18px;
 }
 
-
-
-
-
-
-
 </style>
 </head>
 <body>
-
-
-
-	<div class="about-section">
-
-		<h2>Who we are</h2>
-		<h2>
-			<p>At your side, every step of the way.</p>
-		</h2>
-
-
-		<p>
-			DoctorHub is committed to being a leading provider of health care services <br>
-			by delivering high quality outcomes for patients and ensuring long term profitability.
-		</p>
-		<a href="home"><i class="fas fa-hand-point-left"></i></a>
-	</div>
-
-
-	
 
 				<div>
 		
@@ -124,12 +98,27 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
-	
-  <br>
-	<h2 style="text-align: center">Contact Us</h2>
+		
+		<div class="about-section">
 
-	<div class="card">
-		<img src="image/DoctorHubLogo.png" alt="logo" height="330px" style="width: 100% ">
+		<h2>Who we are</h2>
+		<h2>
+			<p>At your side, every step of the way.</p>
+		</h2>
+
+
+		<p>
+			DoctorHub is committed to being a leading provider of health care services <br>
+			by delivering high quality outcomes for patients and ensuring long term profitability.
+		</p>
+		<a href="home"><i class="fas fa-hand-point-left"></i></a>
+	</div>
+	
+  
+	
+   
+	<div class="card col-8">
+		<img src="image/DoctorHubLogo.png" alt="logo" height="200px" style="width:100% ">
 		<h1>Team25</h1>
 		<p class="title">CEO & Founder, Example</p>
 		<p>CDAC,Mumbai</p>
@@ -142,12 +131,13 @@
 			<a button href="/contactus">Contact Us </a>
 		</p>
 	</div>
+	
 
-	<footer class="about-section1">
-		<div class="container">
+	<footer class="about-section1" style="background-color:black">
+		<div class="container  " class="text-center" >
 			<div>
-				Copyright © 2021 CDAC,Mumbai. All rights reserved | Designed by	Team25. 
-				<a href="#" style="color: #FFFFFF;" target="_blank"><u>Design For U</u></a>
+				Copyright © 2021. All rights reserved | Designed by	Team25. 
+				<a href="#" style="color: white;" target="_blank"><u>Design For U</u></a>
 			</div>
 	         </div>
 	</footer>

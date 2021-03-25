@@ -25,20 +25,17 @@ if(session.getAttribute("my-hospital")==null){
 }
 %>
 
-<script>
-    history.forward();
-</script>
 
 <body class="bg-image">
 <br>
 	<div class="row">
 		<div class="mx-auto">
 			<center>
-				<h3 style="color:black">Hospital Info</h3>
-				<img src="/image/profiles/hospitalLogo.jpg"" alt="" width="100" height="100"/></center>
+				<h3 style="color:white">Hospital Info</h3>
+				<img src="/image/newprofilelogo/hospprofileLogo.png"" alt="" width="100" height="100"/></center>
 			</center>
 
-
+             <br>
 			<table class="table  border-dark table-bordered bg-tableHspListcontact">
 				<tr>
 

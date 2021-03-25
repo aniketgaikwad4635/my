@@ -38,6 +38,10 @@ public class NavbarAction {
 		ModelAndView mv=new ModelAndView("Home");
 		List<DoctorEntity> drList=doctorService.allDoctor();
 		mv.addObject("drList", drList);
+		
+		List<HospitalEntity> hospitallist=hospitalService.hspList();    
+		 mv.addObject("hospitallist", hospitallist);
+		 
 		return mv;
 	}
 	
@@ -90,7 +94,7 @@ public class NavbarAction {
 		return mv;
 	}
 	
-	@GetMapping("createcont")
+	@PostMapping("createcont")
 	public ModelAndView createcont(Contactus contactus) {
 		Date now = new Date();
 		String pattern = "yyyy-MM-dd";

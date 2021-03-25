@@ -9,7 +9,7 @@
 
 .bg-image {
   /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=752&q=80");
+  background-image: url("/image/background/background.jpg");
   /* Add the blur effect */
   
  /* background-color: transparent;*/
@@ -43,8 +43,8 @@ filter: drop-shadow(5px 5px 5px #222);
 		    
 
 			<a class="navbar-band ml-5" href="/home"><img
-				style="border-radius: 50%; width: 40px; height: 40px;"
-				src="/image/DoctorHubLogo.png" /> </a>
+				style="border-radius: 50%; width: 45px; height: 45px;"
+				src="/image/mainlogo/mainlogo1.jpg" /> </a>
 								
 				 <form action="showPatientProf" method="get">														
 				 <input type="hidden" name="id" value="${patient.ptId}" readonly />							

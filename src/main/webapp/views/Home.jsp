@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="common-css-js.jsp"%>
 <jsp:include page="common-header.jsp"></jsp:include>
+<link href="<c:url value="/css/home.css" />" rel="stylesheet">
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,216 +11,435 @@
 
 <link rel="icon" href="/image/DoctorHubLogo.png" type="image/png"
 	sizes="16x16">
-	
-	<style>
- .homebg {
-  background-image: url('https://images.unsplash.com/photo-1535068494772-bfbf4f6863b5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fHNwYXJrbGV8ZW58MHwwfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
-  background-size:cover;
-  height:100vh;
- 
-}        
+
+<style>
+.homebg {
+	background-image: url("/image/homebackground/homebackimg.jpg");
+	background-size: cover;
+	height: 100vh;
+}
 
 .about-section {
 	padding: 50px;
 	text-align: center;
-	background-color:grey;
+	background-color: grey;
 	color: white;
 }
 
 .about-section1 {
-	padding:15px;
+	padding: 15px;
 	text-align: center;
-	background-color:yellowgreen;
+	background-color: yellowgreen;
 	color: white;
 }
-
-
- </style>
+</style>
 
 </head>
-<body >
-<div>
+<body class="">
 
-		<div id="carouselExampleCaptions" class="carousel slide"
-			data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleCaptions" data-slide-to="0"
-					class="active"></li>
-				<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+<div class='container1 homebg'>
+		<div class="container_content1">
+			<div class="container_content_inner1">
+				<!-- <div class="title">
+					<h1>Doctor Hub</h1>
+				</div>
+				<div class="par">
+					<p> If we could give every individual the right amount of nourishment and exercise, not too little and not too much, we would have found the safest way to health. </p>
+				</div> -->
+				
 
-			</ol>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80" height="600" width="1400"
-						 alt="...">
-					<div class="carousel-caption d-none d-md-block" >
-						<h5>Living Healthier Together</h5>
-						<p>Together, we are working toward a healthier community</p>
+			</div>
+		</div>
+		<div class="container_outer_img">
+			<div class="img-inner1">
+				<div class="slider-container">
+
+					<div class="slider-content">
+               <c:forEach var="item" items="${drList }" begin="0" end="5"
+					varStatus="srnodr">
+						<div class="slider-single">
+							<img class="slider-single-image"
+								src="image/hospitals/hsp${srnodr.index+1 }.jpg" alt="1" />
+							<h1 class="slider-single-title">
+							Government Hospitals
+						<%-- 	<c:forEach  var="hsp" items="${hospitallist }" begin="0" end="5" varStatus="srnohsp">
+							    <c:if test="${srnodr.index==srnohsp.index}"></c:if>   ${hsp.hspName }
+							                         </c:forEach> --%>
+							       </h1>
+							<a class="slider-single-likes" href="javascript:void(0);"> <i
+								class="fa fa-heart"></i>
+								<p>1,247</p>
+							</a>
+						</div>
+                  </c:forEach>
+						
 					</div>
 				</div>
-				<div class="carousel-item">
-					<img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" height="600" width="1400"
-						 alt="...">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>Something to feel good about.</h5>
-						<p>Not just better healthcare, but a better healthcare experience.</p>
-					</div>
-				</div>			
+			</div>
+		</div>
+	</div>
+
+
+	<div >
+	<br>
+		<center>
+			<h1 style="color: black;">
+				<i class="fas fa-user-md"> DoctorHub </i>
+			</h1>
+		</center>
+
+		<div class="d-flex">
+		
+			<div class="container">
+				<span>Step 1</span> <img alt=""
+					src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-01.png">
+				<span>Make Appointment </span>
+			</div>
+			<div class="container">
+				<span>Step 2</span> <img alt=""
+					src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-02.png">
+				<span>Ready To Go </span>
+			</div>
+			<div class="container">
+				<span>Step 3</span> <img alt=""
+					src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-03.png">
+				<span>Get Consultant </span>
+			</div>
+			<div class="container">
+				<span>Step 4</span> <img alt=""
+					src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-04.png">
+				<span>Get Relief </span>
+			</div>
+		</div>
+
+
 
 	</div>
 
-			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span> <span
-				class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#myCarousel"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right"></span> <span
-				class="sr-only">Next</span>
-			</a>
-		</div>
-
-<div class="background-color:blue">
-	<center>
-<h1  style="color:skyblue;"> <i class="fas fa-user-md"> DoctorHub </i></h1></center>
-
-<div class="d-flex"> 
-<div class="container"><span>Step 1</span>
-<img alt="" src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-01.png">
-<span>Make Appointment
-</span>
-</div>
-<div class="container"><span>Step 2</span>
-<img alt="" src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-02.png">
-<span>Ready To Go
-</span>
-</div>
-<div class="container"><span>Step 3</span>
-<img alt="" src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-03.png">
-<span>Get Consultant
-
-</span>
-</div>
-<div class="container"><span>Step 4</span>
-<img alt="" src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-04.png">
-<span>Get Relief
-
-</span>
-</div>
-</div>
-
-
-
-</div>
-
-
-		
-		
-		
-		
-
-		
-		
-
-	
 	<div class="overlay"></div>
 
 
 	<div style="background: white;">
-	
-	<div style="text-align: center;color:skyblue;">
-	<h2>Our Doctor's</h2>
-	
-<div class="d-flex">
 
-<c:forEach var="item" items="${drList }"  begin="0" end="3" varStatus="srno">
-<div class="card ml-5 mr-2 mb-2" style="width: 18rem;">
-  <img style="height: 250px;" class="card-img-top"  src="image/doctors/doctor${srno.index+1}.jpg" alt="Card image cap">
-  <div class="card-body">
- <h2 class="card-text" style="color: black;">Dr. ${item.drName}</h2>
-    <h3 class="card-text" style="color: black;"> ${item.drSpec} </h3>  </div>
-</div>
+		<div style="text-align: center; color: black;">
+		 <br> <br>
+			<h2>Our Strengths</h2>
 
-</c:forEach>
- 
+			<div class="d-flex">
 
-</div>
-<br>
+				<c:forEach var="item" items="${drList }" begin="0" end="3"
+					varStatus="srno">
+					<div class="card ml-5 mr-2 mb-2" style="width: 18rem;">
+						<img style="height: 250px;" class="card-img-top"
+							src="image/doctors/doctor${srno.index+1}.jpg"
+							alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-text" style="color: black;">Dr.
+								${item.drName}</h5>
+							<h5 class="card-text" style="color: black;">${item.drSpec}</h5>
+						</div>
+					</div>
+
+				</c:forEach>
+
+
+			</div>
+			
+		</div>
+
 	</div>
 
-	</div>
+	<footer class="text-center text-white"
+		style="background-color: black;">
+		<!-- Grid container -->
+		<div class="container p-4 pb-0" style="">
+			<!-- Section: Social media -->
+			<section class="mb-4">
+				<!-- Facebook -->
+				<a class="btn btn-primary btn-floating m-1"
+					style="background-color: #3b5998;" href="#!" role="button"><i
+					class="fab fa-facebook-f"></i></a>
+
+				<!-- Twitter -->
+				<a class="btn btn-primary btn-floating m-1"
+					style="background-color: #55acee;" href="#!" role="button"><i
+					class="fab fa-twitter"></i></a>
+
+				<!-- Google -->
+				<a class="btn btn-primary btn-floating m-1"
+					style="background-color: #dd4b39;" href="#!" role="button"><i
+					class="fab fa-google"></i></a>
+
+				<!-- Instagram -->
+				<a class="btn btn-primary btn-floating m-1"
+					style="background-color: #ac2bac;" href="#!" role="button"><i
+					class="fab fa-instagram"></i></a>
+
+				<!-- Linkedin -->
+				<a class="btn btn-primary btn-floating m-1"
+					style="background-color: #0082ca;" href="#!" role="button"><i
+					class="fab fa-linkedin-in"></i></a>
+				<!-- Github -->
+				<a class="btn btn-primary btn-floating m-1"
+					style="background-color: #333333;" href="#!" role="button"><i
+					class="fab fa-github"></i></a>
+			</section>
+			<!-- Section: Social media -->
+		</div>
+		<!-- Grid container -->
+
+		<!-- Copyright -->
+		<div class="text-center" >
+			Copyright © 2021. All rights reserved | Designed by	Team25. <a href="#">DoctorHub.com</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
 	
-<footer class="bg-light text-center text-white" style="background-color: black;">
-  <!-- Grid container -->
-  <div class="container p-4 pb-0" style="">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #3b5998;"
-        href="#!"
-        role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <!-- Twitter -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #55acee;"
-        href="#!"
-        role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #dd4b39;"
-        href="#!"
-        role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #ac2bac;"
-        href="#!"
-        role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #0082ca;"
-        href="#!"
-        role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-      <!-- Github -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #333333;"
-        href="#!"
-        role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </section>
-    <!-- Section: Social media -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: grey;">
-    © 2020 Copyright:
-    <a class="text-white" href="#">DoctorHub.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
 	
+	
+	
+	
+	<script type="text/javascript">
+
+	const repeat = false;
+	const noArrows = false;
+	const noBullets = false;
+
+
+	const container = document.querySelector('.slider-container');
+	var slide = document.querySelectorAll('.slider-single');
+	var slideTotal = slide.length - 1;
+	var slideCurrent = -1;
+
+	function initBullets() {
+	    if (noBullets) {
+	        return;
+	    }
+	    const bulletContainer = document.createElement('div');
+	    bulletContainer.classList.add('bullet-container')
+	    slide.forEach((elem, i) => {
+	        const bullet = document.createElement('div');
+	        bullet.classList.add('bullet')
+	        bullet.id = `bullet-index-${i}`
+	        bullet.addEventListener('click', () => {
+	            goToIndexSlide(i);
+	        })
+	        bulletContainer.appendChild(bullet);
+	        elem.classList.add('proactivede');
+	    })
+	    container.appendChild(bulletContainer);
+	}
+
+	function initArrows() {
+	    if (noArrows) {
+	        return;
+	    }
+	    const leftArrow = document.createElement('a')
+	    const iLeft = document.createElement('i');
+	    iLeft.classList.add('fa')
+	    iLeft.classList.add('fa-arrow-left')
+	    leftArrow.classList.add('slider-left')
+	    leftArrow.appendChild(iLeft)
+	    leftArrow.addEventListener('click', () => {
+	        slideLeft();
+	    })
+	    const rightArrow = document.createElement('a')
+	    const iRight = document.createElement('i');
+	    iRight.classList.add('fa')
+	    iRight.classList.add('fa-arrow-right')
+	    rightArrow.classList.add('slider-right')
+	    rightArrow.appendChild(iRight)
+	    rightArrow.addEventListener('click', () => {
+	        slideRight();
+	    })
+	    container.appendChild(leftArrow);
+	    container.appendChild(rightArrow);
+	}
+
+	function slideInitial() {
+	    initBullets();
+	    initArrows();
+	    setTimeout(function () {
+	        slideRight();
+	    }, 500);
+	}
+
+	function updateBullet() {
+	    if (!noBullets) {
+	        document.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((elem, i) => {
+	            elem.classList.remove('active');
+	            if (i === slideCurrent) {
+	                elem.classList.add('active');
+	            }
+	        })
+	    }
+	    checkRepeat();
+	}
+
+	function checkRepeat() {
+	    if (!repeat) {
+	        if (slideCurrent === slide.length - 1) {
+	            slide[0].classList.add('not-visible');
+	            slide[slide.length - 1].classList.remove('not-visible');
+	            if (!noArrows) {
+	                document.querySelector('.slider-right').classList.add('not-visible')
+	                document.querySelector('.slider-left').classList.remove('not-visible')
+	            }
+	        }
+	        else if (slideCurrent === 0) {
+	            slide[slide.length - 1].classList.add('not-visible');
+	            slide[0].classList.remove('not-visible');
+	            if (!noArrows) {
+	                document.querySelector('.slider-left').classList.add('not-visible')
+	                document.querySelector('.slider-right').classList.remove('not-visible')
+	            }
+	        } else {
+	            slide[slide.length - 1].classList.remove('not-visible');
+	            slide[0].classList.remove('not-visible');
+	            if (!noArrows) {
+	                document.querySelector('.slider-left').classList.remove('not-visible')
+	                document.querySelector('.slider-right').classList.remove('not-visible')
+	            }
+	        }
+	    }
+	}
+
+	function slideRight() {
+	    if (slideCurrent < slideTotal) {
+	        slideCurrent++;
+	    } else {
+	        slideCurrent = 0;
+	    }
+
+	    if (slideCurrent > 0) {
+	        var preactiveSlide = slide[slideCurrent - 1];
+	    } else {
+	        var preactiveSlide = slide[slideTotal];
+	    }
+	    var activeSlide = slide[slideCurrent];
+	    if (slideCurrent < slideTotal) {
+	        var proactiveSlide = slide[slideCurrent + 1];
+	    } else {
+	        var proactiveSlide = slide[0];
+
+	    }
+
+	    slide.forEach((elem) => {
+	        var thisSlide = elem;
+	        if (thisSlide.classList.contains('preactivede')) {
+	            thisSlide.classList.remove('preactivede');
+	            thisSlide.classList.remove('preactive');
+	            thisSlide.classList.remove('active');
+	            thisSlide.classList.remove('proactive');
+	            thisSlide.classList.add('proactivede');
+	        }
+	        if (thisSlide.classList.contains('preactive')) {
+	            thisSlide.classList.remove('preactive');
+	            thisSlide.classList.remove('active');
+	            thisSlide.classList.remove('proactive');
+	            thisSlide.classList.remove('proactivede');
+	            thisSlide.classList.add('preactivede');
+	        }
+	    });
+	    preactiveSlide.classList.remove('preactivede');
+	    preactiveSlide.classList.remove('active');
+	    preactiveSlide.classList.remove('proactive');
+	    preactiveSlide.classList.remove('proactivede');
+	    preactiveSlide.classList.add('preactive');
+
+	    activeSlide.classList.remove('preactivede');
+	    activeSlide.classList.remove('preactive');
+	    activeSlide.classList.remove('proactive');
+	    activeSlide.classList.remove('proactivede');
+	    activeSlide.classList.add('active');
+
+	    proactiveSlide.classList.remove('preactivede');
+	    proactiveSlide.classList.remove('preactive');
+	    proactiveSlide.classList.remove('active');
+	    proactiveSlide.classList.remove('proactivede');
+	    proactiveSlide.classList.add('proactive');
+
+	    updateBullet();
+	}
+
+	function slideLeft() {
+	    if (slideCurrent > 0) {
+	        slideCurrent--;
+	    } else {
+	        slideCurrent = slideTotal;
+	    }
+
+	    if (slideCurrent < slideTotal) {
+	        var proactiveSlide = slide[slideCurrent + 1];
+	    } else {
+	        var proactiveSlide = slide[0];
+	    }
+	    var activeSlide = slide[slideCurrent];
+	    if (slideCurrent > 0) {
+	        var preactiveSlide = slide[slideCurrent - 1];
+	    } else {
+	        var preactiveSlide = slide[slideTotal];
+	    }
+	    slide.forEach((elem) => {
+	        var thisSlide = elem;
+	        if (thisSlide.classList.contains('proactive')) {
+	            thisSlide.classList.remove('preactivede');
+	            thisSlide.classList.remove('preactive');
+	            thisSlide.classList.remove('active');
+	            thisSlide.classList.remove('proactive');
+	            thisSlide.classList.add('proactivede');
+	        }
+	        if (thisSlide.classList.contains('proactivede')) {
+	            thisSlide.classList.remove('preactive');
+	            thisSlide.classList.remove('active');
+	            thisSlide.classList.remove('proactive');
+	            thisSlide.classList.remove('proactivede');
+	            thisSlide.classList.add('preactivede');
+	        }
+	    });
+
+	    preactiveSlide.classList.remove('preactivede');
+	    preactiveSlide.classList.remove('active');
+	    preactiveSlide.classList.remove('proactive');
+	    preactiveSlide.classList.remove('proactivede');
+	    preactiveSlide.classList.add('preactive');
+
+	    activeSlide.classList.remove('preactivede');
+	    activeSlide.classList.remove('preactive');
+	    activeSlide.classList.remove('proactive');
+	    activeSlide.classList.remove('proactivede');
+	    activeSlide.classList.add('active');
+
+	    proactiveSlide.classList.remove('preactivede');
+	    proactiveSlide.classList.remove('preactive');
+	    proactiveSlide.classList.remove('active');
+	    proactiveSlide.classList.remove('proactivede');
+	    proactiveSlide.classList.add('proactive');
+
+	    updateBullet();
+	}
+
+	function goToIndexSlide(index) {
+	    const sliding = (slideCurrent > index) ? () => slideRight() : () => slideLeft();
+	    while (slideCurrent !== index) {
+	        sliding();
+	    }
+	}
+
+	slideInitial();
+	
+	const root = document.documentElement;
+	const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+	const marqueeContent = document.querySelector("ul.marquee-content");
+
+	root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+
+	for(let i=0; i<marqueeElementsDisplayed; i++) {
+	  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+	}
+	</script>
+	
+	
+
 </body>
 </html>

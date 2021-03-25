@@ -2,15 +2,15 @@
 
 <body>
 
-	<div class="row" style="height: 70px;  background-color:#D3D3D3" >
+	<div class="row " style="height: 70px; background-color:#D3D3D3 "  >
 	  <div class="col-2"></div>
 		<div
 			class="col-10 d-none d-flex  align-items-center justify-content-end" style="font-family:  sans-serif;">
 	
 		
 		<a class="navbar-band ml-5" href="/home"><img
-					style="border-radius: 50%; width: 40px; height: 40px;"
-					src="/image/DoctorHubLogo.png" /> </a>
+					style="border-radius: 50%; width: 45px; height: 45px;"
+					src="/image/mainlogo/mainlogo1.jpg" /> </a>
 		
 		 <!--    <a class="btn btn-sm btn-secondary mr-3" href="/home" role="button"> Home </a>  -->
 		    <a class="btn btn-sm btn-white ml-4" href="/hospitalList" role="button"><i class="fas fa-search"></i> Inquiry </a> 
@@ -20,10 +20,10 @@
                  <i class="fas fa-sign-in-alt"></i> LOGIN
                  </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/admin/login">Admin</a> 
-                  <a class="dropdown-item" href="/hospital/login">Hospital</a>  
-                  <a class="dropdown-item" href="/dr/login">Doctor</a>
-                  <a class="dropdown-item" href="/patient/login">Patient</a>  
+                  <a class="dropdown-item" href="/admin/login"><i class="fas fa-user-shield"></i>  Admin</a> 
+                  <a class="dropdown-item" href="/hospital/login"><i class="fas fa-hospital"></i>  Hospital</a>  
+                  <a class="dropdown-item" href="/dr/login"><i class="fas fa-user-md"></i>  Doctor</a>
+                  <a class="dropdown-item" href="/patient/login"><i class="fas fa-user-injured"></i>  Patient</a>  
                   
                </div>
             </div> 

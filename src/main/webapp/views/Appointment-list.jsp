@@ -60,7 +60,7 @@ response.setDateHeader("Expires", -1);
 					
 					
 					
-            <center><h4 style="color:black">Appointment List</h4></center> 
+            <center><h4 style="color:white">Appointment List</h4></center> 
          <table class="table  border-dark table-bordered bg-tableHspListcontact" >
              <tr>
     <th>Sr.No</th>  <th>Patient Name</th>    <th>Status</th> <th>Appointment Date</th>  <th>Close Action</th>  <th>Cancel Action</th>
@@ -112,7 +112,7 @@ response.setDateHeader("Expires", -1);
       <div class="row" >
          
            <div class=" mx-auto">
-             <center><h4 style="color:black">All Patient List</h4></center> 
+             <center><h4 style="color:white">All Patient List</h4></center> 
          <table class="table  border-dark table-bordered bg-tableHspListcontact" >
              <tr>
    <th>Sr.No</th>  <th>Patient Name</th>  <th>Age</th> <th>Mobile</th> <th>Status</th> <th>Appointment Date</th> 

@@ -11,8 +11,40 @@
 
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-<body>
-<div class="container bg-light">
+
+
+
+ <style>
+  .contentabc {
+  background: rgb(0, 0, 0);  
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+} 
+
+.bg-image {
+  /* The image used */
+  background-image: url("");
+  /* Add the blur effect */
+  
+ /* background-color: transparent;*/
+   background-size: cover; 
+}
+
+.bg-tableHspListcontact{
+ background-color:white;
+ filter: drop-shadow(5px 5px 5px #222); 
+  opacity: 1;
+}
+
+.forshadow{
+filter: drop-shadow(5px 5px 5px #222); 
+}
+
+</style>
+
+
+<body class="bg-image">
+<div class="container  bg-light">
 <!--Section: Contact v.2-->
 <section class="mb-4">
 
@@ -25,7 +57,7 @@
     <div class="row ">
 
         <div class="col-md-9 mb-md-0 mb-5">
-            <form  action="createcont" method="get">
+            <form  action="createcont" method="post">
  
                 <div class="row">
                     <div class="col-md-6">

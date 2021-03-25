@@ -28,9 +28,7 @@ if(session.getAttribute("my-admin")==null)
 	return;
 }
 %> 
-<script>
-    history.forward();
-</script>
+
  
 
 
@@ -108,7 +106,7 @@ if(session.getAttribute("my-admin")==null)
 				</c:if>
 				<c:if test="${hspReg==2 }">
 					
-						<form action="addHsp" method="get" class="forshadow"
+						<form action="addHsp" method="post" class="forshadow"
 							style="border: 2px solid black; background:white; padding: 20px; border-radius: 20px">
 							
                   <center>
@@ -125,8 +123,8 @@ if(session.getAttribute("my-admin")==null)
 							<div class="form-group">
 								Hospital Address<input name="hspAdd"
 									class="form-control form-control-sm" type="text"
-									placeholder="Enter Address Here..." pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"
-									required autocomplete="off" title="only characters are allowed" />
+									placeholder="Enter Address Here..."   pattern="^[A-Za-z0-9\s]{1,30}"
+									required autocomplete="off" title="only contains characters & numbers.." />
 							</div>
 							<div class="from-group ">
 								<input name="hspBNo" class="form-control form-control-sm"
@@ -193,7 +191,7 @@ if(session.getAttribute("my-admin")==null)
 
 				<c:if test="${hspprofile==2 }">
 
-					<form action="updateHsp" method="get" class="mx-auto forshadow" 
+					<form action="updateHsp" method="post" class="mx-auto forshadow" 
 					style="border: 2px solid black; background:white;  padding: 20px; border-radius: 20px">
 
 						 <center>
@@ -212,8 +210,8 @@ if(session.getAttribute("my-admin")==null)
 						<div class="form-group">
 							Hospital Address<input name="hspAdd"
 								class="form-control form-control-sm" type="text"
-								value="${hspOldInfo.hspAdd }" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"
-								required autocomplete="off" title="only characters are allowed" />
+								value="${hspOldInfo.hspAdd }" pattern="^[A-Za-z0-9\s]{1,30}"
+								required autocomplete="off" title="only contains characters & numbers.." />
 						</div>
 						<div class="form-group">
 							<input name="hspBNo" class="form-control form-control-sm"
@@ -256,13 +254,13 @@ if(session.getAttribute("my-admin")==null)
             <div class="col-1"></div>
 			<div class="col-10">
 			<br>
-				<center><h4 style="color:black" >Messages From Users</h4></center>
+				<center><h4 style="color:black"  >Messages From Users</h4></center>
 				<table class="table  border-dark table-bordered bg-tableHspListcontact" style="color:black;">
 					<tr>
 						<th style="text-align: center;">No</th>									
 						<th style="text-align: center;"><i class="fas fa-user"></i> Name</th>
 						<th style="text-align: center;"><i class="fas fa-envelope"></i> Email</th>
-						<th style="text-align: center;"><i class="far fa-calendar-alt"></i> Date</th>
+						<th style="text-align: center;"> Date </th>
 						<!-- <th style="text-align: center;">Mobile</th> -->
 						<th style="text-align: center;"><i class="far fa-sticky-note"></i> Subject/Topic</th>
 						<th style="text-align: center;"><i class="far fa-comment-alt"></i> Message</th>

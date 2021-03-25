@@ -55,8 +55,9 @@ if(session.getAttribute("my-patient")==null){
 					</c:if>
 					
 					<c:if test="${u==2 }">
+					    <br>
 
-						<form action="upd-patient" method="get" class=""
+						<form action="upd-patient" method="post" class=""
 							style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 
 							<div>

@@ -36,6 +36,7 @@ if(session.getAttribute("my-patient")==null){
     <div class="row d-flex justify-content-center">
         <br><br>
         <div class="col-5">
+        <br> <br> <br> <br>
             <div class="card mx-auto">
            
                                 
@@ -52,6 +53,7 @@ if(session.getAttribute("my-patient")==null){
 	     	</c:if>					
             
             <c:if test="${payOnce==5 }">
+                   
                 <center> <h4 class="heading">PAYMENT DETAILS</h4> </center>
                 <form class="pl-3" action="patientpay" method="post">
                     <div class="form-group mb-0">

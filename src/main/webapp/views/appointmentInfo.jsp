@@ -35,10 +35,10 @@ if(session.getAttribute("my-patient")==null){
 
 
 	<div class="row">
-		<br>
+		
 		<div class="mx-auto">
 
-
+              <br><br>
 			<c:if test="${c==1}">
 				<div class="alert alert-warning mt-2">Appointment cancelled</div>
 			</c:if>
@@ -59,7 +59,7 @@ if(session.getAttribute("my-patient")==null){
 
 		<div>
 			<center>
-				<h4 style="color:black">Appointment Info</h4>
+				<h4 style="color:white">Appointment Info</h4>
 		</div>
 		</center>
 		<div class="row">

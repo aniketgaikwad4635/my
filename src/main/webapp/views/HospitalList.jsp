@@ -12,10 +12,10 @@
 <link href="css/HospitalList.css" rel="stylesheet" type="text/css">
 
 </head>
-<body style="background-color: white" >
+<body  class="bg-dark" >
 <br>
 <center>
-<form th:action="@{/}">
+<form th:action="@{/}" style="color:white">
     Filter: <input type="text" name="keyword" id="keyword" size="50" value="${keyword}" required />
     &nbsp;
     <input type="submit" value="Search" />
@@ -25,7 +25,7 @@
  </center>
  
  <c:if test="${noresult==0}">
-      <div class="container">
+      <div class="container" style="color:white">
            <center> No result Found</center>
       </div>
  </c:if>
@@ -35,7 +35,7 @@
    <c:forEach var="hospital" items="${hospitallist}"  begin="0"    end="100" varStatus="srno">
    
         <c:if test="${srno.index==0}">
-         <div><h4><center>Hospitals</center></h4></div>
+         <div style="color:white"><h4><center>Hospitals</center></h4></div>
         </c:if>
 	          
 	  <div class="container-fluid">

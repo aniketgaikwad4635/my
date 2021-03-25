@@ -14,7 +14,7 @@
 
 .bg-image {
   /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=752&q=80");
+  background-image: url("/image/background/background1.jpg");
   /* Add the blur effect */
   
  /* background-color: transparent;*/
@@ -36,17 +36,17 @@ filter: drop-shadow(5px 5px 5px #222);
 
 <body>
 
-	<div class="row" style="height: 70px; background-color:#D3D3D3 ">
+	<div class="row " style="height: 70px; background-color:#D3D3D3 ">
 		<div class="col-3 d-flex justify-content-center align-items-center">
                <div class=""><h5><i class="fas fa-wreath"></i> Welcome Admin <i class="fas fa-wreath"></i></h5></div>
 		</div>
 		<div class="col-9 d-flex justify-content-end align-items-center">
 	            
 					<a class="navbar-band ml-5" href="/home"><img
-					style="border-radius: 50%; width: 40px; height: 40px;"
-					src="/image/DoctorHubLogo.png" /> </a>									
+					style="border-radius: 50%; width: 45px; height: 45px;"
+					src="/image/mainlogo/mainlogo1.jpg" /> </a>									
 					
-				 <a class="btn btn-sm btn-white ml-3 mr-3"  href="/admin/addHspOpt" role="button"><i class="far fa-plus-square"></i> Register Hospital</a>
+				 <a class="btn btn-sm btn-white ml-4 mr-3"  href="/admin/addHspOpt" role="button"><i class="far fa-plus-square"></i> Register Hospital</a>
 				
 				 <a class="btn btn-sm btn-white mr-3" href="/admin/hspList" role="button"><i class="fas fa-hospital"></i> Hospitals</a>
 				 

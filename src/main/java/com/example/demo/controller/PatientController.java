@@ -226,7 +226,7 @@ public class PatientController {
 		}
 	}
 
-	@GetMapping("/upd-patient")
+	@PostMapping("/upd-patient")
 	public ModelAndView patientupdated(String id, String ptName, String age, String ptGmail, String ptMobile,String ptUsername) {
 		try {
 		    PatientEntity patientEntity = patientService.patientupdated(id, ptName, age, ptGmail, ptMobile,ptUsername);

@@ -34,9 +34,9 @@ if(session.getAttribute("my-patient")==null){
 <body class="bg-image">
 
                   <div class="row">					         
-						<br>
-						<div class="mx-auto">
 						
+						<div class="mx-auto">
+						<br> <br>
 						<c:if test="${b==1}">
 						<div class="alert alert-success mt-2">Appointment booked successfully...<br>
 						                                 <small> Please make a payment to confirm your appointment.</small>                                  </div>
@@ -57,7 +57,7 @@ if(session.getAttribute("my-patient")==null){
 	   
   
     
-       <div ><center><h4 style="color:black">Doctor List</h4></div></center>
+       <div ><center><h4 style="color:white">Doctor List</h4></div></center>
        <div class="row" >
        <div class="mx-auto">
         <table class="table border-dark table-bordered bg-tableHspListcontact">

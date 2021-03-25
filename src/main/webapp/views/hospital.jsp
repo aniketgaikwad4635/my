@@ -28,9 +28,7 @@ if(session.getAttribute("my-hospital")==null){
 	return;
 }
 %> 
-<script>
-    history.forward();
-</script>
+
 
 
 <body class="bg-image">
@@ -41,7 +39,7 @@ if(session.getAttribute("my-hospital")==null){
 
 			<div class="mx-auto">
 				<center>
-					<h3 style="color: black">Doctor's Info</h3>
+					<h3 style="color: white">Doctor's Info</h3>
 				</center>
 				<table class="table  border-dark table-bordered bg-tableHspListcontact" style="color:black">
 
@@ -120,7 +118,7 @@ if(session.getAttribute("my-hospital")==null){
 
 				<c:if test="${hspprofile==2 }">
 
-					<form action="updateHspBedcount" method="get" class="" style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
+					<form action="updateHspBedcount" method="post" class="" style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 
 						<div>
 							<input name="hspId" type="hidden" value="${hospital.hspId}"
@@ -174,17 +172,14 @@ if(session.getAttribute("my-hospital")==null){
 
 	<c:if test="${editDrProf==1 }">
 		
-		<div class="row">
-           <div class="col-4"></div>
-			<div class="col-4">
-                 
-				<c:if test="${drprofile==1 }">
-				<br>
+		<div class="row mt-3" style="height:">
+           <div class="mx-auto ">
+                 <br> <br>
+				<c:if test="${drprofile==1 }">				
 					<div class="alert alert-success">Doctor Profile Updated Successfully...</div>
 				</c:if>
 
-				<c:if test="${drprofile==0 }">
-				     <br> 
+				<c:if test="${drprofile==0 }">				    
 					<div class="alert alert-warning">Doctor Profile Updatation Failed...<br>
 					               <small>username/password already used. Try with different credentials.</small></div>
 				</c:if>
@@ -193,7 +188,7 @@ if(session.getAttribute("my-hospital")==null){
 				<c:if test="${drprofile==2 }">
 				
                    
-					<form action="updateDr" method="get" class="col-md-12"
+					<form action="updateDr" method="post" class=" mt-0"
 						style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 
 						<div class="mt-1">
@@ -224,55 +219,65 @@ if(session.getAttribute("my-hospital")==null){
 							</div>
 					</div> --%>
 
-
-						<div class="form-group">
-							Doctor Name <input name="drName"
+                          <div class="form-row">
+							<div class="form-group  field-wrap col-md-12">
+								<label for="inputname">Doctor Name</label> <input name="drName"
 								class="form-control form-control-sm" type="text"
 								value="${drOldInfo.drName}" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"  required
 								autocomplete="off" title="only characters are allowed" />
+							</div>
 						</div>
-
-
-						<div class="form-group">
-							Speciality <input name="drSpec"
+						
+                       <div class="form-row">
+							<div class="form-group field-wrap col-md-12">
+								<label for="inputspec">Speciality</label> <input name="drSpec"
 								class="form-control form-control-sm" type="text"
 								value="${drOldInfo.drSpec}" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$" required
 								autocomplete="off" title="only characters are allowed" />
+							</div>
 						</div>
-
-						<div class="form-group">
-							Email <input name="drEmail" class="form-control form-control-sm"
+						
+						<div class="form-row">
+							<div class="form-group field-wrap col-md-6">
+								<label for="inputemail">Email</label> <input name="drEmail" class="form-control form-control-sm"
 								type="email" value="${drOldInfo.drEmail}"
 								pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required
 								autocomplete="off" title="enter valid email" />
-						</div>
-						<div class="form-group">
-							Mobile <input name="drMobile"
+							</div>
+					        <div class="form-group  field-wrap col-md-6">
+								<label for="inputmob">Mobile</label> <input name="drMobile"
 								class="form-control form-control-sm" type="text"
 								value="${drOldInfo.drMobile}" Pattern= "[789][0-9]{9}" required
 								autocomplete="off" title="enter valid mobile no" />
+							</div>
 						</div>
-						<div class="form-group">
-							Username <input name="drUsername"
+						
+						
+						<div class="form-row">
+							<div class="form-group  field-wrap col-md-6">
+								<label for="inputUsername">Username</label> <input name="drUsername"
 								class="form-control form-control-sm" type="text"
 								value="${drOldInfo.drUsername}" pattern="[A-Za-z0-9]{1,15}"
 								required autocomplete="off"
 								title="only 15 characters & numbers allowed" />
-						</div>
-						<div class="form-group">
-							Password<input name="drPassword"
+							</div>
+							<div class="form-group  field-wrap col-md-6">
+								<label for="inputPassword">Password</label> <input name="drPassword"
 								class="form-control form-control-sm" type="password"
 								value="${drOldInfo.drPassword}" pattern="[A-Za-z0-9]{1,10}"
 								required autocomplete="off"
 								title="only 10 characters & numbers allowed" />
-						</div>
-						<div class="form-row mt-2">
-							<input class="btn btn-sm btn-outline-secondary col-md-6" type="submit"
-								value="Save" />
+						    </div>
+					    </div>
 						
-							<input class="btn btn-sm btn-outline-secondary col-md-6" type="reset"
-								value="Clear" />
-						</div>
+							
+							<div class="form-row mt-3">
+							  <input class="btn btn-outline-secondary btn-sm col-md-6" type="submit"
+									value="Save" />
+							 
+								 <input class="btn btn-outline-secondary btn-sm col-md-6"
+									type="reset" value="Clear" />
+                                </div>																				
 
 					</form>
 					
@@ -297,7 +302,7 @@ if(session.getAttribute("my-hospital")==null){
 				</c:if>
 
 				<c:if test="${drReg==2 }">
-					<form action="addDr" method="get" class=" mt-0"
+					<form action="addDr" method="post" class=" mt-0"
 						style="border: 2px solid black; background-color: white; padding: 20px; border-radius: 20px">
 						<br>
 						<div>
@@ -360,7 +365,7 @@ if(session.getAttribute("my-hospital")==null){
 						</div>
 
 						
-						<div class="form-row mt-3">
+						      <div class="form-row mt-3">
 							  <input class="btn btn-outline-secondary btn-sm col-md-6" type="submit"
 									value="Register" />
 							 

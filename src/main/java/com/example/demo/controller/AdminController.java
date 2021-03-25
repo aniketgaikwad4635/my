@@ -101,7 +101,7 @@ public class AdminController {
 		return mv;	
 	}
 
-	@GetMapping("/addHsp")
+	@PostMapping("/addHsp")
 	public ModelAndView addHsp(String hspName, String hspAdd, String hspUsername, String hspPassword) {
 		try {
 		ModelAndView mv = new ModelAndView("Admin");
@@ -162,7 +162,7 @@ public class AdminController {
 		return mv;		
 	}
 
-	@GetMapping("/updateHsp")
+	@PostMapping("/updateHsp")
 	public ModelAndView updateHsp(String id, String hspName, String hspAdd, String hspUsername, String hspPassword) {
 		try {
 		ModelAndView mv = new ModelAndView("Admin");
