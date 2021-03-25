@@ -37,7 +37,7 @@
 </head>
 <body class="">
 
-<div class='container1 homebg'>
+      <div class='container1 homebg' style="height:600px">
 		<div class="container_content1">
 			<div class="container_content_inner1">
 				<!-- <div class="title">
@@ -119,7 +119,7 @@
 	<div class="overlay"></div>
 
 
-	<div style="background: white;">
+	<div >
 
 		<div style="text-align: center; color: black;">
 		 <br> <br>
@@ -146,8 +146,42 @@
 			</div>
 			
 		</div>
-
+		
+	
 	</div>
+	<br>
+	<div class="container">
+	  <div class=" row" style="height:350px">
+		    <div class="col-6">
+		           
+		            <img src="image/home/missiondoctor.jpg" alt="doctor" width=100% height="350">
+		            
+		    </div>
+		     <div class="col-6 d-flex flex-column justify-content-center align-items-center ">
+		           <center><h2>Our Mission</h2></center>
+		          
+		            At doctorhub, To provide comprehensive health care service, to all section of society by a providing such type of information so user/patient can able to take decision about the problem he is going to face, be the medium to connect patient  with hospital and doctor easily.
+		    </div>
+		 
+		
+		
+		</div>
+	   <div class=" row" style="height:350px">
+		    
+		    <div class="col-6 d-flex flex-column justify-content-center align-items-center ">
+		           <center><h2>Our Approach</h2></center>
+		          
+		             At doctorhub, our approach is to improve the health of those we serve with a commitment to excellence in all that we do. Our goal is to offer quality care and services that set community standards, exceed patients' expectations and are provided in a caring, convenient, cost-effective and accessible manner.
+		    </div>
+		 <div class="col-6">
+		           
+		            <img src="image/home/approachdoctor.jpg" alt="doctor" width=100%  height="350">
+		            
+		    </div>		
+		
+		</div>
+	</div>
+	<br>
 
 	<footer class="text-center text-white"
 		style="background-color: black;">

@@ -83,18 +83,15 @@ if(session.getAttribute("my-patient")==null){
                
                <td>
                 <script type="text/javascript">
-   var today = new Date().toISOString().split('T')[0];
-   document.getElementsByName("appdate")[0].setAttribute('min', today);
-
-   </script>
-             <div class="form-group"> 
-    <div class="input-group"> 
-    
-     <input type="date"  required="Required" class="form-control" name="appdate" placeholder="Select suitable date" />
-    </div>
-   
-    
-</div>
+                      var today = new Date().toISOString().split('T')[0];
+                      document.getElementsByName("appdate")[0].setAttribute('min', today);
+                </script>
+                
+               <div class="form-group"> 
+                 <div class="input-group"> 
+                     <input type="date"  required="Required" class="form-control" name="appdate" placeholder="Select suitable date" />
+                 </div>
+               </div>
                </td>
               <!--  <td>
                
@@ -105,11 +102,13 @@ if(session.getAttribute("my-patient")==null){
                 <!-- <form action="aptBooking" method="post"> -->
                <!--  <input type="date" id="loc" name="appdate" value="" placeholder="" tabindex="3" required="required" /> -->
                
-               <c:if test="${item.drStatus==true }">
+              <%--  <c:if test="${item.drStatus==true }"> --%>
+              
                 <input type="hidden" name="drid" value="${item.drId}" readonly />	
                 <input type="hidden" name="ptid" value="${patient.ptId}" readonly />								
 				<button class="btn btn-sm btn-success" type="submit">Book Here</button>	
-				</c:if>						    
+				
+				<%-- </c:if>	 --%>					    
 	            <!--  </form>     -->         
                </td>   
             </form>
