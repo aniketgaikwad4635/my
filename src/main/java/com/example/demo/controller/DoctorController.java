@@ -86,9 +86,10 @@ public class DoctorController {
 	//read appointment list using drid and all booked closed cancelled
 	@GetMapping("/AllpatAptlist")
     public ModelAndView AllpatAptlist(String drid) {
+		 AptStatus aptStatus=AptStatus.CLOSED;
    	      	    ModelAndView mv=new ModelAndView("Appointment-list");
    	      	DoctorEntity doctorEntity=doctorService.getDoctor(drid);
-   	  	      	List<Appointment> AllpatAptlist=appointmentService.AllpatAptlist(drid);
+   	  	      	List<Appointment> AllpatAptlist=appointmentService.Appointpatientlist(drid,aptStatus);
    	  	         mv.addObject("doctor", doctorEntity); 	  	        
    	  	         mv.addObject("AllpatAptlist", AllpatAptlist);
    	  	         mv.addObject("allPatAptlist", 1);

@@ -26,9 +26,6 @@ if(session.getAttribute("my-patient")==null){
 
 %>
 
-<script >
-  history.forword();
-</script>
 
 
 <body class="bg-image">
@@ -68,28 +65,49 @@ if(session.getAttribute("my-patient")==null){
            
            <c:forEach var="item" items="${drList}" begin="0" end="100" varStatus="srno">  
              <tr>
-   <td><center>${srno.index+1 }</center></td>    <td>${item.drName}</td> <td> ${item.drSpec}</td> 
+   <td><center>${srno.index+1}</center></td>    <td>${item.drName}</td> <td> ${item.drSpec}</td> 
               <td>
                        <c:if test="${item.drStatus==true}"> Available</c:if>  
                        <c:if test="${item.drStatus==false}"> Not Available</c:if> 
                </td>
-
-							<!-- <td><form action="#">
-									<input type="time" id="appt" name="appt"> <input
-										type="submit">
-								</form></td> -->
-
+							
 							<form action="aptBooking" method="get">
                
                <td>
-                <script type="text/javascript">
-                      var today = new Date().toISOString().split('T')[0];
-                      document.getElementsByName("appdate")[0].setAttribute('min', today);
-                </script>
+               
+            
+               
+                 
                 
                <div class="form-group"> 
                  <div class="input-group"> 
-                     <input type="date"  required="Required" class="form-control" name="appdate" placeholder="Select suitable date" />
+                 
+                 
+                 
+                  <input type="date"  required="Required" class="form-control" name="${srno.index+1}" placeholder="Select suitable date" />
+                  <script type="text/javascript">
+                  
+                  <c:if test="${item.drStatus==true}"> 
+                       var today = new Date().toISOString().split('T')[0];
+                      console.log(today);                     
+                      document.getElementsByName(${srno.index+1})[0].setAttribute('min', today);  
+                  </c:if> 
+                      
+                  <c:if test="${item.drStatus==false}"> 
+                        var today = new Date().toISOString().split('T')[0];
+                        console.log(today);  
+                        var tomorrow = new Date(today);
+                  
+                        tomorrow.setDate(tomorrow.getDate() + 2);
+                        console.log(tomorrow.toISOString().split('T')[0]); 
+                       document.getElementsByName(${srno.index+1})[0].setAttribute('min', tomorrow.toISOString().split('T')[0]);
+                  
+                  </c:if>    
+                    
+
+
+                  </script>
+                    
                  </div>
                </div>
                </td>

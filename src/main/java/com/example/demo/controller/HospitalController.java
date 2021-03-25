@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.EmailSenderService;
 import com.example.demo.dao.Appointment;
 import com.example.demo.entity.AppointmentEntity;
 import com.example.demo.entity.DoctorEntity;
@@ -38,6 +39,9 @@ public class HospitalController {
 	
 	@Autowired
 	AppointmentService appointmentService;
+	
+	@Autowired
+	EmailSenderService emailSenderService;
 	
 	//@Autowired
 	//DoctorRepository doctorRepository;
@@ -228,6 +232,12 @@ public class HospitalController {
 				mv.addObject("drReg", 1);
 				mv.addObject("addDrWindow", 1);
 				System.out.println("doctor added successfully in hospital dao");
+				
+				emailSenderService.sendSimpleEmail(drEmail,
+						"Your registration done by hospital- "+hospitalEntity.getHspName()+"... You can log with following credentials "
+							+" Username: "	+drUsername  + "  Password: " + drPassword,
+							"From DoctorHub!!!");
+				
 			    return mv;
 				}
 				catch(Exception e) {

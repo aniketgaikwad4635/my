@@ -26,26 +26,7 @@
 <div class="container" id="container">
 
 	<div class="form-container sign-up-container">
-	
-		<form action="applyforgotPassinput" method="post">
-		
-		<c:if test="${ptPassUpdated==0 }">
-						<div class="alert alert-warning" style="color:orange"><h6>Password not updated.</h6></div>
-					</c:if>
-			
-			<h1>Change password</h1>
-			
-			<span>enter Username & new password here</span>
-		<input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" title="only 15 characters & numbers allowed"/>	
-			<!-- <input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="enter valid email"/>	 -->			
-		 <input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Enter new password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="only 10 characters & numbers allowed"/> 
-			
-			<button>Save</button>
-			<a href="/home">Go to home</a>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="AuthPtlogin" method="post">
+	<form action="AuthPtlogin" method="post">
 		           <c:if test="${ptLogFail==0 }">
 						<div class="alert alert-warning"> Invalid Login</div>
 					</c:if>
@@ -63,19 +44,40 @@
 			<button>Sign In</button>
 			<a href="/home">Go to home</a>
 		</form>
+		
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="applyforgotPassinput" method="post">
+		
+		<c:if test="${ptPassUpdated==0 }">
+						<div class="alert alert-warning" style="color:orange"><h6>Password not updated.</h6></div>
+					</c:if>
+			
+			<h1>Change password</h1>
+			
+			<span>enter Username & new password here</span>
+		     <input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" title="only 15 characters & numbers allowed"/>					                   									
+			<!-- <input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="enter valid email"/>	 -->			
+		 <input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Enter new password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="only 10 characters & numbers allowed"/> 
+			
+			<button>Save</button>
+			<a href="/home">Go to home</a>
+		</form>
 	</div>
 	<div class="overlay-container">
-		<div class="overlay">
+	       <div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				 <button class="ghost" id="signIn">Sign In</button> 
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend !</h1>
+			<h1>Hello, Friend !</h1>
 				<p>Have you forgot your password? click here to change password</p>
 				<button class="ghost" id="signUp">forgot password</button> 
+				
 			</div>
+	    <div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				 <!-- <button class="ghost" id="signIn">Sign In</button>  -->
+			</div>
+		
 		</div>
 	</div>
 </div>

@@ -73,7 +73,7 @@ public class PatientController {
 					"From DoctorHub!!!");
 		
 		
-		
+	
 		mv.addObject("patReg", 1);
 		return mv;
 		}
@@ -161,7 +161,10 @@ public class PatientController {
 	@GetMapping("/applyforgotPass")
 		public ModelAndView applyforgotPass(String UserName ) {
 		ModelAndView mv = new ModelAndView("loginForgotPass");
-		mv.addObject("UserName"+ UserName);
+		PatientEntity patientEntity=new PatientEntity();
+		patientEntity.setPtUsername(UserName);
+		mv.addObject("UserName",patientEntity.getPtUsername());
+		System.out.println(patientEntity.getPtUsername());
 		return mv;
 	}
 	
@@ -182,13 +185,9 @@ public class PatientController {
 			ModelAndView mv = new ModelAndView("loginForgotPass");
 			mv.addObject("ptPassUpdated", 0);
 			return mv;
-		}
-		
+		}	
 		
 	}
-	
-	
-	
 	
 	
 	@GetMapping("/ptlogout")
