@@ -24,7 +24,7 @@ if(session.getAttribute("my-doctor")==null){
 
 %>
 <script>
-   history.forword();
+   history.forward();
 </script>
 
 

@@ -153,7 +153,7 @@
 
 		<div style="text-align: center; color: black;">
 		 <br> <br>
-			<h2>Our Strengths</h2>
+			<h2>Our Specialist</h2>
 
 			<div class="d-flex">
 
