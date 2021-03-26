@@ -150,6 +150,8 @@ public class PatientController {
 					"click on this link to update your password   " + "http://localhost:8080/patient/applyforgotPass?UserName="+ patientEntity.getPtUsername() ,
 						"From DoctorHub!!!");
 			
+			System.out.println(ptGmail);
+			
 			return mv;
 		} else {
 			ModelAndView mv = new ModelAndView("login");
@@ -328,7 +330,7 @@ public class PatientController {
     	 mv.addObject("c",1);
     	 System.out.println("appointment cancelled");
     	 
-    	
+  
     	 return mv;
      }
      
