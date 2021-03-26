@@ -84,13 +84,13 @@ if(session.getAttribute("my-patient")==null){
                  
                  
                  
-                  <input type="date"  required="Required" class="form-control" name="${srno.index+1}" placeholder="Select suitable date" />
+                  <input type="date"  required="Required" class="form-control"  name="appdate" placeholder="Select suitable date" />
                   <script type="text/javascript">
                   
                   <c:if test="${item.drStatus==true}"> 
                        var today = new Date().toISOString().split('T')[0];
                       console.log(today);                     
-                      document.getElementsByName(${srno.index+1})[0].setAttribute('min', today);  
+                      document.getElementsByName("appdate")[0].setAttribute('min', today);  
                   </c:if> 
                       
                   <c:if test="${item.drStatus==false}"> 
@@ -98,9 +98,9 @@ if(session.getAttribute("my-patient")==null){
                         console.log(today);  
                         var tomorrow = new Date(today);
                   
-                        tomorrow.setDate(tomorrow.getDate() + 2);
+                        tomorrow.setDate(tomorrow.getDate() + 1);
                         console.log(tomorrow.toISOString().split('T')[0]); 
-                       document.getElementsByName(${srno.index+1})[0].setAttribute('min', tomorrow.toISOString().split('T')[0]);
+                       document.getElementsByName("appdate")[0].setAttribute('min', tomorrow.toISOString().split('T')[0]);
                   
                   </c:if>    
                     

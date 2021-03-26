@@ -56,7 +56,7 @@
 			<h1>Change password</h1>
 			
 			<span>enter Username & new password here</span>
-		     <input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" title="only 15 characters & numbers allowed"/>					                   									
+		     <input class="form-control form-control-sm" type="text" name="ptUsername" value="${UserName}"  pattern="[A-Za-z0-9]{1,15}" required autocomplete="off" readonly/>					                   									
 			<!-- <input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off" title="enter valid email"/>	 -->			
 		 <input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Enter new password"  pattern="[A-Za-z0-9]{1,10}" required autocomplete="off" title="only 10 characters & numbers allowed"/> 
 			

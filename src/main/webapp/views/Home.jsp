@@ -15,8 +15,9 @@
 <style>
 .homebg {
 	background-image: url("/image/homebackground/homebackimg.jpg");
-	background-size: cover;
-	height: 100vh;
+	background-size:cover;
+	height:100vh;
+	
 }
 
 .about-section {
@@ -38,14 +39,18 @@
 <body class="">
 
       <div class='container1 homebg' style="height:600px">
-		<div class="container_content1">
+		<div class="container_content1"   >
 			<div class="container_content_inner1">
-				<!-- <div class="title">
-					<h1>Doctor Hub</h1>
+				 <div class="title" >
+					<h1 style="color:white">Doctor Hub</h1>
 				</div>
 				<div class="par">
-					<p> If we could give every individual the right amount of nourishment and exercise, not too little and not too much, we would have found the safest way to health. </p>
-				</div> -->
+					<h5 style="font-family:cursive;">
+					
+					" to bring health care of  standards within the reach of every individual we are committed to the achievement and the maintenance of excellence in healthcare for the benefit of the humanity. "
+					
+                     </h5>
+				</div> 
 				
 
 			</div>

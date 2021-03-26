@@ -3,9 +3,12 @@
 <body>
 
 	<div class="row " style="height: 70px; background-color:#D3D3D3 "  >
-	  <div class="col-2"></div>
+	     <div class="col-3 d-flex justify-content-center align-items-center">
+               <div class=""> <h4><i class="fas fa-user-md"> DoctorHub </i></h4>         
+               </div>
+		</div>
 		<div
-			class="col-10 d-none d-flex  align-items-center justify-content-end" style="font-family:  sans-serif;">
+			class="col-9 d-none d-flex  align-items-center justify-content-end" style="font-family:  sans-serif;">
 	
 		
 		<a class="navbar-band ml-5" href="/home"><img

@@ -42,7 +42,7 @@ if(session.getAttribute("my-patient")==null){
 		<div class="row" >
 			<div class="mx-auto">			      
              				<center><h4 style="color:white">User Profile</h4> 
-             				<img src="/image/newprofilelogo/profileUnknown.png" alt="" width="100" height="100"/></center>
+             				<img src="/image/newprofilelogo/profileUnknown1.png" alt="" width="100" height="100"/></center>
 					<table class="table  border-dark table-bordered bg-tableHspListcontact ">
 					<br>
 						<tr>
