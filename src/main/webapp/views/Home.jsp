@@ -60,30 +60,55 @@
 				<div class="slider-container">
 
 					<div class="slider-content">
-               <c:forEach var="item" items="${drList }" begin="0" end="5"
-					varStatus="srnodr">
+
 						<div class="slider-single">
 							<img class="slider-single-image"
-								src="image/hospitals/hsp${srnodr.index+1 }.jpg" alt="1" />
-							<h1 class="slider-single-title">
-							Government Hospitals
-						<%-- 	<c:forEach  var="hsp" items="${hospitallist }" begin="0" end="5" varStatus="srnohsp">
-							    <c:if test="${srnodr.index==srnohsp.index}"></c:if>   ${hsp.hspName }
-							                         </c:forEach> --%>
-							       </h1>
+								src="image/hospitals/hsp1.jpg" alt="1" />
+							<h1 class="slider-single-title">Government Hospitals</h1>
 							<a class="slider-single-likes" href="javascript:void(0);"> <i
 								class="fa fa-heart"></i>
 								<p>1,247</p>
 							</a>
 						</div>
-                  </c:forEach>
+
+						<div class="slider-single">
+							<img class="slider-single-image"
+								src="image/hospitals/hsp2.jpg" alt="2" />
+							<h1 class="slider-single-title">Government Hospitals</h1>
+							<a class="slider-single-likes" href="javascript:void(0);"> <i
+								class="fa fa-heart"></i>
+								<p>1,247</p>
+							</a>
+						</div>
+
+						<div class="slider-single">
+							<img class="slider-single-image"
+								src="image/hospitals/hsp3.jpg" alt="3" />
+							<h1 class="slider-single-title">Government Hospitals</h1>
+							<a class="slider-single-likes" href="javascript:void(0);"> <i
+								class="fa fa-heart"></i>
+								<p>1,247</p>
+							</a>
+						</div>
+
+
+						<div class="slider-single">
+							<img class="slider-single-image"
+								src="image/hospitals/hsp4.jpg" alt="4" />
+							<h1 class="slider-single-title">Government Hospitals</h1>
+							<a class="slider-single-likes" href="javascript:void(0);"> <i
+								class="fa fa-heart"></i>
+								<p>1,247</p>
+							</a>
+						</div>
+
+
 						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<div >
 	<br>

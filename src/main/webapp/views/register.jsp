@@ -77,7 +77,7 @@
 						                               <small>Username/password already exist.</small></div>
 					</c:if>
 		
-			<h6><b>Create Account</b></h6>               
+			<h3><b>Create Account</b></h3>               
 			
 			<input class="form-control form-control-sm" type="text" name="ptName" placeholder="Name" pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$"  required autocomplete="off" title="Only characters are allowed.."/>
 			<input class="form-control form-control-sm" type="text" name="age" placeholder="Age" Pattern= "^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$" required autocomplete="off" title="Not valid age.."/>
