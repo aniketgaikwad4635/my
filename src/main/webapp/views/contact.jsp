@@ -109,12 +109,12 @@ filter: drop-shadow(5px 5px 5px #222);
                     <script type="text/javascript">
                     document.getElementById('today').value = moment().format('YYYY-MM-DD');
                     </script> --%>
-                    
+                   <!--  
                     <script>
                       if ( window.history.replaceState ) {
                        window.history.replaceState( null, null, window.location.href );
                       }
-                 	</script>
+                 	</script> -->
                     
                 </div>
                  <div class="text-center text-md-left mt-3">         
